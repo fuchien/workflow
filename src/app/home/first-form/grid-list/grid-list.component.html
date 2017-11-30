@@ -1,0 +1,61 @@
+<div class="dado dados1">
+  <ul class="tile">
+    <li class="grid">
+      <h4>Nome</h4>
+      <p>{{dados.nome}}</p>
+    </li>
+    <li class="grid">
+      <h4>Agência</h4>
+      <p>{{dados.agencia}}</p>
+    </li>
+    <li class="grid">
+      <h4>Cpf</h4>
+      <p>{{dados.cpf}}</p>
+    </li>
+    <li class="grid">
+      <h4>Conta</h4>
+      <p>{{dados.conta}}</p>
+    </li>
+    <li class="grid">
+      <h4>Pernumper</h4>
+      <p>{{dados.pernumper}}</p>
+    </li>
+    <li class="grid">
+      <h4>Segmento</h4>
+      <p>{{dados.segmento}}</p>
+    </li>
+    <li class="grid">
+    </li>
+    <li class="grid">
+    </li>
+  </ul>
+</div>
+<div class="dado dados2">
+  <div class="dados-right">
+    <ul class="tile">
+      <li class="grid">
+        <h4>Telefones</h4>
+        <p *ngFor="let tel of dados.telefones">{{tel}}</p>
+      </li>
+      <li class="grid">
+        <h4>Emails</h4>
+        <p *ngFor="let email of dados.emails">{{email}}</p>
+      </li>
+    </ul>
+  </div>
+  <div class="dados-right">
+    <form class="example-form" [formGroup]="contaForm">
+      <div class="title">
+        <h4>Canal</h4>
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Selecione o canal" class="select" formControlName="conta">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let canal of canais" [value]="canal">
+              {{canal}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+.dado {
+    min-width: 50%;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile {
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    min-width: 90%;
+}
+
+.grid {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 45%;
+    margin-top: 15px;
+}
+
+h4,
+p {
+    margin: 0;
+    font-family: OpenSans;
+    text-align: left;
+    font-size: 11px;
+}
+
+h4 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #191919;
+}
+
+p {
+    line-height: 1.45;
+    color: #787878;
+}
+
+.dados2 {
+    min-width: 50%;
+    max-width: 50%;
+    max-height: 50%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.dados-right {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.example-full-width {
+    min-width: 90%;
+    padding: 0;
+}
+
+.select {
+    padding: 0;
+}

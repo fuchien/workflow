@@ -15,11 +15,19 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
+import { ToolbarComponent } from './home/toolbar/toolbar.component';
+import { FirstFormComponent } from './home/first-form/first-form.component';
+import { FooterComponent } from './home/footer/footer.component';
+import { GridListComponent } from './home/first-form/grid-list/grid-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ToolbarComponent,
+    FirstFormComponent,
+    FooterComponent,
+    GridListComponent
   ],
   imports: [
     BrowserModule,
