@@ -1,0 +1,129 @@
+<mat-toolbar color="primary" class="toolbar">
+  <div class="header">
+    <div class="workflow">
+      <div class="image-logo">
+        <img src="assets/img/banco-santander-logo.png" alt="Banco Santander">
+      </div>
+      <div class="line-2-copy"></div>
+      <div class="name">
+        <h1>Workflow de Fraude</h1>
+      </div>
+    </div>
+    <div class="user">
+      <h2>Produtividade</h2>
+      <div class="line-2-copy"></div>
+      <h2>Relatórios</h2>
+      <div class="line-2-copy"></div>
+      <div class="image-user">
+        <!-- <img src="assets/img/user-icon.png" alt="Usuário"> -->
+        <p>LK</p>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+
+<div class="forms">
+  <div class="inputs">
+    <form class="example-form" [formGroup]="canalForm">
+      <div class="title">
+        <h4>Canal</h4>
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Selecione o canal" formControlName="canal">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let canal of canais" [value]="canal">
+              {{canal}}
+            </mat-option>
+          </mat-select>
+          <!-- <mat-icon matSuffix>keyboard_arrow_down</mat-icon> -->
+        </mat-form-field>
+      </div>
+      <div class="title">
+        <h4>Modalidade</h4>
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Selecione a modalidade" formControlName="modalidade">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let canal of canais" [value]="canal">
+              {{canal}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+  <div class="inputs fila" [class.disabled]="filaIsDisabled">
+    <form class="example-form" [formGroup]="filaForm">
+      <div class="title">
+        <h4>Fila</h4>
+        <mat-form-field class="example-full-width">
+          <mat-select placeholder="Selecione a fila" formControlName="fila">
+            <mat-option>--</mat-option>
+            <mat-option *ngFor="let canal of canais" [value]="canal">
+              {{canal}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="title">
+        <h4 *ngIf="flow2">Resumo da fila</h4>
+        <p *ngIf="flow2">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+      </div>
+    </form>
+  </div>
+  <div class="inputs" [class.disabled]="cpfIsDisabled" #localizar>
+    <form class="example-form">
+      <div class="title">
+        <h4>cpf ou cnpj</h4>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Ex.: 123.123.123-10">
+        </mat-form-field>
+      </div>
+      <div class="localizar">
+        <button mat-raised-button color="primary" matTooltip="Localizar o usuário"
+          *ngIf="!localizando" (click)="localizarUser()">
+          Localizar
+        </button>
+        <mat-spinner class="spinner" color="warn" *ngIf="localizando" diameter="30" strokeWidth="5"></mat-spinner>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="flows">
+  <div class="flow">
+    <div class="passos">
+      <div class="passo" [style.color]="filaIsDisabled ? '#33CCCC' : '#191919'">
+        <p>Comece selecionando o canal e modalidades adequados</p>
+      </div>
+      <div class="passo passoFila" [style.color]="cpfIsDisabled ? '#33CCCC' : '#191919'" *ngIf="!filaIsDisabled">
+        <p>Selecione a fila adequada</p>
+      </div>
+      <div class="passo passoCpf" [style.color]="cpfIsDisabled ? '#191919' : '#33CCCC'" *ngIf="!cpfIsDisabled">
+        <p>Digite o cpf ou cnpj</p>
+      </div>
+    </div>
+    <section class="example-section">
+      <mat-progress-bar
+          class="example-margin"
+          [color]="color"
+          [mode]="mode"
+          [value]="value"
+          [bufferValue]="bufferValue">
+      </mat-progress-bar>
+    </section>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer1">
+    <div class="footer2">
+      <div class="name">
+        <div class="circle">
+          <p>LK</p>
+        </div>
+      </div>
+      <div class="data">
+        <p>02/03/2017. 10:00</p>
+      </div>
+    </div>
+  </div>
+</div>
