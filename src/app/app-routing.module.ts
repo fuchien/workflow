@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { FirstFormComponent } from './home/first-form/first-form.component';
+import { RespostaComponent } from './home/resposta/resposta.component';
 
 const routes: Routes = [
   {
@@ -11,7 +13,17 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: '',
+        component: FirstFormComponent
+      },
+      {
+        path: 'response',
+        component: RespostaComponent
+      }
+    ]
   }
 ];
 

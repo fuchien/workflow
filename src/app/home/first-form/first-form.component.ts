@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { FirstFormDatasService } from './first-form-datas.service';
 
 @Component({
   selector: 'wff-first-form',
@@ -31,7 +34,8 @@ export class FirstFormComponent implements OnInit {
       pernumper: '392123861',
       segmento: 'Van Gogh',
       telefones: ['11 1234-5678', '11 98765-4321'],
-      emails: ['laviniacardoso@test.com', 'laviniaferreira@test.com']
+      emails: ['laviniacardoso@test.com', 'laviniaferreira@test.com'],
+      prosseguir: false
   }
 
   private canalForm: FormGroup
@@ -39,7 +43,8 @@ export class FirstFormComponent implements OnInit {
   private cpfForm: FormGroup
 
   constructor(
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private router: Router
   ) {
 
     // criar o FORMULARIO
@@ -96,15 +101,17 @@ export class FirstFormComponent implements OnInit {
     })
   }
 
-  escreverCpf(event) {
-
-    console.log(event)
-  }
-
   localizarUser() {
     
     this.localizando = true
     this.isResult = true
+  }
+
+  prosseguir() {
+    
+    this.dadosPessoais.prosseguir = true
+    FirstFormDatasService.setDadosPessoais(this.dadosPessoais)
+    this.router.navigate(['/home/response'])
   }
 
 }

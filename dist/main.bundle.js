@@ -25,12 +25,16 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_gendir lazy recursive";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_first_form_first_form_component__ = __webpack_require__("../../../../../src/app/home/first-form/first-form.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_resposta_resposta_component__ = __webpack_require__("../../../../../src/app/home/resposta/resposta.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -42,7 +46,17 @@ var routes = [
     },
     {
         path: 'home',
-        component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */]
+        component: __WEBPACK_IMPORTED_MODULE_2__home_home_component__["a" /* HomeComponent */],
+        children: [
+            {
+                path: '',
+                component: __WEBPACK_IMPORTED_MODULE_3__home_first_form_first_form_component__["a" /* FirstFormComponent */]
+            },
+            {
+                path: 'response',
+                component: __WEBPACK_IMPORTED_MODULE_4__home_resposta_resposta_component__["a" /* RespostaComponent */]
+            }
+        ]
     }
 ];
 var AppRoutingModule = (function () {
@@ -52,8 +66,8 @@ var AppRoutingModule = (function () {
 }());
 AppRoutingModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
-        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */].forRoot(routes)],
-        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* RouterModule */]]
+        imports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* RouterModule */].forRoot(routes)],
+        exports: [__WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* RouterModule */]]
     })
 ], AppRoutingModule);
 
@@ -142,12 +156,16 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__home_first_form_first_form_component__ = __webpack_require__("../../../../../src/app/home/first-form/first-form.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__home_footer_footer_component__ = __webpack_require__("../../../../../src/app/home/footer/footer.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__home_first_form_grid_list_grid_list_component__ = __webpack_require__("../../../../../src/app/home/first-form/grid-list/grid-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__home_resposta_resposta_component__ = __webpack_require__("../../../../../src/app/home/resposta/resposta.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__home_first_form_first_form_datas_service__ = __webpack_require__("../../../../../src/app/home/first-form/first-form-datas.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -181,7 +199,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_16__home_toolbar_toolbar_component__["a" /* ToolbarComponent */],
             __WEBPACK_IMPORTED_MODULE_17__home_first_form_first_form_component__["a" /* FirstFormComponent */],
             __WEBPACK_IMPORTED_MODULE_18__home_footer_footer_component__["a" /* FooterComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__home_first_form_grid_list_grid_list_component__["a" /* GridListComponent */]
+            __WEBPACK_IMPORTED_MODULE_19__home_first_form_grid_list_grid_list_component__["a" /* GridListComponent */],
+            __WEBPACK_IMPORTED_MODULE_20__home_resposta_resposta_component__["a" /* RespostaComponent */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -199,12 +218,50 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_11__angular_material_progress_spinner__["a" /* MatProgressSpinnerModule */],
             __WEBPACK_IMPORTED_MODULE_12__angular_material_tooltip__["a" /* MatTooltipModule */]
         ],
-        providers: [],
+        providers: [
+            __WEBPACK_IMPORTED_MODULE_21__home_first_form_first_form_datas_service__["a" /* FirstFormDatasService */]
+        ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_13__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/first-form/first-form-datas.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirstFormDatasService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FirstFormDatasService = (function () {
+    function FirstFormDatasService() {
+    }
+    FirstFormDatasService.getDadosPessoais = function () {
+        return this.dadosPessoais;
+    };
+    FirstFormDatasService.setDadosPessoais = function (dados) {
+        this.dadosPessoais = dados;
+    };
+    return FirstFormDatasService;
+}());
+FirstFormDatasService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [])
+], FirstFormDatasService);
+
+//# sourceMappingURL=first-form-datas.service.js.map
 
 /***/ }),
 
@@ -229,7 +286,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/first-form/first-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"forms\">\n  <div class=\"inputs\">\n    <form class=\"example-form\" [formGroup]=\"canalForm\">\n      <div class=\"title\">\n        <h4>Canal</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select formControlName=\"canal\" [(ngModel)]=\"canalSelected\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n          <!-- <mat-icon matSuffix>keyboard_arrow_down</mat-icon> -->\n        </mat-form-field>\n      </div>\n      <div class=\"title\">\n        <h4>Modalidade</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione a modalidade\" formControlName=\"modalidade\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n    </form>\n  </div>\n  <div class=\"inputs fila\" [class.disabled]=\"filaIsDisabled\">\n    <form class=\"example-form\" [formGroup]=\"filaForm\">\n      <div class=\"title\">\n        <h4>Fila</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione a fila\" formControlName=\"fila\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <div class=\"title\">\n        <h4 *ngIf=\"flow2\">Resumo da fila</h4>\n        <p *ngIf=\"flow2\">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>\n      </div>\n    </form>\n  </div>\n  <div class=\"inputs\" [class.disabled]=\"cpfIsDisabled\" #localizar>\n    <form class=\"example-form\" [formGroup]=\"cpfForm\">\n      <div class=\"title\">\n        <h4>cpf ou cnpj</h4>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput formControlName=\"cpf\" placeholder=\"Ex.: 123.123.123-10\">\n        </mat-form-field>\n      </div>\n      <div class=\"localizar\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Localizar o usuário\"\n          *ngIf=\"!localizando\" [disabled]=\"!podeLocalizar\" (click)=\"localizarUser()\">\n          Localizar\n        </button>\n        <mat-spinner class=\"spinner\" color=\"primary\" *ngIf=\"localizando\" diameter=\"30\" strokeWidth=\"5\"></mat-spinner>\n      </div>\n    </form>\n  </div>\n</div>\n\n<div class=\"flows\" [class.isresult]=\"isResult\">\n  <div class=\"flow\" *ngIf=\"!isResult\">\n    <div class=\"passos\">\n      <div class=\"passo\" [style.color]=\"filaIsDisabled ? '#33CCCC' : '#191919'\">\n        <p>Comece selecionando o canal e modalidades adequados</p>\n      </div>\n      <div class=\"passo passoFila\" [style.color]=\"cpfIsDisabled ? '#33CCCC' : '#191919'\" *ngIf=\"!filaIsDisabled\">\n        <p>Selecione a fila adequada</p>\n      </div>\n      <div class=\"passo passoCpf\" [style.color]=\"podeLocalizar ? '#33CCCC' : '#191919'\" *ngIf=\"!cpfIsDisabled\">\n        <p>Digite o cpf ou cnpj</p>\n      </div>\n    </div>\n    <section class=\"example-section\">\n      <mat-progress-bar\n          class=\"example-margin\"\n          [color]=\"color\"\n          [mode]=\"mode\"\n          [value]=\"value\"\n          [bufferValue]=\"bufferValue\">\n      </mat-progress-bar>\n    </section>\n  </div>\n\n  <div class=\"result\" *ngIf=\"isResult\">\n    <div class=\"result-title\">\n      <h3>Resultado</h3>\n    </div>\n    <div class=\"result-body\">\n      <wff-grid-list [dados]='dadosPessoais' class=\"result-body-list\"></wff-grid-list>\n    </div>\n    <div class=\"result-processar\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Prosseguir\"\n        (click)=\"localizarUser()\">\n        Prosseguir\n      </button>\n      <!-- <mat-spinner class=\"spinner\" color=\"warn\" *ngIf=\"localizando\" diameter=\"30\" strokeWidth=\"5\"></mat-spinner> -->\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"forms\">\n  <div class=\"inputs\">\n    <form class=\"example-form\" [formGroup]=\"canalForm\">\n      <div class=\"title\">\n        <h4>Canal</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select formControlName=\"canal\" [(ngModel)]=\"canalSelected\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n          <!-- <mat-icon matSuffix>keyboard_arrow_down</mat-icon> -->\n        </mat-form-field>\n      </div>\n      <div class=\"title\">\n        <h4>Modalidade</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione a modalidade\" formControlName=\"modalidade\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n    </form>\n  </div>\n  <div class=\"inputs fila\" [class.disabled]=\"filaIsDisabled\">\n    <form class=\"example-form\" [formGroup]=\"filaForm\">\n      <div class=\"title\">\n        <h4>Fila</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione a fila\" formControlName=\"fila\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <div class=\"title\">\n        <h4 *ngIf=\"flow2\">Resumo da fila</h4>\n        <p *ngIf=\"flow2\">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>\n      </div>\n    </form>\n  </div>\n  <div class=\"inputs\" [class.disabled]=\"cpfIsDisabled\" #localizar>\n    <form class=\"example-form\" [formGroup]=\"cpfForm\">\n      <div class=\"title\">\n        <h4>cpf ou cnpj</h4>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput formControlName=\"cpf\" placeholder=\"Ex.: 123.123.123-10\">\n        </mat-form-field>\n      </div>\n      <div class=\"localizar\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Localizar o usuário\"\n          *ngIf=\"!localizando\" [disabled]=\"!podeLocalizar\" (click)=\"localizarUser()\">\n          Localizar\n        </button>\n        <mat-spinner class=\"spinner\" color=\"primary\" *ngIf=\"localizando\" diameter=\"30\" strokeWidth=\"5\"></mat-spinner>\n      </div>\n    </form>\n  </div>\n</div>\n\n<div class=\"flows\" [class.isresult]=\"isResult\">\n  <div class=\"flow\" *ngIf=\"!isResult\">\n    <div class=\"passos\">\n      <div class=\"passo\" [style.color]=\"filaIsDisabled ? '#33CCCC' : '#191919'\">\n        <p>Comece selecionando o canal e modalidades adequados</p>\n      </div>\n      <div class=\"passo passoFila\" [style.color]=\"cpfIsDisabled ? '#33CCCC' : '#191919'\" *ngIf=\"!filaIsDisabled\">\n        <p>Selecione a fila adequada</p>\n      </div>\n      <div class=\"passo passoCpf\" [style.color]=\"podeLocalizar ? '#33CCCC' : '#191919'\" *ngIf=\"!cpfIsDisabled\">\n        <p>Digite o cpf ou cnpj</p>\n      </div>\n    </div>\n    <section class=\"example-section\">\n      <mat-progress-bar\n          class=\"example-margin\"\n          [color]=\"color\"\n          [mode]=\"mode\"\n          [value]=\"value\"\n          [bufferValue]=\"bufferValue\">\n      </mat-progress-bar>\n    </section>\n  </div>\n\n  <div class=\"result\" *ngIf=\"isResult\">\n    <div class=\"result-title\">\n      <h3>Resultado</h3>\n    </div>\n    <div class=\"result-body\">\n      <wff-grid-list [dados]='dadosPessoais' class=\"result-body-list\"></wff-grid-list>\n    </div>\n    <div class=\"result-processar\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Prosseguir\"\n        (click)=\"prosseguir()\">\n        Prosseguir\n      </button>\n      <!-- <mat-spinner class=\"spinner\" color=\"warn\" *ngIf=\"localizando\" diameter=\"30\" strokeWidth=\"5\"></mat-spinner> -->\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -240,6 +297,8 @@ module.exports = "<div class=\"forms\">\n  <div class=\"inputs\">\n    <form cla
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirstFormComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__first_form_datas_service__ = __webpack_require__("../../../../../src/app/home/first-form/first-form-datas.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -251,9 +310,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var FirstFormComponent = (function () {
-    function FirstFormComponent(fb) {
+    function FirstFormComponent(fb, router) {
         this.fb = fb;
+        this.router = router;
         this.color = 'primary';
         this.mode = 'determinate';
         this.value = 0;
@@ -273,7 +335,8 @@ var FirstFormComponent = (function () {
             pernumper: '392123861',
             segmento: 'Van Gogh',
             telefones: ['11 1234-5678', '11 98765-4321'],
-            emails: ['laviniacardoso@test.com', 'laviniaferreira@test.com']
+            emails: ['laviniacardoso@test.com', 'laviniaferreira@test.com'],
+            prosseguir: false
         };
         // criar o FORMULARIO
         this.canalForm = fb.group({
@@ -315,12 +378,14 @@ var FirstFormComponent = (function () {
             _this.podeLocalizar = true;
         });
     };
-    FirstFormComponent.prototype.escreverCpf = function (event) {
-        console.log(event);
-    };
     FirstFormComponent.prototype.localizarUser = function () {
         this.localizando = true;
         this.isResult = true;
+    };
+    FirstFormComponent.prototype.prosseguir = function () {
+        this.dadosPessoais.prosseguir = true;
+        __WEBPACK_IMPORTED_MODULE_3__first_form_datas_service__["a" /* FirstFormDatasService */].setDadosPessoais(this.dadosPessoais);
+        this.router.navigate(['/home/response']);
     };
     return FirstFormComponent;
 }());
@@ -330,10 +395,10 @@ FirstFormComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/home/first-form/first-form.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home/first-form/first-form.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], FirstFormComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=first-form.component.js.map
 
 /***/ }),
@@ -346,7 +411,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".dado {\r\n    min-width: 50%;\r\n    max-width: 50%;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: start;\r\n        -ms-flex-align: start;\r\n            align-items: flex-start;\r\n}\r\n\r\n.tile {\r\n    padding: 0;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: row wrap;\r\n            flex-flow: row wrap;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    list-style: none;\r\n    min-width: 90%;\r\n}\r\n\r\n.grid {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: start;\r\n        -ms-flex-align: start;\r\n            align-items: flex-start;\r\n    width: 45%;\r\n    margin-top: 15px;\r\n}\r\n\r\nh4,\r\np {\r\n    margin: 0;\r\n    font-family: OpenSans;\r\n    text-align: left;\r\n    font-size: 11px;\r\n}\r\n\r\nh4 {\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #191919;\r\n}\r\n\r\np {\r\n    line-height: 1.45;\r\n    color: #787878;\r\n}\r\n\r\n.dados2 {\r\n    min-width: 50%;\r\n    max-width: 50%;\r\n    max-height: 60%;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n}\r\n\r\n.dados-right {\r\n    min-width: 100%;\r\n    max-width: 100%;\r\n}\r\n\r\n.example-full-width {\r\n    min-width: 90%;\r\n    padding: 0;\r\n}\r\n\r\n.select {\r\n    padding: 0;\r\n}", ""]);
+exports.push([module.i, ".dado {\r\n    min-width: 50%;\r\n    max-width: 50%;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: start;\r\n        -ms-flex-align: start;\r\n            align-items: flex-start;\r\n}\r\n\r\n.tile {\r\n    padding: 0;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: horizontal;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: row wrap;\r\n            flex-flow: row wrap;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    list-style: none;\r\n    min-width: 90%;\r\n}\r\n\r\n.grid {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: start;\r\n        -ms-flex-align: start;\r\n            align-items: flex-start;\r\n    width: 45%;\r\n    margin-top: 15px;\r\n}\r\n\r\nh4,\r\np {\r\n    margin: 0;\r\n    font-family: OpenSans;\r\n    text-align: left;\r\n    font-size: 11px;\r\n}\r\n\r\nh4 {\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n    color: #191919;\r\n}\r\n\r\np {\r\n    line-height: 1.45;\r\n    color: #787878;\r\n}\r\n\r\n.dados2 {\r\n    min-width: 50%;\r\n    max-width: 50%;\r\n    /* max-height: 60%; */\r\n    max-height: 150px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-flow: column;\r\n            flex-flow: column;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n}\r\n\r\n.dados-right {\r\n    min-width: 100%;\r\n    max-width: 100%;\r\n}\r\n\r\n.dados-right .tile .corrigir {\r\n    margin-top: 5px;\r\n}\r\n\r\n.dados-right .tile .corrigir button {\r\n    width: 216px;\r\n    height: 32px;\r\n    border-radius: 21px;\r\n    background-color: #424455;\r\n    line-height: 32px;\r\n    text-align: center;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -ms-flex-pack: distribute;\r\n        justify-content: space-around;\r\n}\r\n\r\n.dados-right .tile .corrigir button .icon {\r\n    font-size: 20px;\r\n}\r\n\r\n.example-full-width {\r\n    min-width: 90%;\r\n    padding: 0;\r\n}\r\n\r\n.select {\r\n    padding: 0;\r\n}", ""]);
 
 // exports
 
@@ -359,7 +424,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/first-form/grid-list/grid-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dado dados1\">\n  <ul class=\"tile\">\n    <li class=\"grid\">\n      <h4>Nome</h4>\n      <p>{{dados.nome}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Agência</h4>\n      <p>{{dados.agencia}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Cpf</h4>\n      <p>{{dados.cpf}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Conta</h4>\n      <p>{{dados.conta}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Pernumper</h4>\n      <p>{{dados.pernumper}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Segmento</h4>\n      <p>{{dados.segmento}}</p>\n    </li>\n  </ul>\n</div>\n<div class=\"dado dados2\">\n  <div class=\"dados-right\">\n    <ul class=\"tile\">\n      <li class=\"grid\">\n        <h4>Telefones</h4>\n        <p *ngFor=\"let tel of dados.telefones\">{{tel}}</p>\n      </li>\n      <li class=\"grid\">\n        <h4>Emails</h4>\n        <p *ngFor=\"let email of dados.emails\">{{email}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"dados-right\">\n    <form class=\"example-form\" [formGroup]=\"contaForm\">\n      <div class=\"title\">\n        <h4>Canal</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione o canal\" class=\"select\" formControlName=\"conta\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n    </form>\n  </div>\n</div>"
+module.exports = "<div class=\"dado dados1\">\n  <ul class=\"tile\">\n    <li class=\"grid\">\n      <h4>Nome</h4>\n      <p>{{dados.nome}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Agência</h4>\n      <p>{{dados.agencia}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Cpf</h4>\n      <p>{{dados.cpf}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Conta</h4>\n      <p>{{dados.conta}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Pernumper</h4>\n      <p>{{dados.pernumper}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Segmento</h4>\n      <p>{{dados.segmento}}</p>\n    </li>\n  </ul>\n</div>\n<div class=\"dado dados2\">\n  <div class=\"dados-right\">\n    <ul class=\"tile\">\n      <li class=\"grid\">\n        <h4>Telefones</h4>\n        <p *ngFor=\"let tel of dados.telefones\">{{tel}}</p>\n      </li>\n      <li class=\"grid\">\n        <h4>Emails</h4>\n        <p *ngFor=\"let email of dados.emails\">{{email}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"dados-right\">\n    <form class=\"example-form\" [formGroup]=\"contaForm\" *ngIf=\"!buttonCorrigirDados\">\n      <div class=\"title\">\n        <h4>Canal</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione o canal\" class=\"select\" formControlName=\"conta\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n    </form>\n    <ul class=\"tile\" *ngIf=\"buttonCorrigirDados\">\n      <li class=\"grid corrigir\">\n        <h4>Conta selecionada</h4>\n        <p>Corrente 1231</p>\n      </li>\n      <li class=\"grid corrigir\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Corrigir os Dados\"\n          (click)=\"corrigirDados()\">\n          <mat-icon matSuffix class=\"icon\">mode_edit</mat-icon>\n          Corrigir dados\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -385,11 +450,18 @@ var GridListComponent = (function () {
     function GridListComponent(fb) {
         this.fb = fb;
         this.canais = ['Dog', 'Cat', 'Cow', 'Fox'];
+        this.buttonCorrigirDados = false;
         this.contaForm = fb.group({
             'conta': [null, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required]]
         });
     }
     GridListComponent.prototype.ngOnInit = function () {
+        if (this.dados.prosseguir) {
+            this.buttonCorrigirDados = true;
+            return;
+        }
+    };
+    GridListComponent.prototype.corrigirDados = function () {
     };
     return GridListComponent;
 }());
@@ -493,7 +565,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<wff-toolbar></wff-toolbar>\n\n<wff-first-form></wff-first-form>\n\n<wff-footer></wff-footer>"
+module.exports = "<wff-toolbar></wff-toolbar>\n\n<router-outlet></router-outlet>\n<!-- <wff-first-form></wff-first-form> -->\n\n<wff-footer></wff-footer>"
 
 /***/ }),
 
@@ -533,6 +605,70 @@ HomeComponent = __decorate([
 
 /***/ }),
 
+/***/ "../../../../../src/app/home/resposta/resposta.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".forms {\r\n    margin: 0 auto;\r\n    margin-top: 10.9px;\r\n    min-width: 90vw;\r\n    max-width: 90vw;\r\n    min-height: 191px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    position: relative;\r\n    border: 1px solid #d8d8d8;\r\n}\r\n\r\n.result {\r\n    min-width: 98%;\r\n    /* min-height: 45vh;\r\n    max-height: 45vh; */\r\n    max-height: 180px;\r\n    min-height: 180px;\r\n    margin: 0 auto;\r\n    /* margin-top: 30.5px; */\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.result .result-body {\r\n    min-width: 100%;\r\n    border-radius: 4px;\r\n    /* min-height: 23vh; */\r\n    max-height: 180px;\r\n    min-height: 180px;\r\n    background-color: #ffffff;\r\n    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n}\r\n\r\n.result .result-body-list {\r\n    min-width: 100%;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/resposta/resposta.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"forms\">\n  <div class=\"result\">\n    <div class=\"result-body\">\n      <wff-grid-list [dados]='dadosPessoais' class=\"result-body-list\"></wff-grid-list>\n    </div>\n  </div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/resposta/resposta.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RespostaComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__first_form_first_form_datas_service__ = __webpack_require__("../../../../../src/app/home/first-form/first-form-datas.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var RespostaComponent = (function () {
+    function RespostaComponent() {
+    }
+    RespostaComponent.prototype.ngOnInit = function () {
+        this.dadosPessoais = __WEBPACK_IMPORTED_MODULE_1__first_form_first_form_datas_service__["a" /* FirstFormDatasService */].getDadosPessoais();
+    };
+    return RespostaComponent;
+}());
+RespostaComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'wff-resposta',
+        template: __webpack_require__("../../../../../src/app/home/resposta/resposta.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/home/resposta/resposta.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], RespostaComponent);
+
+//# sourceMappingURL=resposta.component.js.map
+
+/***/ }),
+
 /***/ "../../../../../src/app/home/toolbar/toolbar.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -541,7 +677,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".toolbar {\r\n    background-color: #2a4751;\r\n    min-height: 63.1px;\r\n    max-height: 63.1px;\r\n}\r\n\r\n.header  {\r\n    width: 90vw;\r\n    margin: 0 auto;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.workflow {\r\n    width: 22%;\r\n    min-height: 63.1px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    color: #c2c2c2;\r\n}\r\n\r\n.workflow .image-logo {\r\n    width: 48px;\r\n    height: 48px;\r\n    border-radius: 50%;\r\n    background-color: #fff;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.workflow .image-logo img {\r\n    width: 35.8px;\r\n    height: 32px;\r\n}\r\n\r\n.workflow .line-2-copy, .user .line-2-copy {\r\n    width: 1px;\r\n    height: 60px;\r\n    background-color: #35505a;\r\n    border: 2px solid #35505a;\r\n}\r\n\r\n.workflow .name {\r\n    min-height: 63.1px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    font-family: OpenSans;\r\n    font-size: 18px;\r\n    text-align: right;\r\n    color: #c2c2c2;\r\n}\r\n\r\n.user {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    font-family: OpenSans;\r\n    font-size: 16px;\r\n    text-align: left;\r\n    color: #ffffff;\r\n}\r\n\r\n.user h2 {\r\n    font-family: OpenSans;\r\n    font-size: 16px;\r\n    text-align: left;\r\n    color: #ffffff;\r\n}\r\n\r\n.user .line-2-copy {\r\n    margin: 0 19px;\r\n}\r\n\r\n.user .image-user {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width: 42px;\r\n    height: 42px;\r\n    background-color: #afcad2;\r\n    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);\r\n    border: 3px solid #50ccfb;\r\n    border-radius: 50%;\r\n}\r\n\r\n.user .image-user img {\r\n    border-radius: 50%;\r\n    padding: 0;\r\n    width: 29.3px;\r\n    height: 36.5px;\r\n    background-color: #dbf6fe;\r\n}", ""]);
+exports.push([module.i, ".toolbar {\r\n    background-color: #2a4751;\r\n    min-height: 63.1px;\r\n    max-height: 63.1px;\r\n}\r\n\r\n.header  {\r\n    width: 90vw;\r\n    margin: 0 auto;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.workflow {\r\n    width: 22%;\r\n    min-height: 63.1px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    color: #c2c2c2;\r\n}\r\n\r\n.workflow .image-logo {\r\n    width: 48px;\r\n    height: 48px;\r\n    border-radius: 50%;\r\n    background-color: #fff;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n}\r\n\r\n.workflow .image-logo img {\r\n    width: 35.8px;\r\n    height: 32px;\r\n}\r\n\r\n.workflow .line-2-copy, .user .line-2-copy {\r\n    width: 1px;\r\n    min-height: 58px;\r\n    max-height: 58px;\r\n    background-color: #35505a;\r\n    border: 2px solid #35505a;\r\n}\r\n\r\n.workflow .name {\r\n    min-height: 63.1px;\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    font-family: OpenSans;\r\n    font-size: 18px;\r\n    text-align: right;\r\n    color: #c2c2c2;\r\n}\r\n\r\n.user {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: justify;\r\n        -ms-flex-pack: justify;\r\n            justify-content: space-between;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    font-family: OpenSans;\r\n    font-size: 16px;\r\n    text-align: left;\r\n    color: #ffffff;\r\n}\r\n\r\n.user h2 {\r\n    font-family: OpenSans;\r\n    font-size: 16px;\r\n    text-align: left;\r\n    color: #ffffff;\r\n}\r\n\r\n.user .line-2-copy {\r\n    margin: 0 19px;\r\n}\r\n\r\n.user .image-user {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-pack: center;\r\n        -ms-flex-pack: center;\r\n            justify-content: center;\r\n    -webkit-box-align: center;\r\n        -ms-flex-align: center;\r\n            align-items: center;\r\n    width: 42px;\r\n    height: 42px;\r\n    background-color: #afcad2;\r\n    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);\r\n    border: 3px solid #50ccfb;\r\n    border-radius: 50%;\r\n}\r\n\r\n.user .image-user img {\r\n    border-radius: 50%;\r\n    padding: 0;\r\n    width: 29.3px;\r\n    height: 36.5px;\r\n    background-color: #dbf6fe;\r\n}", ""]);
 
 // exports
 

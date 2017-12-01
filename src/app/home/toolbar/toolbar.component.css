@@ -38,7 +38,8 @@
 
 .workflow .line-2-copy, .user .line-2-copy {
     width: 1px;
-    height: 60px;
+    min-height: 58px;
+    max-height: 58px;
     background-color: #35505a;
     border: 2px solid #35505a;
 }

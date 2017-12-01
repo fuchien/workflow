@@ -11,6 +11,8 @@ export class GridListComponent implements OnInit {
   @Input('dados') dados
   canais = ['Dog', 'Cat', 'Cow', 'Fox']
 
+  buttonCorrigirDados: boolean = false
+
   private contaForm: FormGroup
 
   constructor(
@@ -24,6 +26,16 @@ export class GridListComponent implements OnInit {
 
   ngOnInit() {
 
+    if (this.dados.prosseguir) {
+
+      this.buttonCorrigirDados = true
+      return
+    }
+  }
+
+  corrigirDados() {
+
+    
   }
 
 }

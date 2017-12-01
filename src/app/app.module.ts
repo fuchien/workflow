@@ -20,6 +20,9 @@ import { ToolbarComponent } from './home/toolbar/toolbar.component';
 import { FirstFormComponent } from './home/first-form/first-form.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { GridListComponent } from './home/first-form/grid-list/grid-list.component';
+import { RespostaComponent } from './home/resposta/resposta.component';
+
+import { FirstFormDatasService } from './home/first-form/first-form-datas.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,8 @@ import { GridListComponent } from './home/first-form/grid-list/grid-list.compone
     ToolbarComponent,
     FirstFormComponent,
     FooterComponent,
-    GridListComponent
+    GridListComponent,
+    RespostaComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ import { GridListComponent } from './home/first-form/grid-list/grid-list.compone
     MatProgressSpinnerModule,
     MatTooltipModule
   ],
-  providers: [],
+  providers: [
+    FirstFormDatasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

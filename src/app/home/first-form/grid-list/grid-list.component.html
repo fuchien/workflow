@@ -40,7 +40,7 @@
     </ul>
   </div>
   <div class="dados-right">
-    <form class="example-form" [formGroup]="contaForm">
+    <form class="example-form" [formGroup]="contaForm" *ngIf="!buttonCorrigirDados">
       <div class="title">
         <h4>Canal</h4>
         <mat-form-field class="example-full-width">
@@ -53,5 +53,18 @@
         </mat-form-field>
       </div>
     </form>
+    <ul class="tile" *ngIf="buttonCorrigirDados">
+      <li class="grid corrigir">
+        <h4>Conta selecionada</h4>
+        <p>Corrente 1231</p>
+      </li>
+      <li class="grid corrigir">
+        <button mat-raised-button color="primary" matTooltip="Corrigir os Dados"
+          (click)="corrigirDados()">
+          <mat-icon matSuffix class="icon">mode_edit</mat-icon>
+          Corrigir dados
+        </button>
+      </li>
+    </ul>
   </div>
 </div>
