@@ -14530,13 +14530,13 @@ function supportsWebAnimations() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ActiveDescendantKeyManager; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return ActiveDescendantKeyManager; });
 /* unused harmony export MESSAGES_CONTAINER_ID */
 /* unused harmony export CDK_DESCRIBEDBY_ID_PREFIX */
 /* unused harmony export CDK_DESCRIBEDBY_HOST_ATTRIBUTE */
-/* unused harmony export AriaDescriber */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return AriaDescriber; });
 /* unused harmony export ARIA_DESCRIBER_PROVIDER_FACTORY */
-/* unused harmony export ARIA_DESCRIBER_PROVIDER */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ARIA_DESCRIBER_PROVIDER; });
 /* unused harmony export isFakeMousedownFromScreenReader */
 /* unused harmony export FocusKeyManager */
 /* unused harmony export FocusTrap */
@@ -14550,7 +14550,7 @@ function supportsWebAnimations() {
 /* unused harmony export LIVE_ANNOUNCER_PROVIDER_FACTORY */
 /* unused harmony export LIVE_ANNOUNCER_PROVIDER */
 /* unused harmony export TOUCH_BUFFER_MS */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return FocusMonitor; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return FocusMonitor; });
 /* unused harmony export CdkMonitorFocus */
 /* unused harmony export FOCUS_MONITOR_PROVIDER_FACTORY */
 /* unused harmony export FOCUS_MONITOR_PROVIDER */
@@ -16924,7 +16924,7 @@ var NINE = 91;
 /* unused harmony export OverlayOrigin */
 /* unused harmony export GlobalPositionStrategy */
 /* unused harmony export ConnectedPositionStrategy */
-/* unused harmony export OverlayConfig */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return OverlayConfig; });
 /* unused harmony export ConnectionPositionPair */
 /* unused harmony export ScrollingVisibility */
 /* unused harmony export ConnectedOverlayPositionChange */
@@ -16934,7 +16934,7 @@ var NINE = 91;
 /* unused harmony export NoopScrollStrategy */
 /* unused harmony export BlockScrollStrategy */
 /* unused harmony export OVERLAY_PROVIDERS */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return OverlayModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return OverlayModule; });
 /* unused harmony export ɵb */
 /* unused harmony export ɵa */
 /* unused harmony export ɵc */
@@ -16952,7 +16952,7 @@ var NINE = 91;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_cdk_bidi__ = __webpack_require__("../../../cdk/esm5/bidi.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_cdk_coercion__ = __webpack_require__("../../../cdk/esm5/coercion.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_cdk_keycodes__ = __webpack_require__("../../../cdk/esm5/keycodes.es5.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return __WEBPACK_IMPORTED_MODULE_3__angular_cdk_scrolling__["d"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_3__angular_cdk_scrolling__["d"]; });
 /* unused harmony reexport VIEWPORT_RULER_PROVIDER */
 /* unused harmony reexport Scrollable */
 /* unused harmony reexport ScrollDispatcher */
@@ -18339,7 +18339,7 @@ var Overlay = (function () {
      * @return {?} A portal host for the given DOM element.
      */
     Overlay.prototype._createPortalHost = function (pane) {
-        return new __WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__["a" /* DomPortalHost */](pane, this._componentFactoryResolver, this._appRef, this._injector);
+        return new __WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__["b" /* DomPortalHost */](pane, this._componentFactoryResolver, this._appRef, this._injector);
     };
     Overlay.decorators = [
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */] },
@@ -18532,7 +18532,7 @@ var ConnectedOverlayDirective = (function () {
          * Event emitted when the overlay has been detached.
          */
         this.detach = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
-        this._templatePortal = new __WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__["c" /* TemplatePortal */](templateRef, viewContainerRef);
+        this._templatePortal = new __WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__["d" /* TemplatePortal */](templateRef, viewContainerRef);
     }
     Object.defineProperty(ConnectedOverlayDirective.prototype, "offsetX", {
         /**
@@ -18978,7 +18978,7 @@ var OverlayModule = (function () {
     }
     OverlayModule.decorators = [
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */], args: [{
-                    imports: [__WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__["b" /* PortalModule */], __WEBPACK_IMPORTED_MODULE_3__angular_cdk_scrolling__["a" /* ScrollDispatchModule */]],
+                    imports: [__WEBPACK_IMPORTED_MODULE_1__angular_cdk_portal__["c" /* PortalModule */], __WEBPACK_IMPORTED_MODULE_3__angular_cdk_scrolling__["a" /* ScrollDispatchModule */]],
                     exports: [ConnectedOverlayDirective, OverlayOrigin, __WEBPACK_IMPORTED_MODULE_3__angular_cdk_scrolling__["a" /* ScrollDispatchModule */]],
                     declarations: [ConnectedOverlayDirective, OverlayOrigin],
                     providers: [OVERLAY_PROVIDERS, ScrollStrategyOptions],
@@ -19155,13 +19155,13 @@ var PlatformModule = (function () {
 
 "use strict";
 /* unused harmony export Portal */
-/* unused harmony export ComponentPortal */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return TemplatePortal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ComponentPortal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return TemplatePortal; });
 /* unused harmony export BasePortalHost */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DomPortalHost; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return DomPortalHost; });
 /* unused harmony export TemplatePortalDirective */
 /* unused harmony export PortalHostDirective */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return PortalModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return PortalModule; });
 /* unused harmony export PortalInjector */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__("../../../../tslib/tslib.es6.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
@@ -76102,7 +76102,7 @@ var MatButton = (function (_super) {
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */], },
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */], },
         { type: __WEBPACK_IMPORTED_MODULE_5__angular_cdk_platform__["a" /* Platform */], },
-        { type: __WEBPACK_IMPORTED_MODULE_3__angular_cdk_a11y__["c" /* FocusMonitor */], },
+        { type: __WEBPACK_IMPORTED_MODULE_3__angular_cdk_a11y__["e" /* FocusMonitor */], },
     ]; };
     return MatButton;
 }(_MatButtonMixinBase));
@@ -76153,7 +76153,7 @@ var MatAnchor = (function (_super) {
      */
     MatAnchor.ctorParameters = function () { return [
         { type: __WEBPACK_IMPORTED_MODULE_5__angular_cdk_platform__["a" /* Platform */], },
-        { type: __WEBPACK_IMPORTED_MODULE_3__angular_cdk_a11y__["c" /* FocusMonitor */], },
+        { type: __WEBPACK_IMPORTED_MODULE_3__angular_cdk_a11y__["e" /* FocusMonitor */], },
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */], },
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["_2" /* Renderer2 */], },
     ]; };
@@ -81892,7 +81892,7 @@ var MatSelect = (function (_super) {
      */
     MatSelect.prototype._initKeyManager = function () {
         var _this = this;
-        this._keyManager = new __WEBPACK_IMPORTED_MODULE_3__angular_cdk_a11y__["b" /* ActiveDescendantKeyManager */](this.options).withTypeAhead();
+        this._keyManager = new __WEBPACK_IMPORTED_MODULE_3__angular_cdk_a11y__["c" /* ActiveDescendantKeyManager */](this.options).withTypeAhead();
         this._tabSubscription = this._keyManager.tabOut.subscribe(function () { return _this.close(); });
     };
     /**
@@ -82406,7 +82406,7 @@ var MatSelect = (function (_super) {
      * @nocollapse
      */
     MatSelect.ctorParameters = function () { return [
-        { type: __WEBPACK_IMPORTED_MODULE_8__angular_cdk_overlay__["d" /* ViewportRuler */], },
+        { type: __WEBPACK_IMPORTED_MODULE_8__angular_cdk_overlay__["e" /* ViewportRuler */], },
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["l" /* ChangeDetectorRef */], },
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["R" /* NgZone */], },
         { type: __WEBPACK_IMPORTED_MODULE_11__angular_material_core__["a" /* ErrorStateMatcher */], },
@@ -82453,7 +82453,7 @@ var MatSelectModule = (function () {
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */], args: [{
                     imports: [
                         __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
-                        __WEBPACK_IMPORTED_MODULE_8__angular_cdk_overlay__["c" /* OverlayModule */],
+                        __WEBPACK_IMPORTED_MODULE_8__angular_cdk_overlay__["d" /* OverlayModule */],
                         __WEBPACK_IMPORTED_MODULE_11__angular_material_core__["f" /* MatOptionModule */],
                         __WEBPACK_IMPORTED_MODULE_11__angular_material_core__["c" /* MatCommonModule */],
                     ],
@@ -82591,6 +82591,744 @@ var MatToolbarModule = (function () {
 
 
 //# sourceMappingURL=toolbar.es5.js.map
+
+
+/***/ }),
+
+/***/ "../../../material/esm5/tooltip.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MatTooltipModule; });
+/* unused harmony export TOUCHEND_HIDE_DELAY */
+/* unused harmony export SCROLL_THROTTLE_MS */
+/* unused harmony export TOOLTIP_PANEL_CLASS */
+/* unused harmony export getMatTooltipInvalidPositionError */
+/* unused harmony export MAT_TOOLTIP_SCROLL_STRATEGY */
+/* unused harmony export MAT_TOOLTIP_SCROLL_STRATEGY_PROVIDER_FACTORY */
+/* unused harmony export MAT_TOOLTIP_SCROLL_STRATEGY_PROVIDER */
+/* unused harmony export MatTooltip */
+/* unused harmony export TooltipComponent */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_cdk_a11y__ = __webpack_require__("../../../cdk/esm5/a11y.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_cdk_overlay__ = __webpack_require__("../../../cdk/esm5/overlay.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_cdk_platform__ = __webpack_require__("../../../cdk/esm5/platform.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material_core__ = __webpack_require__("../../../material/esm5/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_animations__ = __webpack_require__("../../../animations/@angular/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_cdk_bidi__ = __webpack_require__("../../../cdk/esm5/bidi.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_cdk_coercion__ = __webpack_require__("../../../cdk/esm5/coercion.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__angular_cdk_keycodes__ = __webpack_require__("../../../cdk/esm5/keycodes.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_cdk_portal__ = __webpack_require__("../../../cdk/esm5/portal.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_cdk_rxjs__ = __webpack_require__("../../../cdk/esm5/rxjs.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__angular_cdk_scrolling__ = __webpack_require__("../../../cdk/esm5/scrolling.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_Subject__ = __webpack_require__("../../../../rxjs/Subject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_rxjs_Subject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_rxjs_Subject__);
+/**
+ * @license
+ * Copyright Google Inc. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Time in ms to delay before changing the tooltip visibility to hidden
+ */
+var TOUCHEND_HIDE_DELAY = 1500;
+/**
+ * Time in ms to throttle repositioning after scroll events.
+ */
+var SCROLL_THROTTLE_MS = 20;
+/**
+ * CSS class that will be attached to the overlay panel.
+ */
+var TOOLTIP_PANEL_CLASS = 'mat-tooltip-panel';
+/**
+ * Creates an error to be thrown if the user supplied an invalid tooltip position.
+ * @param {?} position
+ * @return {?}
+ */
+function getMatTooltipInvalidPositionError(position) {
+    return Error("Tooltip position \"" + position + "\" is invalid.");
+}
+/**
+ * Injection token that determines the scroll handling while a tooltip is visible.
+ */
+var MAT_TOOLTIP_SCROLL_STRATEGY = new __WEBPACK_IMPORTED_MODULE_4__angular_core__["D" /* InjectionToken */]('mat-tooltip-scroll-strategy');
+/**
+ * \@docs-private
+ * @param {?} overlay
+ * @return {?}
+ */
+function MAT_TOOLTIP_SCROLL_STRATEGY_PROVIDER_FACTORY(overlay) {
+    return function () { return overlay.scrollStrategies.reposition({ scrollThrottle: SCROLL_THROTTLE_MS }); };
+}
+/**
+ * \@docs-private
+ */
+var MAT_TOOLTIP_SCROLL_STRATEGY_PROVIDER = {
+    provide: MAT_TOOLTIP_SCROLL_STRATEGY,
+    deps: [__WEBPACK_IMPORTED_MODULE_1__angular_cdk_overlay__["b" /* Overlay */]],
+    useFactory: MAT_TOOLTIP_SCROLL_STRATEGY_PROVIDER_FACTORY
+};
+/**
+ * Directive that attaches a material design tooltip to the host element. Animates the showing and
+ * hiding of a tooltip provided position (defaults to below the element).
+ *
+ * https://material.google.com/components/tooltips.html
+ */
+var MatTooltip = (function () {
+    /**
+     * @param {?} renderer
+     * @param {?} _overlay
+     * @param {?} _elementRef
+     * @param {?} _scrollDispatcher
+     * @param {?} _viewContainerRef
+     * @param {?} _ngZone
+     * @param {?} _platform
+     * @param {?} _ariaDescriber
+     * @param {?} _scrollStrategy
+     * @param {?} _dir
+     */
+    function MatTooltip(renderer, _overlay, _elementRef, _scrollDispatcher, _viewContainerRef, _ngZone, _platform, _ariaDescriber, _scrollStrategy, _dir) {
+        var _this = this;
+        this._overlay = _overlay;
+        this._elementRef = _elementRef;
+        this._scrollDispatcher = _scrollDispatcher;
+        this._viewContainerRef = _viewContainerRef;
+        this._ngZone = _ngZone;
+        this._platform = _platform;
+        this._ariaDescriber = _ariaDescriber;
+        this._scrollStrategy = _scrollStrategy;
+        this._dir = _dir;
+        this._position = 'below';
+        this._disabled = false;
+        /**
+         * The default delay in ms before showing the tooltip after show is called
+         */
+        this.showDelay = 0;
+        /**
+         * The default delay in ms before hiding the tooltip after hide is called
+         */
+        this.hideDelay = 0;
+        this._message = '';
+        // The mouse events shouldn't be bound on iOS devices, because
+        // they can prevent the first tap from firing its click event.
+        if (!_platform.IOS) {
+            this._enterListener =
+                renderer.listen(_elementRef.nativeElement, 'mouseenter', function () { return _this.show(); });
+            this._leaveListener =
+                renderer.listen(_elementRef.nativeElement, 'mouseleave', function () { return _this.hide(); });
+        }
+    }
+    Object.defineProperty(MatTooltip.prototype, "position", {
+        /**
+         * Allows the user to define the position of the tooltip relative to the parent element
+         * @return {?}
+         */
+        get: function () { return this._position; },
+        /**
+         * @param {?} value
+         * @return {?}
+         */
+        set: function (value) {
+            if (value !== this._position) {
+                this._position = value;
+                // TODO(andrewjs): When the overlay's position can be dynamically changed, do not destroy
+                // the tooltip.
+                if (this._tooltipInstance) {
+                    this._disposeTooltip();
+                }
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatTooltip.prototype, "disabled", {
+        /**
+         * Disables the display of the tooltip.
+         * @return {?}
+         */
+        get: function () { return this._disabled; },
+        /**
+         * @param {?} value
+         * @return {?}
+         */
+        set: function (value) {
+            this._disabled = Object(__WEBPACK_IMPORTED_MODULE_8__angular_cdk_coercion__["a" /* coerceBooleanProperty */])(value);
+            // If tooltip is disabled, hide immediately.
+            if (this._disabled) {
+                this.hide(0);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatTooltip.prototype, "_positionDeprecated", {
+        /**
+         * @deprecated
+         * @return {?}
+         */
+        get: function () { return this._position; },
+        /**
+         * @param {?} value
+         * @return {?}
+         */
+        set: function (value) { this._position = value; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatTooltip.prototype, "message", {
+        /**
+         * The message to be displayed in the tooltip
+         * @return {?}
+         */
+        get: function () { return this._message; },
+        /**
+         * @param {?} value
+         * @return {?}
+         */
+        set: function (value) {
+            this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this._message);
+            // If the message is not a string (e.g. number), convert it to a string and trim it.
+            this._message = value != null ? ("" + value).trim() : '';
+            this._updateTooltipMessage();
+            this._ariaDescriber.describe(this._elementRef.nativeElement, this.message);
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MatTooltip.prototype, "tooltipClass", {
+        /**
+         * Classes to be passed to the tooltip. Supports the same syntax as `ngClass`.
+         * @return {?}
+         */
+        get: function () { return this._tooltipClass; },
+        /**
+         * @param {?} value
+         * @return {?}
+         */
+        set: function (value) {
+            this._tooltipClass = value;
+            if (this._tooltipInstance) {
+                this._setTooltipClass(this._tooltipClass);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Dispose the tooltip when destroyed.
+     * @return {?}
+     */
+    MatTooltip.prototype.ngOnDestroy = function () {
+        if (this._tooltipInstance) {
+            this._disposeTooltip();
+        }
+        // Clean up the event listeners set in the constructor
+        if (!this._platform.IOS) {
+            this._enterListener();
+            this._leaveListener();
+        }
+        this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this.message);
+    };
+    /**
+     * Shows the tooltip after the delay in ms, defaults to tooltip-delay-show or 0ms if no input
+     * @param {?=} delay
+     * @return {?}
+     */
+    MatTooltip.prototype.show = function (delay) {
+        if (delay === void 0) { delay = this.showDelay; }
+        if (this.disabled || !this.message) {
+            return;
+        }
+        if (!this._tooltipInstance) {
+            this._createTooltip();
+        }
+        this._setTooltipClass(this._tooltipClass);
+        this._updateTooltipMessage(); /** @type {?} */
+        ((this._tooltipInstance)).show(this._position, delay);
+    };
+    /**
+     * Hides the tooltip after the delay in ms, defaults to tooltip-delay-hide or 0ms if no input
+     * @param {?=} delay
+     * @return {?}
+     */
+    MatTooltip.prototype.hide = function (delay) {
+        if (delay === void 0) { delay = this.hideDelay; }
+        if (this._tooltipInstance) {
+            this._tooltipInstance.hide(delay);
+        }
+    };
+    /**
+     * Shows/hides the tooltip
+     * @return {?}
+     */
+    MatTooltip.prototype.toggle = function () {
+        this._isTooltipVisible() ? this.hide() : this.show();
+    };
+    /**
+     * Returns true if the tooltip is currently visible to the user
+     * @return {?}
+     */
+    MatTooltip.prototype._isTooltipVisible = function () {
+        return !!this._tooltipInstance && this._tooltipInstance.isVisible();
+    };
+    /**
+     * Handles the keydown events on the host element.
+     * @param {?} e
+     * @return {?}
+     */
+    MatTooltip.prototype._handleKeydown = function (e) {
+        if (this._isTooltipVisible() && e.keyCode === __WEBPACK_IMPORTED_MODULE_9__angular_cdk_keycodes__["e" /* ESCAPE */]) {
+            e.stopPropagation();
+            this.hide(0);
+        }
+    };
+    /**
+     * Create the tooltip to display
+     * @return {?}
+     */
+    MatTooltip.prototype._createTooltip = function () {
+        var _this = this;
+        var /** @type {?} */ overlayRef = this._createOverlay();
+        var /** @type {?} */ portal = new __WEBPACK_IMPORTED_MODULE_10__angular_cdk_portal__["a" /* ComponentPortal */](TooltipComponent, this._viewContainerRef);
+        this._tooltipInstance = overlayRef.attach(portal).instance; /** @type {?} */
+        ((
+        // Dispose the overlay when finished the shown tooltip.
+        this._tooltipInstance)).afterHidden().subscribe(function () {
+            // Check first if the tooltip has already been removed through this components destroy.
+            if (_this._tooltipInstance) {
+                _this._disposeTooltip();
+            }
+        });
+    };
+    /**
+     * Create the overlay config and position strategy
+     * @return {?}
+     */
+    MatTooltip.prototype._createOverlay = function () {
+        var _this = this;
+        var /** @type {?} */ origin = this._getOrigin();
+        var /** @type {?} */ overlay = this._getOverlayPosition();
+        // Create connected position strategy that listens for scroll events to reposition.
+        var /** @type {?} */ strategy = this._overlay
+            .position()
+            .connectedTo(this._elementRef, origin.main, overlay.main)
+            .withFallbackPosition(origin.fallback, overlay.fallback);
+        strategy.withScrollableContainers(this._scrollDispatcher.getScrollContainers(this._elementRef));
+        strategy.onPositionChange.subscribe(function (change) {
+            if (_this._tooltipInstance) {
+                if (change.scrollableViewProperties.isOverlayClipped && _this._tooltipInstance.isVisible()) {
+                    // After position changes occur and the overlay is clipped by
+                    // a parent scrollable then close the tooltip.
+                    _this.hide(0);
+                }
+                else {
+                    // Otherwise recalculate the origin based on the new position.
+                    _this._tooltipInstance._setTransformOrigin(change.connectionPair);
+                }
+            }
+        });
+        var /** @type {?} */ config = new __WEBPACK_IMPORTED_MODULE_1__angular_cdk_overlay__["c" /* OverlayConfig */]({
+            direction: this._dir ? this._dir.value : 'ltr',
+            positionStrategy: strategy,
+            panelClass: TOOLTIP_PANEL_CLASS,
+            scrollStrategy: this._scrollStrategy()
+        });
+        this._overlayRef = this._overlay.create(config);
+        return this._overlayRef;
+    };
+    /**
+     * Disposes the current tooltip and the overlay it is attached to
+     * @return {?}
+     */
+    MatTooltip.prototype._disposeTooltip = function () {
+        if (this._overlayRef) {
+            this._overlayRef.dispose();
+            this._overlayRef = null;
+        }
+        this._tooltipInstance = null;
+    };
+    /**
+     * Returns the origin position and a fallback position based on the user's position preference.
+     * The fallback position is the inverse of the origin (e.g. 'below' -> 'above').
+     * @return {?}
+     */
+    MatTooltip.prototype._getOrigin = function () {
+        var /** @type {?} */ isDirectionLtr = !this._dir || this._dir.value == 'ltr';
+        var /** @type {?} */ position;
+        if (this.position == 'above' || this.position == 'below') {
+            position = { originX: 'center', originY: this.position == 'above' ? 'top' : 'bottom' };
+        }
+        else if (this.position == 'left' ||
+            this.position == 'before' && isDirectionLtr ||
+            this.position == 'after' && !isDirectionLtr) {
+            position = { originX: 'start', originY: 'center' };
+        }
+        else if (this.position == 'right' ||
+            this.position == 'after' && isDirectionLtr ||
+            this.position == 'before' && !isDirectionLtr) {
+            position = { originX: 'end', originY: 'center' };
+        }
+        else {
+            throw getMatTooltipInvalidPositionError(this.position);
+        }
+        var _a = this._invertPosition(position.originX, position.originY), x = _a.x, y = _a.y;
+        return {
+            main: position,
+            fallback: { originX: x, originY: y }
+        };
+    };
+    /**
+     * Returns the overlay position and a fallback position based on the user's preference
+     * @return {?}
+     */
+    MatTooltip.prototype._getOverlayPosition = function () {
+        var /** @type {?} */ isLtr = !this._dir || this._dir.value == 'ltr';
+        var /** @type {?} */ position;
+        if (this.position == 'above') {
+            position = { overlayX: 'center', overlayY: 'bottom' };
+        }
+        else if (this.position == 'below') {
+            position = { overlayX: 'center', overlayY: 'top' };
+        }
+        else if (this.position == 'left' ||
+            this.position == 'before' && isLtr ||
+            this.position == 'after' && !isLtr) {
+            position = { overlayX: 'end', overlayY: 'center' };
+        }
+        else if (this.position == 'right' ||
+            this.position == 'after' && isLtr ||
+            this.position == 'before' && !isLtr) {
+            position = { overlayX: 'start', overlayY: 'center' };
+        }
+        else {
+            throw getMatTooltipInvalidPositionError(this.position);
+        }
+        var _a = this._invertPosition(position.overlayX, position.overlayY), x = _a.x, y = _a.y;
+        return {
+            main: position,
+            fallback: { overlayX: x, overlayY: y }
+        };
+    };
+    /**
+     * Updates the tooltip message and repositions the overlay according to the new message length
+     * @return {?}
+     */
+    MatTooltip.prototype._updateTooltipMessage = function () {
+        var _this = this;
+        // Must wait for the message to be painted to the tooltip so that the overlay can properly
+        // calculate the correct positioning based on the size of the text.
+        if (this._tooltipInstance) {
+            this._tooltipInstance.message = this.message;
+            this._tooltipInstance._markForCheck();
+            __WEBPACK_IMPORTED_MODULE_11__angular_cdk_rxjs__["g" /* first */].call(this._ngZone.onMicrotaskEmpty.asObservable()).subscribe(function () {
+                if (_this._tooltipInstance) {
+                    ((_this._overlayRef)).updatePosition();
+                }
+            });
+        }
+    };
+    /**
+     * Updates the tooltip class
+     * @param {?} tooltipClass
+     * @return {?}
+     */
+    MatTooltip.prototype._setTooltipClass = function (tooltipClass) {
+        if (this._tooltipInstance) {
+            this._tooltipInstance.tooltipClass = tooltipClass;
+            this._tooltipInstance._markForCheck();
+        }
+    };
+    /**
+     * Inverts an overlay position.
+     * @param {?} x
+     * @param {?} y
+     * @return {?}
+     */
+    MatTooltip.prototype._invertPosition = function (x, y) {
+        if (this.position === 'above' || this.position === 'below') {
+            if (y === 'top') {
+                y = 'bottom';
+            }
+            else if (y === 'bottom') {
+                y = 'top';
+            }
+        }
+        else {
+            if (x === 'end') {
+                x = 'start';
+            }
+            else if (x === 'start') {
+                x = 'end';
+            }
+        }
+        return { x: x, y: y };
+    };
+    MatTooltip.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["u" /* Directive */], args: [{
+                    selector: '[mat-tooltip], [matTooltip]',
+                    exportAs: 'matTooltip',
+                    host: {
+                        '(longpress)': 'show()',
+                        '(focus)': 'show()',
+                        '(blur)': 'hide(0)',
+                        '(keydown)': '_handleKeydown($event)',
+                        '(touchend)': 'hide(' + TOUCHEND_HIDE_DELAY + ')',
+                    },
+                },] },
+    ];
+    /**
+     * @nocollapse
+     */
+    MatTooltip.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_2" /* Renderer2 */], },
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_cdk_overlay__["b" /* Overlay */], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["v" /* ElementRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_12__angular_cdk_scrolling__["b" /* ScrollDispatcher */], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_18" /* ViewContainerRef */], },
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["R" /* NgZone */], },
+        { type: __WEBPACK_IMPORTED_MODULE_2__angular_cdk_platform__["a" /* Platform */], },
+        { type: __WEBPACK_IMPORTED_MODULE_0__angular_cdk_a11y__["d" /* AriaDescriber */], },
+        { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["B" /* Inject */], args: [MAT_TOOLTIP_SCROLL_STRATEGY,] },] },
+        { type: __WEBPACK_IMPORTED_MODULE_7__angular_cdk_bidi__["b" /* Directionality */], decorators: [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["S" /* Optional */] },] },
+    ]; };
+    MatTooltip.propDecorators = {
+        'position': [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["F" /* Input */], args: ['matTooltipPosition',] },],
+        'disabled': [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["F" /* Input */], args: ['matTooltipDisabled',] },],
+        '_positionDeprecated': [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["F" /* Input */], args: ['tooltip-position',] },],
+        'showDelay': [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["F" /* Input */], args: ['matTooltipShowDelay',] },],
+        'hideDelay': [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["F" /* Input */], args: ['matTooltipHideDelay',] },],
+        'message': [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["F" /* Input */], args: ['matTooltip',] },],
+        'tooltipClass': [{ type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["F" /* Input */], args: ['matTooltipClass',] },],
+    };
+    return MatTooltip;
+}());
+/**
+ * Internal component that wraps the tooltip's content.
+ * \@docs-private
+ */
+var TooltipComponent = (function () {
+    /**
+     * @param {?} _changeDetectorRef
+     */
+    function TooltipComponent(_changeDetectorRef) {
+        this._changeDetectorRef = _changeDetectorRef;
+        /**
+         * Property watched by the animation framework to show or hide the tooltip
+         */
+        this._visibility = 'initial';
+        /**
+         * Whether interactions on the page should close the tooltip
+         */
+        this._closeOnInteraction = false;
+        /**
+         * The transform origin used in the animation for showing and hiding the tooltip
+         */
+        this._transformOrigin = 'bottom';
+        /**
+         * Subject for notifying that the tooltip has been hidden from the view
+         */
+        this._onHide = new __WEBPACK_IMPORTED_MODULE_13_rxjs_Subject__["Subject"]();
+    }
+    /**
+     * Shows the tooltip with an animation originating from the provided origin
+     * @param {?} position Position of the tooltip.
+     * @param {?} delay Amount of milliseconds to the delay showing the tooltip.
+     * @return {?}
+     */
+    TooltipComponent.prototype.show = function (position, delay) {
+        var _this = this;
+        // Cancel the delayed hide if it is scheduled
+        if (this._hideTimeoutId) {
+            clearTimeout(this._hideTimeoutId);
+        }
+        // Body interactions should cancel the tooltip if there is a delay in showing.
+        this._closeOnInteraction = true;
+        this._position = position;
+        this._showTimeoutId = setTimeout(function () {
+            _this._visibility = 'visible';
+            // Mark for check so if any parent component has set the
+            // ChangeDetectionStrategy to OnPush it will be checked anyways
+            _this._markForCheck();
+        }, delay);
+    };
+    /**
+     * Begins the animation to hide the tooltip after the provided delay in ms.
+     * @param {?} delay Amount of milliseconds to delay showing the tooltip.
+     * @return {?}
+     */
+    TooltipComponent.prototype.hide = function (delay) {
+        var _this = this;
+        // Cancel the delayed show if it is scheduled
+        if (this._showTimeoutId) {
+            clearTimeout(this._showTimeoutId);
+        }
+        this._hideTimeoutId = setTimeout(function () {
+            _this._visibility = 'hidden';
+            // Mark for check so if any parent component has set the
+            // ChangeDetectionStrategy to OnPush it will be checked anyways
+            _this._markForCheck();
+        }, delay);
+    };
+    /**
+     * Returns an observable that notifies when the tooltip has been hidden from view.
+     * @return {?}
+     */
+    TooltipComponent.prototype.afterHidden = function () {
+        return this._onHide.asObservable();
+    };
+    /**
+     * Whether the tooltip is being displayed.
+     * @return {?}
+     */
+    TooltipComponent.prototype.isVisible = function () {
+        return this._visibility === 'visible';
+    };
+    /**
+     * Sets the tooltip transform origin according to the position of the tooltip overlay.
+     * @param {?} overlayPosition
+     * @return {?}
+     */
+    TooltipComponent.prototype._setTransformOrigin = function (overlayPosition) {
+        var /** @type {?} */ axis = (this._position === 'above' || this._position === 'below') ? 'Y' : 'X';
+        var /** @type {?} */ position = axis == 'X' ? overlayPosition.overlayX : overlayPosition.overlayY;
+        if (position === 'top' || position === 'bottom') {
+            this._transformOrigin = position;
+        }
+        else if (position === 'start') {
+            this._transformOrigin = 'left';
+        }
+        else if (position === 'end') {
+            this._transformOrigin = 'right';
+        }
+        else {
+            throw getMatTooltipInvalidPositionError(this._position);
+        }
+    };
+    /**
+     * @return {?}
+     */
+    TooltipComponent.prototype._animationStart = function () {
+        this._closeOnInteraction = false;
+    };
+    /**
+     * @param {?} event
+     * @return {?}
+     */
+    TooltipComponent.prototype._animationDone = function (event) {
+        var _this = this;
+        var /** @type {?} */ toState = (event.toState);
+        if (toState === 'hidden' && !this.isVisible()) {
+            this._onHide.next();
+        }
+        if (toState === 'visible' || toState === 'hidden') {
+            // Note: as of Angular 4.3, the animations module seems to fire the `start` callback before
+            // the end if animations are disabled. Make this call async to ensure that it still fires
+            // at the appropriate time.
+            Promise.resolve().then(function () { return _this._closeOnInteraction = true; });
+        }
+    };
+    /**
+     * Interactions on the HTML body should close the tooltip immediately as defined in the
+     * material design spec.
+     * https://material.google.com/components/tooltips.html#tooltips-interaction
+     * @return {?}
+     */
+    TooltipComponent.prototype._handleBodyInteraction = function () {
+        if (this._closeOnInteraction) {
+            this.hide(0);
+        }
+    };
+    /**
+     * Marks that the tooltip needs to be checked in the next change detection run.
+     * Mainly used for rendering the initial text before positioning a tooltip, which
+     * can be problematic in components with OnPush change detection.
+     * @return {?}
+     */
+    TooltipComponent.prototype._markForCheck = function () {
+        this._changeDetectorRef.markForCheck();
+    };
+    TooltipComponent.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["o" /* Component */], args: [{selector: 'mat-tooltip-component',
+                    template: "<div class=\"mat-tooltip\" [ngClass]=\"tooltipClass\" [style.transform-origin]=\"_transformOrigin\" [@state]=\"_visibility\" (@state.start)=\"_animationStart()\" (@state.done)=\"_animationDone($event)\">{{message}}</div>",
+                    styles: [".mat-tooltip-panel{pointer-events:none!important}.mat-tooltip{color:#fff;border-radius:2px;margin:14px;max-width:250px;padding-left:8px;padding-right:8px}@media screen and (-ms-high-contrast:active){.mat-tooltip{outline:solid 1px}}"],
+                    encapsulation: __WEBPACK_IMPORTED_MODULE_4__angular_core__["_19" /* ViewEncapsulation */].None,
+                    preserveWhitespaces: false,
+                    changeDetection: __WEBPACK_IMPORTED_MODULE_4__angular_core__["k" /* ChangeDetectionStrategy */].OnPush,
+                    animations: [
+                        Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["j" /* trigger */])('state', [
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["g" /* state */])('initial, void, hidden', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* style */])({ transform: 'scale(0)' })),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["g" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* style */])({ transform: 'scale(1)' })),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* transition */])('* => visible', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])('150ms cubic-bezier(0.0, 0.0, 0.2, 1)')),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* transition */])('* => hidden', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])('150ms cubic-bezier(0.4, 0.0, 1, 1)')),
+                        ])
+                    ],
+                    host: {
+                        // Forces the element to have a layout in IE and Edge. This fixes issues where the element
+                        // won't be rendered if the animations are disabled or there is no web animations polyfill.
+                        '[style.zoom]': '_visibility === "visible" ? 1 : null',
+                        '(body:click)': 'this._handleBodyInteraction()',
+                        'aria-hidden': 'true',
+                    }
+                },] },
+    ];
+    /**
+     * @nocollapse
+     */
+    TooltipComponent.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["l" /* ChangeDetectorRef */], },
+    ]; };
+    return TooltipComponent;
+}());
+
+var MatTooltipModule = (function () {
+    function MatTooltipModule() {
+    }
+    MatTooltipModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_4__angular_core__["M" /* NgModule */], args: [{
+                    imports: [
+                        __WEBPACK_IMPORTED_MODULE_3__angular_common__["b" /* CommonModule */],
+                        __WEBPACK_IMPORTED_MODULE_1__angular_cdk_overlay__["d" /* OverlayModule */],
+                        __WEBPACK_IMPORTED_MODULE_5__angular_material_core__["c" /* MatCommonModule */],
+                        __WEBPACK_IMPORTED_MODULE_2__angular_cdk_platform__["b" /* PlatformModule */],
+                        __WEBPACK_IMPORTED_MODULE_0__angular_cdk_a11y__["a" /* A11yModule */],
+                    ],
+                    exports: [MatTooltip, TooltipComponent, __WEBPACK_IMPORTED_MODULE_5__angular_material_core__["c" /* MatCommonModule */]],
+                    declarations: [MatTooltip, TooltipComponent],
+                    entryComponents: [TooltipComponent],
+                    providers: [MAT_TOOLTIP_SCROLL_STRATEGY_PROVIDER, __WEBPACK_IMPORTED_MODULE_0__angular_cdk_a11y__["b" /* ARIA_DESCRIBER_PROVIDER */]],
+                },] },
+    ];
+    /**
+     * @nocollapse
+     */
+    MatTooltipModule.ctorParameters = function () { return []; };
+    return MatTooltipModule;
+}());
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=tooltip.es5.js.map
 
 
 /***/ }),

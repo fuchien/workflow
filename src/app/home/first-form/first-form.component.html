@@ -4,7 +4,7 @@
       <div class="title">
         <h4>Canal</h4>
         <mat-form-field class="example-full-width">
-          <mat-select placeholder="Selecione o canal" formControlName="canal">
+          <mat-select formControlName="canal" [(ngModel)]="canalSelected">
             <mat-option>--</mat-option>
             <mat-option *ngFor="let canal of canais" [value]="canal">
               {{canal}}
@@ -58,7 +58,7 @@
           *ngIf="!localizando" [disabled]="cpfIsDisabled" (click)="localizarUser()">
           Localizar
         </button>
-        <mat-spinner class="spinner" color="warn" *ngIf="localizando" diameter="30" strokeWidth="5"></mat-spinner>
+        <mat-spinner class="spinner" color="primary" *ngIf="localizando" diameter="30" strokeWidth="5"></mat-spinner>
       </div>
     </form>
   </div>
@@ -96,11 +96,11 @@
       <wff-grid-list [dados]='dadosPessoais' class="result-body-list"></wff-grid-list>
     </div>
     <div class="result-processar">
-        <!-- <button mat-raised-button color="primary" matTooltip="Localizar o usuário"
-        *ngIf="!localizando" (click)="localizarUser()">
-        Localizar
+        <button mat-raised-button color="primary" matTooltip="Prosseguir"
+        (click)="localizarUser()">
+        Prosseguir
       </button>
-      <mat-spinner class="spinner" color="warn" *ngIf="localizando" diameter="30" strokeWidth="5"></mat-spinner> -->
+      <!-- <mat-spinner class="spinner" color="warn" *ngIf="localizando" diameter="30" strokeWidth="5"></mat-spinner> -->
     </div>
   </div>
 </div>

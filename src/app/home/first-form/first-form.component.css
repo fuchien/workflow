@@ -45,7 +45,7 @@
     height: 15px;
     font-family: "Open Sans";
     font-weight: bold;
-    font-size: 15px;
+    font-size: 11px;
     text-align: left;
     color: #191919;
     text-transform: uppercase;
@@ -54,7 +54,7 @@
 .example-form .title p {
     width: 25vw;
     font-family: LucidaGrande;
-    font-size: 1rem;
+    font-size: 11px;
     line-height: 1.45;
     text-align: left;
     color: #191919;
@@ -113,7 +113,7 @@
     /* min-height: 432px; */
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     border-left: 1px solid #d8d8d8;
     border-right: 1px solid #d8d8d8;
     border-bottom: 1px solid #d8d8d8;
@@ -123,7 +123,6 @@
 }
 
 .flow {
-    margin-top: 50px;
     min-width: 80vw;
     max-width: 80vw;
     display: flex;
@@ -186,8 +185,12 @@
 
 .result {
     min-width: 98%;
-    min-height: 98%;
+    min-height: 45vh;
+    max-height: 45vh;
     margin: 0 auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
 }
 
 .result .result-title {
@@ -197,6 +200,12 @@
     font-weight: 300;
     line-height: 1.2;
     text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.result .result-title h3 {
+    margin: 0;
 }
 
 .result .result-body {
@@ -213,4 +222,23 @@
     min-width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.result .result-processar {
+    min-width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.result .result-processar button {
+    width: 25%;
+    border-radius: 21px;
+    background-color: #fff;
+    font-family: OpenSans;
+    font-size: 14px;
+    text-align: center;
+    color: #424455;
+    text-transform: uppercase;
+    height: 40px;
 }

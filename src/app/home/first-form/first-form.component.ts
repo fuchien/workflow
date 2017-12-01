@@ -16,8 +16,9 @@ export class FirstFormComponent implements OnInit {
   cpfIsDisabled = true
   localizando: boolean = false
   isResult: boolean = false
-
+  
   canais = ['Dog', 'Cat', 'Cow', 'Fox']
+  canalSelected = this.canais[0]
 
   dadosPessoais = {
       nome: 'Lavinia Cardoso Ferreira',
@@ -81,8 +82,6 @@ export class FirstFormComponent implements OnInit {
     
     this.localizando = true
     this.isResult = true
-
-    setTimeout(() => this.localizando = false, 3000)
   }
 
 }
