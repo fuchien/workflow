@@ -3,7 +3,7 @@
     max-width: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .tile {
@@ -47,7 +47,7 @@ p {
 .dados2 {
     min-width: 50%;
     max-width: 50%;
-    max-height: 50%;
+    max-height: 60%;
     display: flex;
     flex-flow: column;
     justify-content: space-between;

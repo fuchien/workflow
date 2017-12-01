@@ -55,7 +55,7 @@
       </div>
       <div class="localizar">
         <button mat-raised-button color="primary" matTooltip="Localizar o usuário"
-          *ngIf="!localizando" [disabled]="podeLocalizar" (click)="localizarUser()">
+          *ngIf="!localizando" [disabled]="!podeLocalizar" (click)="localizarUser()">
           Localizar
         </button>
         <mat-spinner class="spinner" color="primary" *ngIf="localizando" diameter="30" strokeWidth="5"></mat-spinner>
