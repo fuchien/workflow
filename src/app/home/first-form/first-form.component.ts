@@ -12,8 +12,11 @@ export class FirstFormComponent implements OnInit {
   mode = 'determinate';
   value = 0;
   bufferValue = 100;
+
   filaIsDisabled = true
   cpfIsDisabled = true
+  podeLocalizar = true
+
   localizando: boolean = false
   isResult: boolean = false
   
@@ -33,6 +36,7 @@ export class FirstFormComponent implements OnInit {
 
   private canalForm: FormGroup
   private filaForm: FormGroup
+  private cpfForm: FormGroup
 
   constructor(
     private fb: FormBuilder
@@ -46,6 +50,10 @@ export class FirstFormComponent implements OnInit {
 
     this.filaForm = fb.group({
       'fila': [null, [Validators.required]]
+    })
+
+    this.cpfForm = fb.group({
+      'cpf': ['', [Validators.required]]
     })
   }
 
@@ -76,6 +84,21 @@ export class FirstFormComponent implements OnInit {
       this.value = 50
       this.cpfIsDisabled = true
     })
+
+    this.cpfForm.valueChanges.subscribe(form => {
+
+      if (form.cpf != '') {
+
+        this.podeLocalizar = false
+        return
+      }
+      this.podeLocalizar = true
+    })
+  }
+
+  escreverCpf(event) {
+
+    console.log(event)
   }
 
   localizarUser() {
