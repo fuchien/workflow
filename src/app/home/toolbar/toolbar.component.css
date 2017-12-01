@@ -1,6 +1,7 @@
 .toolbar {
     background-color: #2a4751;
     min-height: 63.1px;
+    max-height: 63.1px;
 }
 
 .header  {

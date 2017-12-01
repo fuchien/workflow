@@ -13,7 +13,7 @@
     min-width: 30vw;
     max-width: 30vw;
     /* min-height: 34vh; */
-    min-height: 198px;
+    min-height: 216px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,8 +109,9 @@
     margin: 0 auto;
     min-width: 90vw;
     max-width: 90vw;
-    min-height: 50vh;
-    /* min-height: 432px; */
+    /* min-height: 50vh; */
+    min-height: 431px;
+    max-height: 431px;
     display: flex;
     justify-content: center;
     align-items: center;
