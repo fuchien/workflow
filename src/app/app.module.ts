@@ -12,6 +12,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +25,7 @@ import { GridListComponent } from './home/first-form/grid-list/grid-list.compone
 import { RespostaComponent } from './home/resposta/resposta.component';
 
 import { FirstFormDatasService } from './home/first-form/first-form-datas.service';
+import { HomeProsseguirGuard } from './guards/home-prosseguir.guard';
 
 @NgModule({
   declarations: [
@@ -48,10 +51,13 @@ import { FirstFormDatasService } from './home/first-form/first-form-datas.servic
     MatButtonModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatExpansionModule,
+    MatListModule
   ],
   providers: [
-    FirstFormDatasService
+    FirstFormDatasService,
+    HomeProsseguirGuard
   ],
   bootstrap: [AppComponent]
 })

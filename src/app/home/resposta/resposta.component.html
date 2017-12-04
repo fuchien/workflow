@@ -5,3 +5,243 @@
     </div>
   </div>
 </div>
+<div class="accordions">
+  <div class="respostas">
+    <mat-expansion-panel class="panel" 
+      [expanded]="step === 0" (opened)="setStep(0)">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="title" [class.panelTitle]="mostrarTransacoes">
+          <h3>1 - Parecer</h3>
+          <div class="divIcon" *ngIf="mostrarTransacoes">
+            <mat-icon matSuffix class="iconDone">done</mat-icon>
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      
+      <div class="accordion-body accordionParecer">
+        <div class="forms-resp">
+          <div class="form-left">
+            <form [formGroup]="respForm">
+              <div class="title">
+                <h4>Modalidade</h4>
+                <mat-form-field class="example-full-width">
+                  <mat-select placeholder="Selecione a modalidade" formControlName="resposta">
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let canal of canais" [value]="canal">
+                      {{canal}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              
+              <div class="title">
+                <h4>Modalidade</h4>
+                <mat-form-field class="example-full-width">
+                  <mat-select placeholder="Selecione a modalidade" formControlName="modalidade">
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let canal of canais" [value]="canal">
+                      {{canal}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </form>
+          </div>
+          <div class="form-right">
+            <form [formGroup]="respForm">
+              <div class="title">
+                <h4>Comentário do analista</h4>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput matTextareaAutosize matAutosizeMinRows="6"
+                      matAutosizeMaxRows="6" class="textarea"></textarea>
+                </mat-form-field>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="prosseguir">
+          <button mat-raised-button matTooltip="Corrigir os Dados" (click)="nextStep('mostrarTransacoes')">
+            Prosseguir
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </div>
+  <div class="respostas">
+    <mat-expansion-panel class="panel" *ngIf="mostrarTransacoes"
+    [expanded]="step === 1" (opened)="setStep(1)">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="title" [class.panelTitle]="mostrarContatos">
+          <h3>2 - Transações</h3>
+          <div class="divIcon" *ngIf="mostrarContatos">
+            <mat-icon matSuffix class="iconDone">done</mat-icon>
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      
+      <div class="accordion-body accordionTransacao">
+        <div class="forms-resp">
+          <form [formGroup]="formTransacao" class="formTransacao">
+            <div class="title">
+              <h4>Selecione as transações afetadas</h4>
+              <h6>Selecionar todas transações</h6>
+              <div class="listTransacao">
+                <div class="listHeader">
+                  <ul>
+                    <li class="data">Data</li>
+                    <li class="dataAbertura">Data de abertura</li>
+                    <li class="front">Front</li>
+                    <li class="score">Score</li>
+                    <li class="redes">Redes</li>
+                    <li class="reglas">Reglas</li>
+                    <li class="solicitado">Solicitado</li>
+                    <li class="transacao">Transação</li>
+                    <li class="conta">Conta</li>
+                  </ul>
+                </div>
+                <mat-selection-list>
+                  <mat-list-option *ngFor="let t of transacoes">
+                    <ul class="listTransacaoBody">
+                      <li class="data">{{t.data1}}</li>
+                      <li class="dataAbertura">{{t.dataAbertura1}}</li>
+                      <li class="front">{{t.front}}</li>
+                      <li class="score score1"
+                      [ngClass]="getColor(t.score)">{{t.score}}</li>
+                      <li class="redes redes1"
+                      [ngClass]="getColor(t.redes)">{{t.redes}}</li>
+                      <li class="reglas reglas1"
+                      [ngClass]="getColor(t.reglas)">{{t.reglas}}</li>
+                      <li class="solicitado">{{t.solicitado}}</li>
+                      <li class="transacao">{{t.transacao}}</li>
+                      <li class="conta">{{t.conta}}</li>
+                    </ul>
+                  </mat-list-option>
+                </mat-selection-list>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="prosseguir">
+          <button mat-raised-button matTooltip="Corrigir os Dados" (click)="nextStep('mostrarContatos')">
+            Prosseguir
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </div>
+  <div class="respostas">
+    <mat-expansion-panel class="panel" *ngIf="mostrarContatos"
+    [expanded]="step === 2" (opened)="setStep(2)">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="title" [class.panelTitle]="mostrarChecklists">
+          <h3>3 - Contato com o cliente</h3>
+          <div class="divIcon" *ngIf="mostrarChecklists">
+            <mat-icon matSuffix class="iconDone">done</mat-icon>
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      
+      <div class="accordion-body accordionContato">
+        <div class="title">
+          <h4>Seleciona a forma de contato com o cliente</h4>
+        </div>
+        <div class="forms-resp">
+          <div class="form-left">
+            <div class="title">
+              <h4>Números no cadastro</h4>
+              <ul class="listNumbers">
+                <li *ngFor="let n of numerosRegistrados">
+                  <div class="divAddIcon">
+                    <mat-icon matSuffix class="addIcon">add</mat-icon>
+                  </div>
+                  <p>{{ n }}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="form-right">
+            <form [formGroup]="respForm">
+              <div class="title">
+                <h4>Comentário do analista</h4>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput matTextareaAutosize matAutosizeMinRows="6"
+                      matAutosizeMaxRows="6" class="textarea"></textarea>
+                </mat-form-field>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="prosseguir">
+          <button mat-raised-button matTooltip="Corrigir os Dados" (click)="nextStep('mostrarChecklists')">
+            Prosseguir
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </div>
+  <div class="respostas">
+    <mat-expansion-panel class="panel" *ngIf="mostrarChecklists"
+    [expanded]="step === 3" (opened)="setStep(3)">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="title" [class.panelTitle]="mostrarEmails">
+          <h3>4 - Checklist</h3>
+          <div class="divIcon" *ngIf="mostrarEmails">
+            <mat-icon matSuffix class="iconDone">done</mat-icon>
+          </div>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      
+      <div class="accordion-body accordionParecer">
+        <div class="forms-resp">
+          <div class="form-left">
+            <form [formGroup]="respForm">
+              <div class="title">
+                <h4>Modalidade</h4>
+                <mat-form-field class="example-full-width">
+                  <mat-select placeholder="Selecione a modalidade" formControlName="resposta">
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let canal of canais" [value]="canal">
+                      {{canal}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              
+              <div class="title">
+                <h4>Modalidade</h4>
+                <mat-form-field class="example-full-width">
+                  <mat-select placeholder="Selecione a modalidade" formControlName="modalidade">
+                    <mat-option>--</mat-option>
+                    <mat-option *ngFor="let canal of canais" [value]="canal">
+                      {{canal}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </form>
+          </div>
+          <div class="form-right">
+            <form [formGroup]="respForm">
+              <div class="title">
+                <h4>Comentário do analista</h4>
+                <mat-form-field class="example-full-width">
+                  <textarea matInput matTextareaAutosize matAutosizeMinRows="6"
+                      matAutosizeMaxRows="6" class="textarea"></textarea>
+                </mat-form-field>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="prosseguir">
+          <button mat-raised-button matTooltip="Corrigir os Dados" (click)="nextStep('mostrarEmails')">
+            Prosseguir
+          </button>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </div>
+</div>

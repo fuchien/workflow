@@ -1,0 +1,104 @@
+.toolbar {
+    background-color: #2a4751;
+    min-height: 63.1px;
+    max-height: 63.1px;
+
+    .header {
+      width: 90vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .workflow {
+        width: 22%;
+        min-height: 63.1px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #c2c2c2;
+
+        .image-logo {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          background-color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 35.8px;
+            height: 32px;
+          }
+        }
+
+        .line-2-copy {
+          width: 1px;
+          min-height: 58px;
+          max-height: 58px;
+          background-color: #35505a;
+          border: 2px solid #35505a;
+        }
+      }
+
+      .user .line-2-copy {
+        width: 1px;
+        min-height: 58px;
+        max-height: 58px;
+        background-color: #35505a;
+        border: 2px solid #35505a;
+      }
+
+      .workflow .name {
+        min-height: 63.1px;
+        display: flex;
+        align-items: center;
+        font-family: OpenSans;
+        font-size: 18px;
+        text-align: right;
+        color: #c2c2c2;
+      }
+
+      .user {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: OpenSans;
+        font-size: 16px;
+        text-align: left;
+        color: #ffffff;
+
+        h2 {
+          font-family: OpenSans;
+          font-size: 16px;
+          text-align: left;
+          color: #ffffff;
+        }
+
+        .line-2-copy {
+          margin: 0 19px;
+        }
+
+        .image-user {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 42px;
+          height: 42px;
+          background-color: #afcad2;
+          box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+          border: 3px solid #50ccfb;
+          border-radius: 50%;
+
+          img {
+            border-radius: 50%;
+            padding: 0;
+            width: 29.3px;
+            height: 36.5px;
+            background-color: #dbf6fe;
+          }
+        }
+      }
+    }
+  }

@@ -7,7 +7,7 @@ import { FirstFormDatasService } from './first-form-datas.service';
 @Component({
   selector: 'wff-first-form',
   templateUrl: './first-form.component.html',
-  styleUrls: ['./first-form.component.css']
+  styleUrls: ['./first-form.component.scss']
 })
 export class FirstFormComponent implements OnInit {
 

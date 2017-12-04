@@ -1,0 +1,404 @@
+.forms {
+  margin: 0 auto;
+  margin-top: 10.9px;
+  min-width: 90vw;
+  max-width: 90vw;
+  min-height: 191px;
+  display: flex;
+  position: relative;
+  border: 1px solid #d8d8d8;
+
+  .result {
+    min-width: 100%;
+    /* min-height: 45vh;
+    max-height: 45vh; */
+    max-height: 190px;
+    min-height: 190px;
+    margin-top: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .result-body {
+      min-width: 100%;
+      border-radius: 4px;
+      /* min-height: 23vh; */
+      max-height: 190px;
+      min-height: 190px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
+      display: flex;
+      justify-content: space-between;
+
+      .result-body-list {
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+/* ACCORDIONS */
+
+.accordions {
+  margin: 0 auto;
+  margin-top: 10px;
+  min-width: 90vw;
+  max-width: 90vw;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  border: 1px solid #d8d8d8;
+
+  .panel {
+    min-width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
+    border: 1px solid #d8d8d8;
+  }
+
+  .respostas {
+    min-width: 100%;
+  }
+
+  .panel .title h3 {
+    font-family: OpenSans;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: #424455;
+  }
+
+  .respostas {
+
+    .panel {
+  
+      .panelTitle {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .divIcon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: 10px;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          border: 2px solid #99cc00;
+
+          .iconDone {
+            font-size: 16px;
+            color: #99cc00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+
+        h3 {
+          font-family: OpenSans;
+          font-size: 16px;
+          font-weight: bold;
+          text-align: left;
+          color: #99cc00;
+        }
+      }
+
+      .accordionParecer .forms-resp {
+
+        .form-left .title h4 {
+          font-family: OpenSans;
+          font-size: 11px;
+          font-weight: bold;
+          text-align: left;
+          color: #191919;
+          text-transform: uppercase;
+        }
+
+        max-width: 100%;
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .accordion-body {
+      min-width: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+    }
+
+    .panel {
+
+      .accordionParecer {
+  
+        .forms-resp {
+  
+          .form-left {
+  
+            min-width: 50%;
+            max-width: 50%;
+            display: flex;
+            flex-flow: column;
+
+            .title {
+              margin-top: 1.5px;
+            }
+          }
+
+          .form-right {
+            min-width: 50%;
+            max-width: 50%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+          }
+
+          .form-left .title h4, .form-right .title h4 {
+            padding: 0;
+            margin: 0;
+            font-family: OpenSans;
+            font-size: 11px;
+            font-weight: bold;
+            text-align: left;
+            color: #191919;
+          }
+  
+          .form-left .title .example-full-width {
+            min-width: 95%;
+          }
+  
+          .form-right {
+    
+            .title .example-full-width {
+              min-width: 95%;
+            }
+    
+            form {
+              min-width: 100%;
+      
+              .title {
+                min-width: 100%;
+              }
+            }
+  
+            .title .example-full-width textarea {
+              max-height: 115px;
+              border-radius: 4px;
+            }
+          }
+        }
+  
+        .prosseguir {
+          width: 95%;
+          margin: 0 auto;
+          margin-top: 10px;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+
+      .accordionTransacao .prosseguir, .accordionContato .prosseguir {
+        width: 95%;
+        margin: 0 auto;
+        margin-top: 10px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .accordionParecer .prosseguir button, .accordionTransacao .prosseguir button, .accordionContato .prosseguir button {
+        width: 216px;
+        height: 40px;
+        border-radius: 21px;
+        background-color: #424455;
+        line-height: 40px;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: OpenSans;
+        font-size: 14px;
+        color: #ffffff;
+      }
+
+      .accordionTransacao .forms-resp .formTransacao {
+
+        .title {
+    
+          min-width: 100%;
+  
+          h4 {
+            font-family: OpenSans;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.2;
+            text-align: left;
+            color: #444444;
+          }
+  
+          h6 {
+            font-family: OpenSans;
+            font-size: 11px;
+            line-height: 1.45;
+            text-align: left;
+            color: #33cccc;
+          }
+  
+          .listTransacao {
+    
+            min-width: 100%;
+    
+            .listHeader {
+      
+              min-width: 100%;
+  
+              ul {
+                list-style: none;
+                min-width: 100%;
+                max-width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0;
+              }
+            }
+
+            .listTransacaoBody {
+              list-style: none;
+              min-width: 100%;
+              max-width: 100%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0;
+  
+              li {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+            }
+  
+            .listHeader ul {
+              min-width: 95%;
+              max-width: 95%;
+              margin: 0 auto;
+            }
+  
+            .data, .conta {
+              width: 15%;
+            }
+  
+            .dataAbertura, .front, .score, .redes, .reglas, .solicitado, .transacao {
+              width: 10%;
+            }
+  
+            .listTransacaoBody {
+  
+              .score1, .redes1, .reglas1 {
+                width: 44px;
+                height: 24px;
+                border-radius: 4px;
+              } 
+  
+              .colorBlue {
+                background-color: #33cccc;
+              }
+    
+              .colorOrange {
+                background-color: #ff9933;
+              }
+  
+              .colorRed {
+                background-color: #ce0000;
+              }
+    
+            }
+          }
+        }
+        min-width: 100%;
+        max-width: 100%;
+      }
+      .accordionContato {
+  
+        .title h4 {
+          font-family: OpenSans;
+          font-size: 20px;
+          font-weight: 300;
+          line-height: 1.2;
+          text-align: left;
+          color: #444444;
+          margin-bottom: 0;
+        }
+  
+        .forms-resp {
+          margin-top: 32px;
+          min-width: 100%;
+          display: flex;
+          justify-content: space-between;
+  
+          .form-left {
+            min-width: 20%;
+            max-width: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            background-color: #f9f9f9;
+    
+            .title {
+              min-width: 70%;
+              max-width: 70%;
+              display: flex;
+              flex-flow: column;
+              align-items: center;
+              justify-content: center;
+      
+              h4 {
+                margin-top: 10px;
+              }
+    
+              .listNumbers {
+                padding: 0;
+                list-style: none;
+                min-width: 100%;
+                margin: 22px 15px;
+                margin-top: 15px;
+      
+                li {
+                  display: flex;
+                  justify-content: space-around;
+                  align-items: center;
+                  min-width: 95%;
+                  margin-top: 12px;
+                  max-width: 95%;
+                  height: 32px;
+                  border-radius: 21px;
+                  background-color: #ffffff;
+                  border: 2px solid #424455;
+    
+                  p {
+                    font-size: 14px;
+                    text-align: center;
+                    color: #424455;
+                    vertical-align: middle;
+                  }
+                }
+              }
+            }
+          }
+          .form-right {
+            min-width: 80%;
+            max-width: 80%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ACCORDION TRANSACAO */
+
+/* ACCORDION  CONTATO */

@@ -4,7 +4,7 @@ import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 @Component({
   selector: 'wff-grid-list',
   templateUrl: './grid-list.component.html',
-  styleUrls: ['./grid-list.component.css']
+  styleUrls: ['./grid-list.component.scss']
 })
 export class GridListComponent implements OnInit {
 

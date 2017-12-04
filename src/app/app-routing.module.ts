@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { FirstFormComponent } from './home/first-form/first-form.component';
 import { RespostaComponent } from './home/resposta/resposta.component';
 
+import { HomeProsseguirGuard } from './guards/home-prosseguir.guard';
+
 const routes: Routes = [
   {
     path: '',
@@ -21,7 +23,8 @@ const routes: Routes = [
       },
       {
         path: 'response',
-        component: RespostaComponent
+        component: RespostaComponent,
+        canActivate: [HomeProsseguirGuard]
       }
     ]
   }
