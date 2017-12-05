@@ -1,12 +1,24 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
   selector: 'wff-grid-list',
   templateUrl: './grid-list.component.html',
-  styleUrls: ['./grid-list.component.scss']
+  styleUrls: ['./grid-list.component.scss'],
+  animations: [
+    trigger('dadosAppeared', [
+      state('ready', style({opacity: 1})),
+      transition('void => ready', [
+        style({opacity: 0, transform: 'scale(0)'}),
+        animate('500ms 0s ease-in-out')
+      ])
+    ])
+  ]
 })
 export class GridListComponent implements OnInit {
+
+  dadosState = 'ready'
 
   @Input('dados') dados
   canais = ['Dog', 'Cat', 'Cow', 'Fox']

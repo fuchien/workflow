@@ -88,14 +88,14 @@
     </section>
   </div>
 
-  <div class="result" *ngIf="isResult">
+  <div class="result" *ngIf="isResult" [@resultAppeared]="resultState">
     <div class="result-title">
       <h3>Resultado</h3>
     </div>
     <div class="result-body">
       <wff-grid-list [dados]='dadosPessoais' class="result-body-list"></wff-grid-list>
     </div>
-    <div class="result-processar">
+    <div class="result-processar" [@btnAppeared]="btnState">
         <button mat-raised-button color="primary" matTooltip="Prosseguir"
         (click)="prosseguir()">
         Prosseguir

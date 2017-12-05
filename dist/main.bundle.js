@@ -330,7 +330,7 @@ FirstFormDatasService = __decorate([
 /***/ "../../../../../src/app/home/first-form/first-form.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"forms\">\n  <div class=\"inputs\">\n    <form class=\"example-form\" [formGroup]=\"canalForm\">\n      <div class=\"title\">\n        <h4>Canal</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select formControlName=\"canal\" [(ngModel)]=\"canalSelected\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n          <!-- <mat-icon matSuffix>keyboard_arrow_down</mat-icon> -->\n        </mat-form-field>\n      </div>\n      <div class=\"title\">\n        <h4>Modalidade</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione a modalidade\" formControlName=\"modalidade\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n    </form>\n  </div>\n  <div class=\"inputs fila\" [class.disabled]=\"filaIsDisabled\">\n    <form class=\"example-form\" [formGroup]=\"filaForm\">\n      <div class=\"title\">\n        <h4>Fila</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione a fila\" formControlName=\"fila\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <div class=\"title\">\n        <h4 *ngIf=\"flow2\">Resumo da fila</h4>\n        <p *ngIf=\"flow2\">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>\n      </div>\n    </form>\n  </div>\n  <div class=\"inputs\" [class.disabled]=\"cpfIsDisabled\" #localizar>\n    <form class=\"example-form\" [formGroup]=\"cpfForm\">\n      <div class=\"title\">\n        <h4>cpf ou cnpj</h4>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput formControlName=\"cpf\" placeholder=\"Ex.: 123.123.123-10\">\n        </mat-form-field>\n      </div>\n      <div class=\"localizar\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Localizar o usuário\" class=\"btnLocalizar\"\n          *ngIf=\"!localizando\" [disabled]=\"!podeLocalizar\" (click)=\"localizarUser()\">\n          Localizar\n        </button>\n        <mat-spinner class=\"spinner\" color=\"primary\" *ngIf=\"localizando\" diameter=\"30\" strokeWidth=\"5\"></mat-spinner>\n      </div>\n    </form>\n  </div>\n</div>\n\n<div class=\"flows\" [class.isresult]=\"isResult\">\n  <div class=\"flow\" *ngIf=\"!isResult\">\n    <div class=\"passos\">\n      <div class=\"passo\" [style.color]=\"filaIsDisabled ? '#33CCCC' : '#191919'\">\n        <p>Comece selecionando o canal e modalidades adequados</p>\n      </div>\n      <div class=\"passo passoFila\" [style.color]=\"cpfIsDisabled ? '#33CCCC' : '#191919'\" *ngIf=\"!filaIsDisabled\">\n        <p>Selecione a fila adequada</p>\n      </div>\n      <div class=\"passo passoCpf\" [style.color]=\"podeLocalizar ? '#33CCCC' : '#191919'\" *ngIf=\"!cpfIsDisabled\">\n        <p>Digite o cpf ou cnpj</p>\n      </div>\n    </div>\n    <section class=\"example-section\">\n      <mat-progress-bar\n          class=\"example-margin\"\n          [color]=\"color\"\n          [mode]=\"mode\"\n          [value]=\"value\"\n          [bufferValue]=\"bufferValue\">\n      </mat-progress-bar>\n    </section>\n  </div>\n\n  <div class=\"result\" *ngIf=\"isResult\">\n    <div class=\"result-title\">\n      <h3>Resultado</h3>\n    </div>\n    <div class=\"result-body\">\n      <wff-grid-list [dados]='dadosPessoais' class=\"result-body-list\"></wff-grid-list>\n    </div>\n    <div class=\"result-processar\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Prosseguir\"\n        (click)=\"prosseguir()\">\n        Prosseguir\n      </button>\n      <!-- <mat-spinner class=\"spinner\" color=\"warn\" *ngIf=\"localizando\" diameter=\"30\" strokeWidth=\"5\"></mat-spinner> -->\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"forms\">\n  <div class=\"inputs\">\n    <form class=\"example-form\" [formGroup]=\"canalForm\">\n      <div class=\"title\">\n        <h4>Canal</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select formControlName=\"canal\" [(ngModel)]=\"canalSelected\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n          <!-- <mat-icon matSuffix>keyboard_arrow_down</mat-icon> -->\n        </mat-form-field>\n      </div>\n      <div class=\"title\">\n        <h4>Modalidade</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione a modalidade\" formControlName=\"modalidade\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n    </form>\n  </div>\n  <div class=\"inputs fila\" [class.disabled]=\"filaIsDisabled\">\n    <form class=\"example-form\" [formGroup]=\"filaForm\">\n      <div class=\"title\">\n        <h4>Fila</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione a fila\" formControlName=\"fila\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n      <div class=\"title\">\n        <h4 *ngIf=\"flow2\">Resumo da fila</h4>\n        <p *ngIf=\"flow2\">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>\n      </div>\n    </form>\n  </div>\n  <div class=\"inputs\" [class.disabled]=\"cpfIsDisabled\" #localizar>\n    <form class=\"example-form\" [formGroup]=\"cpfForm\">\n      <div class=\"title\">\n        <h4>cpf ou cnpj</h4>\n        <mat-form-field class=\"example-full-width\">\n          <input matInput formControlName=\"cpf\" placeholder=\"Ex.: 123.123.123-10\">\n        </mat-form-field>\n      </div>\n      <div class=\"localizar\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Localizar o usuário\" class=\"btnLocalizar\"\n          *ngIf=\"!localizando\" [disabled]=\"!podeLocalizar\" (click)=\"localizarUser()\">\n          Localizar\n        </button>\n        <mat-spinner class=\"spinner\" color=\"primary\" *ngIf=\"localizando\" diameter=\"30\" strokeWidth=\"5\"></mat-spinner>\n      </div>\n    </form>\n  </div>\n</div>\n\n<div class=\"flows\" [class.isresult]=\"isResult\">\n  <div class=\"flow\" *ngIf=\"!isResult\">\n    <div class=\"passos\">\n      <div class=\"passo\" [style.color]=\"filaIsDisabled ? '#33CCCC' : '#191919'\">\n        <p>Comece selecionando o canal e modalidades adequados</p>\n      </div>\n      <div class=\"passo passoFila\" [style.color]=\"cpfIsDisabled ? '#33CCCC' : '#191919'\" *ngIf=\"!filaIsDisabled\">\n        <p>Selecione a fila adequada</p>\n      </div>\n      <div class=\"passo passoCpf\" [style.color]=\"podeLocalizar ? '#33CCCC' : '#191919'\" *ngIf=\"!cpfIsDisabled\">\n        <p>Digite o cpf ou cnpj</p>\n      </div>\n    </div>\n    <section class=\"example-section\">\n      <mat-progress-bar\n          class=\"example-margin\"\n          [color]=\"color\"\n          [mode]=\"mode\"\n          [value]=\"value\"\n          [bufferValue]=\"bufferValue\">\n      </mat-progress-bar>\n    </section>\n  </div>\n\n  <div class=\"result\" *ngIf=\"isResult\" [@resultAppeared]=\"resultState\">\n    <div class=\"result-title\">\n      <h3>Resultado</h3>\n    </div>\n    <div class=\"result-body\">\n      <wff-grid-list [dados]='dadosPessoais' class=\"result-body-list\"></wff-grid-list>\n    </div>\n    <div class=\"result-processar\" [@btnAppeared]=\"btnState\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Prosseguir\"\n        (click)=\"prosseguir()\">\n        Prosseguir\n      </button>\n      <!-- <mat-spinner class=\"spinner\" color=\"warn\" *ngIf=\"localizando\" diameter=\"30\" strokeWidth=\"5\"></mat-spinner> -->\n    </div>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -360,7 +360,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__first_form_datas_service__ = __webpack_require__("../../../../../src/app/home/first-form/first-form-datas.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_animations__ = __webpack_require__("../../../animations/@angular/animations.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__first_form_datas_service__ = __webpack_require__("../../../../../src/app/home/first-form/first-form-datas.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -374,10 +375,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var FirstFormComponent = (function () {
     function FirstFormComponent(fb, router) {
         this.fb = fb;
         this.router = router;
+        this.btnState = 'ready';
+        this.resultState = 'ready';
         this.color = 'primary';
         this.mode = 'determinate';
         this.value = 0;
@@ -446,7 +450,7 @@ var FirstFormComponent = (function () {
     };
     FirstFormComponent.prototype.prosseguir = function () {
         this.dadosPessoais.prosseguir = true;
-        __WEBPACK_IMPORTED_MODULE_3__first_form_datas_service__["a" /* FirstFormDatasService */].setDadosPessoais(this.dadosPessoais);
+        __WEBPACK_IMPORTED_MODULE_4__first_form_datas_service__["a" /* FirstFormDatasService */].setDadosPessoais(this.dadosPessoais);
         this.router.navigate(['/home/response']);
     };
     return FirstFormComponent;
@@ -455,7 +459,23 @@ FirstFormComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'wff-first-form',
         template: __webpack_require__("../../../../../src/app/home/first-form/first-form.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/home/first-form/first-form.component.scss")]
+        styles: [__webpack_require__("../../../../../src/app/home/first-form/first-form.component.scss")],
+        animations: [
+            Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["k" /* trigger */])('btnAppeared', [
+                Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["h" /* state */])('ready', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["i" /* style */])({ opacity: 1 })),
+                Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["j" /* transition */])('void => ready', [
+                    Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["i" /* style */])({ opacity: 0, transform: 'scale(0)' }),
+                    Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["e" /* animate */])('600ms 0s ease-in-out')
+                ])
+            ]),
+            Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["k" /* trigger */])('resultAppeared', [
+                Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["h" /* state */])('ready', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["i" /* style */])({ opacity: 1 })),
+                Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["j" /* transition */])('void => ready', [
+                    Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["i" /* style */])({ opacity: 0, transform: 'translateX(100%)' }),
+                    Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["e" /* animate */])('300ms 0s ease-in-out')
+                ])
+            ])
+        ]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]) === "function" && _b || Object])
 ], FirstFormComponent);
@@ -468,7 +488,7 @@ var _a, _b;
 /***/ "../../../../../src/app/home/first-form/grid-list/grid-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dado dados1\">\n  <ul class=\"tile\">\n    <li class=\"grid\">\n      <h4>Nome</h4>\n      <p>{{dados.nome}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Agência</h4>\n      <p>{{dados.agencia}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Cpf</h4>\n      <p>{{dados.cpf}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Conta</h4>\n      <p>{{dados.conta}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Pernumper</h4>\n      <p>{{dados.pernumper}}</p>\n    </li>\n    <li class=\"grid\">\n      <h4>Segmento</h4>\n      <p>{{dados.segmento}}</p>\n    </li>\n  </ul>\n</div>\n<div class=\"dado dados2\">\n  <div class=\"dados-right\">\n    <ul class=\"tile\">\n      <li class=\"grid\">\n        <h4>Telefones</h4>\n        <p *ngFor=\"let tel of dados.telefones\">{{tel}}</p>\n      </li>\n      <li class=\"grid\">\n        <h4>Emails</h4>\n        <p *ngFor=\"let email of dados.emails\">{{email}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"dados-right\">\n    <form class=\"example-form\" [formGroup]=\"contaForm\" *ngIf=\"!buttonCorrigirDados\">\n      <div class=\"title\">\n        <h4>Canal</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione o canal\" class=\"select\" formControlName=\"conta\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n    </form>\n    <ul class=\"tile\" *ngIf=\"buttonCorrigirDados\">\n      <li class=\"grid corrigir\">\n        <h4>Conta selecionada</h4>\n        <p>Corrente 1231</p>\n      </li>\n      <li class=\"grid corrigir\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Corrigir os Dados\"\n          (click)=\"corrigirDados()\">\n          <mat-icon matSuffix class=\"icon\">mode_edit</mat-icon>\n          Atualizar dados\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>"
+module.exports = "<div class=\"dado dados1\">\n  <ul class=\"tile\">\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Nome</h4>\n      <p>{{dados.nome}}</p>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Agência</h4>\n      <p>{{dados.agencia}}</p>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Cpf</h4>\n      <p>{{dados.cpf}}</p>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Conta</h4>\n      <p>{{dados.conta}}</p>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Pernumper</h4>\n      <p>{{dados.pernumper}}</p>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Segmento</h4>\n      <p>{{dados.segmento}}</p>\n    </li>\n  </ul>\n</div>\n<div class=\"dado dados2\">\n  <div class=\"dados-right\">\n    <ul class=\"tile\">\n      <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n        <h4>Telefones</h4>\n        <p *ngFor=\"let tel of dados.telefones\">{{tel}}</p>\n      </li>\n      <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n        <h4>Emails</h4>\n        <p *ngFor=\"let email of dados.emails\">{{email}}</p>\n      </li>\n    </ul>\n  </div>\n  <div class=\"dados-right\">\n    <form class=\"example-form\" [formGroup]=\"contaForm\" *ngIf=\"!buttonCorrigirDados\">\n      <div class=\"title\">\n        <h4>Canal</h4>\n        <mat-form-field class=\"example-full-width\">\n          <mat-select placeholder=\"Selecione o canal\" class=\"select\" formControlName=\"conta\">\n            <mat-option>--</mat-option>\n            <mat-option *ngFor=\"let canal of canais\" [value]=\"canal\">\n              {{canal}}\n            </mat-option>\n          </mat-select>\n        </mat-form-field>\n      </div>\n    </form>\n    <ul class=\"tile\" *ngIf=\"buttonCorrigirDados\">\n      <li class=\"grid corrigir\" [@dadosAppeared]=\"dadosState\">\n        <h4>Conta selecionada</h4>\n        <p>Corrente 1231</p>\n      </li>\n      <li class=\"grid corrigir\" [@dadosAppeared]=\"dadosState\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Corrigir os Dados\"\n          (click)=\"corrigirDados()\">\n          <mat-icon matSuffix class=\"icon\">mode_edit</mat-icon>\n          Atualizar dados\n        </button>\n      </li>\n    </ul>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -497,6 +517,7 @@ module.exports = module.exports.toString();
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GridListComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations__ = __webpack_require__("../../../animations/@angular/animations.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -508,9 +529,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var GridListComponent = (function () {
     function GridListComponent(fb) {
         this.fb = fb;
+        this.dadosState = 'ready';
         this.canais = ['Dog', 'Cat', 'Cow', 'Fox'];
         this.buttonCorrigirDados = false;
         this.contaForm = fb.group({
@@ -535,7 +558,16 @@ GridListComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'wff-grid-list',
         template: __webpack_require__("../../../../../src/app/home/first-form/grid-list/grid-list.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/home/first-form/grid-list/grid-list.component.scss")]
+        styles: [__webpack_require__("../../../../../src/app/home/first-form/grid-list/grid-list.component.scss")],
+        animations: [
+            Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["k" /* trigger */])('dadosAppeared', [
+                Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["h" /* state */])('ready', Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ opacity: 1 })),
+                Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["j" /* transition */])('void => ready', [
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["i" /* style */])({ opacity: 0, transform: 'scale(0)' }),
+                    Object(__WEBPACK_IMPORTED_MODULE_2__angular_animations__["e" /* animate */])('500ms 0s ease-in-out')
+                ])
+            ])
+        ]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object])
 ], GridListComponent);

@@ -1,15 +1,35 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { FirstFormDatasService } from './first-form-datas.service';
 
 @Component({
   selector: 'wff-first-form',
   templateUrl: './first-form.component.html',
-  styleUrls: ['./first-form.component.scss']
+  styleUrls: ['./first-form.component.scss'],
+  animations: [
+    trigger('btnAppeared', [
+      state('ready', style({opacity: 1})),
+      transition('void => ready', [
+        style({opacity: 0, transform: 'scale(0)'}),
+        animate('600ms 0s ease-in-out')
+      ])
+    ]),
+    trigger('resultAppeared', [
+      state('ready', style({opacity: 1})),
+      transition('void => ready', [
+        style({opacity: 0, transform: 'translateX(100%)'}),
+        animate('300ms 0s ease-in-out')
+      ])
+    ])
+  ]
 })
 export class FirstFormComponent implements OnInit {
+
+  btnState = 'ready'
+  resultState = 'ready'
 
   color = 'primary';
   mode = 'determinate';

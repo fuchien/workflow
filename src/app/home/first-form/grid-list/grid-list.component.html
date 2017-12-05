@@ -1,26 +1,26 @@
 <div class="dado dados1">
   <ul class="tile">
-    <li class="grid">
+    <li class="grid" [@dadosAppeared]="dadosState">
       <h4>Nome</h4>
       <p>{{dados.nome}}</p>
     </li>
-    <li class="grid">
+    <li class="grid" [@dadosAppeared]="dadosState">
       <h4>Agência</h4>
       <p>{{dados.agencia}}</p>
     </li>
-    <li class="grid">
+    <li class="grid" [@dadosAppeared]="dadosState">
       <h4>Cpf</h4>
       <p>{{dados.cpf}}</p>
     </li>
-    <li class="grid">
+    <li class="grid" [@dadosAppeared]="dadosState">
       <h4>Conta</h4>
       <p>{{dados.conta}}</p>
     </li>
-    <li class="grid">
+    <li class="grid" [@dadosAppeared]="dadosState">
       <h4>Pernumper</h4>
       <p>{{dados.pernumper}}</p>
     </li>
-    <li class="grid">
+    <li class="grid" [@dadosAppeared]="dadosState">
       <h4>Segmento</h4>
       <p>{{dados.segmento}}</p>
     </li>
@@ -29,11 +29,11 @@
 <div class="dado dados2">
   <div class="dados-right">
     <ul class="tile">
-      <li class="grid">
+      <li class="grid" [@dadosAppeared]="dadosState">
         <h4>Telefones</h4>
         <p *ngFor="let tel of dados.telefones">{{tel}}</p>
       </li>
-      <li class="grid">
+      <li class="grid" [@dadosAppeared]="dadosState">
         <h4>Emails</h4>
         <p *ngFor="let email of dados.emails">{{email}}</p>
       </li>
@@ -54,11 +54,11 @@
       </div>
     </form>
     <ul class="tile" *ngIf="buttonCorrigirDados">
-      <li class="grid corrigir">
+      <li class="grid corrigir" [@dadosAppeared]="dadosState">
         <h4>Conta selecionada</h4>
         <p>Corrente 1231</p>
       </li>
-      <li class="grid corrigir">
+      <li class="grid corrigir" [@dadosAppeared]="dadosState">
         <button mat-raised-button color="primary" matTooltip="Corrigir os Dados"
           (click)="corrigirDados()">
           <mat-icon matSuffix class="icon">mode_edit</mat-icon>
