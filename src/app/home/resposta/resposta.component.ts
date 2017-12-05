@@ -17,8 +17,6 @@ export class RespostaComponent implements OnInit {
   mostrarChecklists: boolean = false
   mostrarEmails: boolean = false
 
-  typesOfShoes = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
-
   transacoes = [
     {
       data1: '01/04/2017',

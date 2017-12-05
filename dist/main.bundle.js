@@ -52,12 +52,18 @@ var routes = [
         children: [
             {
                 path: '',
-                component: __WEBPACK_IMPORTED_MODULE_3__home_first_form_first_form_component__["a" /* FirstFormComponent */]
+                component: __WEBPACK_IMPORTED_MODULE_3__home_first_form_first_form_component__["a" /* FirstFormComponent */],
+                data: {
+                    animation: 'home'
+                }
             },
             {
                 path: 'response',
                 component: __WEBPACK_IMPORTED_MODULE_4__home_resposta_resposta_component__["a" /* RespostaComponent */],
-                canActivate: [__WEBPACK_IMPORTED_MODULE_5__guards_home_prosseguir_guard__["a" /* HomeProsseguirGuard */]]
+                canActivate: [__WEBPACK_IMPORTED_MODULE_5__guards_home_prosseguir_guard__["a" /* HomeProsseguirGuard */]],
+                data: {
+                    animation: 'response'
+                }
             }
         ]
     }
@@ -603,7 +609,7 @@ FooterComponent = __decorate([
 /***/ "../../../../../src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<wff-toolbar></wff-toolbar>\n\n<router-outlet></router-outlet>\n<!-- <wff-first-form></wff-first-form> -->\n\n<wff-footer></wff-footer>"
+module.exports = "<wff-toolbar></wff-toolbar>\n\n<div [@routerAnimation]=\"getRouteAnimation(route)\">\n    <router-outlet #route=\"outlet\"></router-outlet>\n</div>\n<!-- <wff-first-form></wff-first-form> -->\n\n<wff-footer></wff-footer>"
 
 /***/ }),
 
@@ -631,6 +637,7 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__("../../../animations/@angular/animations.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -641,10 +648,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var HomeComponent = (function () {
     function HomeComponent() {
     }
     HomeComponent.prototype.ngOnInit = function () {
+    };
+    // change the animation state
+    HomeComponent.prototype.getRouteAnimation = function (outlet) {
+        return outlet.activatedRouteData.animation;
     };
     return HomeComponent;
 }());
@@ -652,7 +664,30 @@ HomeComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-home',
         template: __webpack_require__("../../../../../src/app/home/home.component.html"),
-        styles: [__webpack_require__("../../../../../src/app/home/home.component.scss")]
+        styles: [__webpack_require__("../../../../../src/app/home/home.component.scss")],
+        animations: [
+            Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["k" /* trigger */])('routerAnimation', [
+                Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["j" /* transition */])('* <=> *', [
+                    // Initial state of new route
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["f" /* query */])(':enter', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* style */])({
+                        position: 'fixed',
+                        width: '100%',
+                        transform: 'translateX(-100%)'
+                    }), { optional: true }),
+                    // move page off screen right on leave
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["f" /* query */])(':leave', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* animate */])('300ms ease', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* style */])({
+                        position: 'fixed',
+                        width: '100%',
+                        transform: 'translateX(100%)'
+                    })), { optional: true }),
+                    // move page in screen from left to right
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["f" /* query */])(':enter', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* animate */])('300ms ease', Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* style */])({
+                        opacity: 1,
+                        transform: 'translateX(0%)'
+                    })), { optional: true }),
+                ])
+            ])
+        ]
     }),
     __metadata("design:paramtypes", [])
 ], HomeComponent);
@@ -713,7 +748,6 @@ var RespostaComponent = (function () {
         this.mostrarContatos = false;
         this.mostrarChecklists = false;
         this.mostrarEmails = false;
-        this.typesOfShoes = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
         this.transacoes = [
             {
                 data1: '01/04/2017',

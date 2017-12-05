@@ -8264,17 +8264,17 @@ module.exports = g;
 /* unused harmony export animation */
 /* unused harmony export group */
 /* unused harmony export keyframes */
-/* unused harmony export query */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return sequence; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return query; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return sequence; });
 /* unused harmony export stagger */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return state; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return style; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return transition; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return trigger; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return state; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return style; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return transition; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return trigger; });
 /* unused harmony export useAnimation */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return NoopAnimationPlayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return AnimationGroupPlayer; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return ɵPRE_STYLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return AnimationGroupPlayer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return ɵPRE_STYLE; });
 /**
  * @license Angular v4.4.6
  * (c) 2010-2017 Google, Inc. https://angular.io/
@@ -9632,7 +9632,7 @@ function optimizeGroupPlayer(players) {
         case 1:
             return players[0];
         default:
-            return new __WEBPACK_IMPORTED_MODULE_1__angular_animations__["k" /* ɵAnimationGroupPlayer */](players);
+            return new __WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* ɵAnimationGroupPlayer */](players);
     }
 }
 function normalizeKeyframes(driver, normalizer, element, keyframes, preStyles, postStyles) {
@@ -9652,7 +9652,7 @@ function normalizeKeyframes(driver, normalizer, element, keyframes, preStyles, p
             if (prop !== 'offset') {
                 normalizedProp = normalizer.normalizePropertyName(normalizedProp, errors);
                 switch (normalizedValue) {
-                    case __WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* ɵPRE_STYLE */]:
+                    case __WEBPACK_IMPORTED_MODULE_1__angular_animations__["m" /* ɵPRE_STYLE */]:
                         normalizedValue = preStyles[prop];
                         break;
                     case __WEBPACK_IMPORTED_MODULE_1__angular_animations__["a" /* AUTO_STYLE */]:
@@ -9930,7 +9930,7 @@ function normalizeAnimationEntry(steps) {
     if (Array.isArray(steps)) {
         if (steps.length == 1)
             return steps[0];
-        return Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["f" /* sequence */])(steps);
+        return Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["g" /* sequence */])(steps);
     }
     return steps;
 }
@@ -10298,7 +10298,7 @@ var AnimationAstBuilderVisitor = (function () {
         var /** @type {?} */ timingAst = constructTimingAst(metadata.timings, context.errors);
         context.currentAnimateTimings = timingAst;
         var /** @type {?} */ styleAst;
-        var /** @type {?} */ styleMetadata = metadata.styles ? metadata.styles : Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])({});
+        var /** @type {?} */ styleMetadata = metadata.styles ? metadata.styles : Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* style */])({});
         if (styleMetadata.type == 5 /* Keyframes */) {
             styleAst = this.visitKeyframes(/** @type {?} */ (styleMetadata), context);
         }
@@ -10311,7 +10311,7 @@ var AnimationAstBuilderVisitor = (function () {
                 if (timingAst.easing) {
                     newStyleData['easing'] = timingAst.easing;
                 }
-                styleMetadata_1 = Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* style */])(newStyleData);
+                styleMetadata_1 = Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* style */])(newStyleData);
             }
             context.currentTime += timingAst.duration + timingAst.delay;
             var /** @type {?} */ _styleAst = this.visitStyle(styleMetadata_1, context);
@@ -11571,7 +11571,7 @@ var TimelineBuilder = (function () {
             var /** @type {?} */ finalKeyframe = copyStyles(keyframe, true);
             Object.keys(finalKeyframe).forEach(function (prop) {
                 var /** @type {?} */ value = finalKeyframe[prop];
-                if (value == __WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* ɵPRE_STYLE */]) {
+                if (value == __WEBPACK_IMPORTED_MODULE_1__angular_animations__["m" /* ɵPRE_STYLE */]) {
                     preStyleProps.add(prop);
                 }
                 else if (value == __WEBPACK_IMPORTED_MODULE_1__angular_animations__["a" /* AUTO_STYLE */]) {
@@ -13315,7 +13315,7 @@ var TransitionAnimationEngine = (function () {
         });
         // PRE STAGE: fill the ! styles
         var preStylesMap = (allPreStyleElements.size ?
-            cloakAndComputeStyles(this.driver, enterNodesWithoutAnimations, allPreStyleElements, __WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* ɵPRE_STYLE */]) :
+            cloakAndComputeStyles(this.driver, enterNodesWithoutAnimations, allPreStyleElements, __WEBPACK_IMPORTED_MODULE_1__angular_animations__["m" /* ɵPRE_STYLE */]) :
             [new Map()])[0];
         replaceNodes.forEach(function (node) {
             var /** @type {?} */ post = postStylesMap.get(node);
@@ -13974,7 +13974,7 @@ function flattenGroupPlayers(players) {
 function _flattenGroupPlayersRecur(players, finalPlayers) {
     for (var /** @type {?} */ i = 0; i < players.length; i++) {
         var /** @type {?} */ player = players[i];
-        if (player instanceof __WEBPACK_IMPORTED_MODULE_1__angular_animations__["k" /* ɵAnimationGroupPlayer */]) {
+        if (player instanceof __WEBPACK_IMPORTED_MODULE_1__angular_animations__["l" /* ɵAnimationGroupPlayer */]) {
             _flattenGroupPlayersRecur(player.players, finalPlayers);
         }
         else {
@@ -78797,10 +78797,10 @@ var MatExpansionPanel = (function (_super) {
                         { provide: AccordionItem, useExisting: Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["_24" /* forwardRef */])(function () { return MatExpansionPanel; }) }
                     ],
                     animations: [
-                        Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["j" /* trigger */])('bodyExpansion', [
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["g" /* state */])('collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* style */])({ height: '0px', visibility: 'hidden' })),
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["g" /* state */])('expanded', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* style */])({ height: '*', visibility: 'visible' })),
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* transition */])('expanded <=> collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])(EXPANSION_PANEL_ANIMATION_TIMING)),
+                        Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["k" /* trigger */])('bodyExpansion', [
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* state */])('collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* style */])({ height: '0px', visibility: 'hidden' })),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* state */])('expanded', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* style */])({ height: '*', visibility: 'visible' })),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["j" /* transition */])('expanded <=> collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])(EXPANSION_PANEL_ANIMATION_TIMING)),
                         ]),
                     ],
                 },] },
@@ -78945,23 +78945,23 @@ var MatExpansionPanelHeader = (function () {
                         '[@expansionHeight]': "{\n        value: _getExpandedState(),\n        params: {\n          collapsedHeight: collapsedHeight,\n          expandedHeight: expandedHeight\n        }\n    }",
                     },
                     animations: [
-                        Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["j" /* trigger */])('indicatorRotate', [
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["g" /* state */])('collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* style */])({ transform: 'rotate(0deg)' })),
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["g" /* state */])('expanded', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* style */])({ transform: 'rotate(180deg)' })),
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* transition */])('expanded <=> collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])(EXPANSION_PANEL_ANIMATION_TIMING)),
+                        Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["k" /* trigger */])('indicatorRotate', [
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* state */])('collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* style */])({ transform: 'rotate(0deg)' })),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* state */])('expanded', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* style */])({ transform: 'rotate(180deg)' })),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["j" /* transition */])('expanded <=> collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])(EXPANSION_PANEL_ANIMATION_TIMING)),
                         ]),
-                        Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["j" /* trigger */])('expansionHeight', [
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["g" /* state */])('collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* style */])({
+                        Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["k" /* trigger */])('expansionHeight', [
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* state */])('collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* style */])({
                                 height: '{{collapsedHeight}}',
                             }), {
                                 params: { collapsedHeight: '48px' },
                             }),
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["g" /* state */])('expanded', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* style */])({
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* state */])('expanded', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* style */])({
                                 height: '{{expandedHeight}}'
                             }), {
                                 params: { expandedHeight: '64px' }
                             }),
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* transition */])('expanded <=> collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])(EXPANSION_PANEL_ANIMATION_TIMING)),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["j" /* transition */])('expanded <=> collapsed', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])(EXPANSION_PANEL_ANIMATION_TIMING)),
                         ]),
                     ],
                 },] },
@@ -79576,10 +79576,10 @@ var MatFormField = (function () {
                     styles: [".mat-form-field{display:inline-block;position:relative;text-align:left}[dir=rtl] .mat-form-field{text-align:right}.mat-form-field-wrapper{position:relative}.mat-form-field-flex{display:inline-flex;align-items:baseline;width:100%}.mat-form-field-prefix,.mat-form-field-suffix{white-space:nowrap;flex:none}.mat-form-field-prefix .mat-icon,.mat-form-field-suffix .mat-icon{width:1em}.mat-form-field-prefix .mat-icon-button,.mat-form-field-suffix .mat-icon-button{font:inherit;vertical-align:baseline}.mat-form-field-prefix .mat-icon-button .mat-icon,.mat-form-field-suffix .mat-icon-button .mat-icon{font-size:inherit}.mat-form-field-infix{display:block;position:relative;flex:auto;min-width:0}.mat-form-field-placeholder-wrapper{position:absolute;left:0;box-sizing:content-box;width:100%;height:100%;overflow:hidden;pointer-events:none}.mat-form-field-placeholder{position:absolute;left:0;font:inherit;pointer-events:none;width:100%;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;transform:perspective(100px);-ms-transform:none;transform-origin:0 0;transition:transform .4s cubic-bezier(.25,.8,.25,1),color .4s cubic-bezier(.25,.8,.25,1),width .4s cubic-bezier(.25,.8,.25,1);display:none}[dir=rtl] .mat-form-field-placeholder{transform-origin:100% 0;left:auto;right:0}.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder,.mat-form-field-empty.mat-form-field-placeholder{display:block}.mat-form-field-autofill-control:-webkit-autofill+.mat-form-field-placeholder-wrapper .mat-form-field-placeholder{display:none}.mat-form-field-can-float .mat-form-field-autofill-control:-webkit-autofill+.mat-form-field-placeholder-wrapper .mat-form-field-placeholder{display:block;transition:none}.mat-form-field-placeholder:not(.mat-form-field-empty){transition:none}.mat-form-field-underline{position:absolute;height:1px;width:100%}.mat-form-field-underline.mat-disabled{background-position:0;background-color:transparent}.mat-form-field-underline .mat-form-field-ripple{position:absolute;height:1px;top:0;left:0;width:100%;transform-origin:50%;transform:scaleX(.5);visibility:hidden;transition:background-color .3s cubic-bezier(.55,0,.55,.2)}.mat-focused .mat-form-field-underline .mat-form-field-ripple{height:2px}.mat-focused .mat-form-field-underline .mat-form-field-ripple,.mat-form-field-invalid .mat-form-field-underline .mat-form-field-ripple{visibility:visible;transform:scaleX(1);transition:transform 150ms linear,background-color .3s cubic-bezier(.55,0,.55,.2)}.mat-form-field-subscript-wrapper{position:absolute;width:100%;overflow:hidden}.mat-form-field-placeholder-wrapper .mat-icon,.mat-form-field-subscript-wrapper .mat-icon{width:1em;height:1em;font-size:inherit;vertical-align:baseline}.mat-form-field-hint-wrapper{display:flex}.mat-form-field-hint-spacer{flex:1 0 1em}.mat-error{display:block} .mat-input-element{font:inherit;background:0 0;color:currentColor;border:none;outline:0;padding:0;margin:0;width:100%;max-width:100%;vertical-align:bottom}.mat-input-element:-moz-ui-invalid{box-shadow:none}.mat-input-element::placeholder{color:transparent!important}.mat-input-element::-moz-placeholder{color:transparent!important}.mat-input-element::-webkit-input-placeholder{color:transparent!important}.mat-input-element:-ms-input-placeholder{color:transparent!important}textarea.mat-input-element{resize:vertical;overflow:auto}"],
                     animations: [
                         // TODO(mmalerba): Use angular animations for placeholder animation as well.
-                        Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["j" /* trigger */])('transitionMessages', [
-                            Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["g" /* state */])('enter', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["h" /* style */])({ opacity: 1, transform: 'translateY(0%)' })),
-                            Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["i" /* transition */])('void => enter', [
-                                Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["h" /* style */])({ opacity: 0, transform: 'translateY(-100%)' }),
+                        Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["k" /* trigger */])('transitionMessages', [
+                            Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["h" /* state */])('enter', Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["i" /* style */])({ opacity: 1, transform: 'translateY(0%)' })),
+                            Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["j" /* transition */])('void => enter', [
+                                Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["i" /* style */])({ opacity: 0, transform: 'translateY(-100%)' }),
                                 Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["e" /* animate */])('300ms cubic-bezier(0.55, 0, 0.55, 0.2)'),
                             ]),
                         ]),
@@ -82427,27 +82427,27 @@ var MatProgressSpinnerModule = (function () {
  *
  * When the panel is removed from the DOM, it simply fades out linearly.
  */
-var transformPanel = Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["j" /* trigger */])('transformPanel', [
-    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["g" /* state */])('showing', Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["h" /* style */])({
+var transformPanel = Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["k" /* trigger */])('transformPanel', [
+    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["h" /* state */])('showing', Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["i" /* style */])({
         opacity: 1,
         minWidth: 'calc(100% + 32px)',
         transform: 'scaleY(1)'
     })),
-    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["g" /* state */])('showing-multiple', Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["h" /* style */])({
+    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["h" /* state */])('showing-multiple', Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["i" /* style */])({
         opacity: 1,
         minWidth: 'calc(100% + 64px)',
         transform: 'scaleY(1)'
     })),
-    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["i" /* transition */])('void => *', [
-        Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["h" /* style */])({
+    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["j" /* transition */])('void => *', [
+        Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["i" /* style */])({
             opacity: 0,
             minWidth: '100%',
             transform: 'scaleY(0)'
         }),
         Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["e" /* animate */])('150ms cubic-bezier(0.25, 0.8, 0.25, 1)')
     ]),
-    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["i" /* transition */])('* => void', [
-        Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["e" /* animate */])('250ms 100ms linear', Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["h" /* style */])({ opacity: 0 }))
+    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["j" /* transition */])('* => void', [
+        Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["e" /* animate */])('250ms 100ms linear', Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["i" /* style */])({ opacity: 0 }))
     ])
 ]);
 /**
@@ -82455,10 +82455,10 @@ var transformPanel = Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["
  * select's options. It is time delayed to occur 100ms after the overlay
  * panel has transformed in.
  */
-var fadeInContent = Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["j" /* trigger */])('fadeInContent', [
-    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["g" /* state */])('showing', Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["h" /* style */])({ opacity: 1 })),
-    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["i" /* transition */])('void => showing', [
-        Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["h" /* style */])({ opacity: 0 }),
+var fadeInContent = Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["k" /* trigger */])('fadeInContent', [
+    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["h" /* state */])('showing', Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["i" /* style */])({ opacity: 1 })),
+    Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["j" /* transition */])('void => showing', [
+        Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["i" /* style */])({ opacity: 0 }),
         Object(__WEBPACK_IMPORTED_MODULE_16__angular_animations__["e" /* animate */])('150ms 100ms cubic-bezier(0.55, 0, 0.55, 0.2)')
     ])
 ]);
@@ -84671,11 +84671,11 @@ var TooltipComponent = (function () {
                     preserveWhitespaces: false,
                     changeDetection: __WEBPACK_IMPORTED_MODULE_4__angular_core__["k" /* ChangeDetectionStrategy */].OnPush,
                     animations: [
-                        Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["j" /* trigger */])('state', [
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["g" /* state */])('initial, void, hidden', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* style */])({ transform: 'scale(0)' })),
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["g" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* style */])({ transform: 'scale(1)' })),
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* transition */])('* => visible', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])('150ms cubic-bezier(0.0, 0.0, 0.2, 1)')),
-                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* transition */])('* => hidden', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])('150ms cubic-bezier(0.4, 0.0, 1, 1)')),
+                        Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["k" /* trigger */])('state', [
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* state */])('initial, void, hidden', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* style */])({ transform: 'scale(0)' })),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["h" /* state */])('visible', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["i" /* style */])({ transform: 'scale(1)' })),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["j" /* transition */])('* => visible', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])('150ms cubic-bezier(0.0, 0.0, 0.2, 1)')),
+                            Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["j" /* transition */])('* => hidden', Object(__WEBPACK_IMPORTED_MODULE_6__angular_animations__["e" /* animate */])('150ms cubic-bezier(0.4, 0.0, 1, 1)')),
                         ])
                     ],
                     host: {
@@ -89465,7 +89465,7 @@ var BrowserAnimationBuilder = (function (_super) {
     BrowserAnimationBuilder.prototype.build = function (animation) {
         var /** @type {?} */ id = this._nextAnimationId.toString();
         this._nextAnimationId++;
-        var /** @type {?} */ entry = Array.isArray(animation) ? Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["f" /* sequence */])(animation) : animation;
+        var /** @type {?} */ entry = Array.isArray(animation) ? Object(__WEBPACK_IMPORTED_MODULE_3__angular_animations__["g" /* sequence */])(animation) : animation;
         issueAnimationCommand(this._renderer, null, id, 'register', [entry]);
         return new BrowserAnimationFactory(id, this._renderer);
     };

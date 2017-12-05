@@ -19,12 +19,18 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: FirstFormComponent
+        component: FirstFormComponent,
+        data: {
+          animation: 'home'
+        }
       },
       {
         path: 'response',
         component: RespostaComponent,
-        canActivate: [HomeProsseguirGuard]
+        canActivate: [HomeProsseguirGuard],
+        data: {
+          animation: 'response'
+        }
       }
     ]
   }
