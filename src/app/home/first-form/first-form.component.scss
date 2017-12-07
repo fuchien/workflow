@@ -13,7 +13,7 @@
       min-width: 30vw;
       max-width: 30vw;
       /* min-height: 34vh; */
-      min-height: 216px;
+      min-height: 168px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -28,6 +28,7 @@
       min-height: 25vh;
       max-height: 25vh;
       min-width: 80%;
+      margin-top: 26px;
       display: flex;
       flex-flow: column;
       justify-content: flex-start;
@@ -78,7 +79,7 @@
           color: #ffffff;
           text-transform: uppercase;
           height: 40px;
-          margin-top: 2vh;
+          margin-top: 10px;
         }
 
         .spinner {
@@ -106,8 +107,8 @@
     min-width: 90vw;
     max-width: 90vw;
     /* min-height: 50vh; */
-    min-height: 431px;
-    max-height: 431px;
+    min-height: 480px;
+    max-height: 480px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -119,7 +120,7 @@
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
 
     .flow {
-      margin-top: 150px;
+      margin-top: 200px;
       min-width: 80vw;
       max-width: 80vw;
       display: flex;
@@ -186,10 +187,9 @@
     min-width: 98%;
     /* min-height: 45vh;
     max-height: 45vh; */
-    max-height: 340px;
-    min-height: 340px;
+    max-height: 450px;
+    min-height: 450px;
     margin: 0 auto;
-    margin-top: 30.5px;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
@@ -206,26 +206,147 @@
 
       h3 {
         margin: 0;
+        margin-top: 30px;
       }
     }
     .result-body {
       min-width: 100%;
       border-radius: 4px;
       /* min-height: 23vh; */
-      min-height: 217px;
+      min-height: 310px;
       background-color: #ffffff;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
       display: flex;
+      flex-flow: column;
+      align-items: center;
       justify-content: space-between;
     }
 
-    .result-body-list {
+    .dados {
       min-width: 100%;
+      max-width: 100%;
+      max-height: 120px;
+      min-height: 120px;
+      margin: 0 auto;
+      margin-top: 30px;
+      padding: 0;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+  
+      .tile {
+          padding: 0;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: flex-start;
+          align-items: center;
+          list-style: none;
+          min-width: 90%;
+          min-height: 120px;
+          margin: 0;
+  
+          .grid {
+            margin-top: 20px;
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 25%;
+            min-height: 60px;
+
+            h4 {
+              margin: 0;
+              font-family: OpenSans;
+              text-align: left;
+              font-size: 11px;
+              text-transform: uppercase;
+              font-weight: bold;
+              color: #191919;
+            }
+
+            p {
+                margin: 0;
+                font-family: OpenSans;
+                text-align: left;
+                font-size: 11px;
+                line-height: 1.45;
+                color: #787878;
+            }
+          }
+        }
+      }
+
+      .cartoes {
+        min-width: 90%;
+        max-width: 90%;
+        max-height: 190px;
+        min-height: 190px;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-flow: column;
+
+        h4 {
+          font-family: OpenSans;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 1.5;
+          text-align: left;
+          color: #424455;
+          margin-top: 15px;
+          margin-bottom: 10px;
+        }
+
+        .contas {
+          min-height: 90%;
+          display: flex;
+          flex-flow: column;
+          align-items: center;
+
+          .contasUl {
+            min-width: 100%;
+            max-width: 100%;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: flex-start;
+
+            .contasLi {
+              width: 20%;
+              display: flex;
+              justify-content: space-around;
+              font-family: OpenSans;
+              font-size: 11px;
+              font-weight: bold;
+              color: #191919;
+            }
+
+            .contasLists {
+              margin-top: -15px;
+              font-family: OpenSans;
+              font-size: 11px;
+              line-height: 1.45;
+              text-align: left;
+              color: #787878;
+              display: flex;
+              align-items: center;
+
+              .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+                background-color: rgb(27, 142, 241) !important;
+              }
+              
+              .mat-ripple-element {
+                background: rgba(27, 142, 241, .4) !important;
+              }
+            }
+          }
+        }
+      }
     }
+
 
     .result-processar {
+      margin-top: 20px;
       min-width: 100%;
       display: flex;
       justify-content: flex-end;
@@ -244,4 +365,3 @@
         margin-top: -15px;
       }
     }
-  }

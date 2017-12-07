@@ -19,6 +19,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class GridListComponent implements OnInit {
 
   dadosState = 'ready'
+  isEdit: boolean = false
 
   @Input('dados') dados
   canais = ['Dog', 'Cat', 'Cow', 'Fox']
@@ -45,9 +46,14 @@ export class GridListComponent implements OnInit {
     }
   }
 
-  corrigirDados() {
+  alterarDados() {
 
-    
+    this.isEdit = true
+  }
+
+  salvarDados() {
+
+    this.isEdit = false
   }
 
 }

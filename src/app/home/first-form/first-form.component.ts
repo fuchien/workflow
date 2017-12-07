@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 import { FirstFormDatasService } from './first-form-datas.service';
+import { FirstFormService } from './first-form.service';
+import { SnackbarService } from '../../shared/snackbar/snackbar.service';
 
 @Component({
   selector: 'wff-first-form',
@@ -43,74 +46,85 @@ export class FirstFormComponent implements OnInit {
   localizando: boolean = false
   isResult: boolean = false
   
-  canais = ['Dog', 'Cat', 'Cow', 'Fox']
-  canalSelected = this.canais[0]
+  // canais = ['Dog', 'Cat', 'Cow', 'Fox']
+  canais: Observable<any>
+  filas: any
+  pessoas: any
+  filasSelecionadas: any
+  filaId: number
+  // canalSelected = this.canais[0]
 
-  dadosPessoais = {
-      nome: 'Lavinia Cardoso Ferreira',
-      cpf: '416.570.459-86',
-      agencia: '0183',
-      conta: '010034362',
-      pernumper: '392123861',
-      segmento: 'Van Gogh',
-      telefones: ['11 1234-5678', '11 98765-4321'],
-      emails: ['laviniacardoso@test.com', 'laviniaferreira@test.com'],
-      prosseguir: false
-  }
+  dadosPessoais: Dados
 
-  private canalForm: FormGroup
-  private filaForm: FormGroup
-  private cpfForm: FormGroup
+  private myForm: FormGroup
+  private dadosCartoes = []
 
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private snackbarService: SnackbarService,
+    private firstFormService: FirstFormService
   ) {
 
     // criar o FORMULARIO
-    this.canalForm = fb.group({
+    this.myForm = fb.group({
       'canal': [null, [Validators.required]],
-      'modalidade': [null, [Validators.required]]
-    })
-
-    this.filaForm = fb.group({
-      'fila': [null, [Validators.required]]
-    })
-
-    this.cpfForm = fb.group({
-      'cpf': ['', [Validators.required]]
+      'filaForm': fb.group({
+        'fila': [null, [Validators.required]]
+      }),
+      'cpfForm': fb.group({
+        'cpf': ['', [Validators.required]]
+      })
     })
   }
 
   ngOnInit() {
 
-    this.canalForm.valueChanges.subscribe(form => {
-      
-      if (form.canal != null && form.modalidade != null) {
+    this.myForm.get('filaForm.fila').disable()
+    this.myForm.get('cpfForm.cpf').disable()
 
-        this.value = 50
+    this.canais = this.firstFormService.pegarCanais()
+    this.firstFormService.pegarFilas()
+      .subscribe(filas => this.filas = filas)
+
+    this.firstFormService.pegarDados()
+      .subscribe(dados => this.pessoas = dados)
+
+    this.myForm.get('canal').valueChanges.subscribe(form => {
+      
+      if (form != null) {
+
+        this.filasSelecionadas = this.filas.filter(fila => fila.canal_id == form.ID)
+        this.value += 50
+        this.myForm.get('filaForm.fila').enable()
         this.filaIsDisabled = false
+
         return
       }
 
       this.value = 0
+      this.myForm.get('filaForm.fila').disable()
       this.filaIsDisabled = true
     })
 
-    this.filaForm.valueChanges.subscribe(form => {
+    this.myForm.get('filaForm').valueChanges.subscribe(form => {
       
       if (form.fila != null) {
 
-        this.value = 100
+        this.filaId = form.fila.ID
+
+        this.value += 50
+        this.myForm.get('cpfForm.cpf').enable()
         this.cpfIsDisabled = false
         return
       }
 
       this.value = 50
+      this.myForm.get('cpfForm.cpf').disable()
       this.cpfIsDisabled = true
     })
 
-    this.cpfForm.valueChanges.subscribe(form => {
+    this.myForm.get('cpfForm').valueChanges.subscribe(form => {
 
       if (form.cpf != '') {
 
@@ -121,17 +135,61 @@ export class FirstFormComponent implements OnInit {
     })
   }
 
-  localizarUser() {
-    
+  localizarUser(value, valid) {
+
+    if (!valid) return
+
+    let dados
+    if (value.cpfForm.cpf.length <= 8) {
+
+      dados = this.pessoas.find(pessoa => pessoa.pernumper == value.cpfForm.cpf)
+    }
+
+    if (value.cpfForm.cpf.length == 11) {
+      
+      dados = this.pessoas.find(pessoa => pessoa.cpf == value.cpfForm.cpf)
+    }
+
+    if (value.cpfForm.cpf.length == 16) {
+      
+      dados = this.pessoas.find(pessoa => pessoa.cnpj == value.cpfForm.cpf)
+    }
+
+    this.dadosPessoais = dados
     this.localizando = true
     this.isResult = true
+    this.snackbarService.notify(`CPF/CNPJ inválida!`)
   }
 
   prosseguir() {
-    
-    this.dadosPessoais.prosseguir = true
+
+    if (!this.dadosPessoais.cartaoSelecionada) return
+
     FirstFormDatasService.setDadosPessoais(this.dadosPessoais)
     this.router.navigate(['/home/response'])
   }
 
+  checarContas(contas) {
+
+    this.dadosPessoais.cartaoSelecionada = contas
+  }
+
+}
+
+export interface Dados {
+  nome: string
+  cpf: string
+  cnpj: string
+  pernumper: string
+  segmento: string
+  telefones: string
+  emails: string
+  cartao: string
+  cartoes: Cartoes[]
+  cartaoSelecionada: Cartoes
+}
+
+export interface Cartoes {
+  agencia: string
+  conta: string
 }

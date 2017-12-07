@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -14,6 +16,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,9 +26,12 @@ import { FirstFormComponent } from './home/first-form/first-form.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { GridListComponent } from './home/first-form/grid-list/grid-list.component';
 import { RespostaComponent } from './home/resposta/resposta.component';
+import { SnackbarComponent } from './shared/snackbar/snackbar.component';
 
 import { FirstFormDatasService } from './home/first-form/first-form-datas.service';
+import { SnackbarService } from './shared/snackbar/snackbar.service';
 import { HomeProsseguirGuard } from './guards/home-prosseguir.guard';
+import { FirstFormService } from './home/first-form/first-form.service';
 
 @NgModule({
   declarations: [
@@ -35,12 +41,15 @@ import { HomeProsseguirGuard } from './guards/home-prosseguir.guard';
     FirstFormComponent,
     FooterComponent,
     GridListComponent,
-    RespostaComponent
+    RespostaComponent,
+    SnackbarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
+    HttpModule,
     ReactiveFormsModule,
     AppRoutingModule,
     MatToolbarModule,
@@ -53,11 +62,14 @@ import { HomeProsseguirGuard } from './guards/home-prosseguir.guard';
     MatProgressSpinnerModule,
     MatTooltipModule,
     MatExpansionModule,
-    MatListModule
+    MatListModule,
+    MatRadioModule
   ],
   providers: [
     FirstFormDatasService,
-    HomeProsseguirGuard
+    HomeProsseguirGuard,
+    SnackbarService,
+    FirstFormService
   ],
   bootstrap: [AppComponent]
 })

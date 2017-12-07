@@ -3,7 +3,7 @@
   margin-top: 10.9px;
   min-width: 90vw;
   max-width: 90vw;
-  min-height: 191px;
+  min-height: 161px;
   display: flex;
   position: relative;
   border: 1px solid #d8d8d8;
@@ -12,8 +12,8 @@
     min-width: 100%;
     /* min-height: 45vh;
     max-height: 45vh; */
-    max-height: 190px;
-    min-height: 190px;
+    max-height: 161px;
+    min-height: 161px;
     margin-top: 1px;
     display: flex;
     justify-content: center;
@@ -23,8 +23,8 @@
       min-width: 100%;
       border-radius: 4px;
       /* min-height: 23vh; */
-      max-height: 190px;
-      min-height: 190px;
+      max-height: 161px;
+      min-height: 161px;
       background-color: #ffffff;
       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
       display: flex;
@@ -178,11 +178,20 @@
               min-width: 95%;
             }
     
-            form {
+            .form {
               min-width: 100%;
       
               .title {
                 min-width: 100%;
+
+                h4 {
+                  font-family: OpenSans;
+                  font-size: 11px;
+                  font-weight: bold;
+                  text-align: left;
+                  color: #191919;
+                  text-transform: uppercase;
+                }
               }
             }
   

@@ -90,7 +90,6 @@ export class RespostaComponent implements OnInit {
   step = 0;
 
   private respForm: FormGroup
-  private formTransacao: FormGroup
 
   constructor(
     private fb: FormBuilder,
@@ -98,13 +97,11 @@ export class RespostaComponent implements OnInit {
 
     // criar o FORMULARIO
     this.respForm = fb.group({
-      'resposta': [null, [Validators.required]],
-      'modalidade': [null, [Validators.required]],
-    })
-
-    // criar o FORMULARIO
-    this.formTransacao = fb.group({
-
+      'parecerForm': fb.group({
+        'resposta': [null, [Validators.required]],
+        'modalidade': [null, [Validators.required]],
+        'comentario': [null, [Validators.required]]
+      })
     })
   }
 

@@ -1,68 +1,57 @@
-<div class="forms">
-  <div class="inputs">
-    <form class="example-form" [formGroup]="canalForm">
-      <div class="title">
-        <h4>Canal</h4>
-        <mat-form-field class="example-full-width">
-          <mat-select formControlName="canal" [(ngModel)]="canalSelected">
-            <mat-option>--</mat-option>
-            <mat-option *ngFor="let canal of canais" [value]="canal">
-              {{canal}}
-            </mat-option>
-          </mat-select>
-          <!-- <mat-icon matSuffix>keyboard_arrow_down</mat-icon> -->
-        </mat-form-field>
+<form [formGroup]="myForm">
+  <div class="forms">
+    <div class="inputs">
+      <div class="example-form">
+        <div class="title">
+          <h4>Canal</h4>
+          <mat-form-field class="example-full-width">
+            <mat-select formControlName="canal" placeholder="Selecione o canal" [(ngModel)]="canalSelected">
+              <mat-option *ngFor="let canal of canais | async" [value]="canal">
+                {{canal.name}}
+              </mat-option>
+            </mat-select>
+            <!-- <mat-icon matSuffix>keyboard_arrow_down</mat-icon> -->
+          </mat-form-field>
+        </div>
       </div>
-      <div class="title">
-        <h4>Modalidade</h4>
-        <mat-form-field class="example-full-width">
-          <mat-select placeholder="Selecione a modalidade" formControlName="modalidade">
-            <mat-option>--</mat-option>
-            <mat-option *ngFor="let canal of canais" [value]="canal">
-              {{canal}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+    </div>
+    <div class="inputs fila" [class.disabled]="filaIsDisabled" formGroupName="filaForm">
+      <div class="example-form">
+        <div class="title">
+          <h4>Fila</h4>
+          <mat-form-field class="example-full-width">
+            <mat-select placeholder="Selecione a fila" formControlName="fila">
+              <mat-option *ngFor="let fila of filasSelecionadas" [value]="fila">
+                {{fila.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="title">
+          <h4>Resumo da fila</h4>
+          <p>{{ filaId }}</p>
+        </div>
       </div>
-    </form>
+    </div>
+    <div class="inputs" [class.disabled]="cpfIsDisabled" #localizar formGroupName="cpfForm">
+      <div class="example-form" >
+        <div class="title">
+          <h4>cpf ou cnpj</h4>
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="cpf" placeholder="Ex.: 123.123.123-10">
+          </mat-form-field>
+        </div>
+        <div class="localizar">
+          <button mat-raised-button color="primary" matTooltip="Localizar o usuário" class="btnLocalizar"
+            *ngIf="!localizando" (click)="localizarUser(myForm.value, myForm.valid)">
+            Localizar
+          </button>
+          <mat-spinner class="spinner" color="primary" *ngIf="localizando" diameter="30" strokeWidth="5"></mat-spinner>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="inputs fila" [class.disabled]="filaIsDisabled">
-    <form class="example-form" [formGroup]="filaForm">
-      <div class="title">
-        <h4>Fila</h4>
-        <mat-form-field class="example-full-width">
-          <mat-select placeholder="Selecione a fila" formControlName="fila">
-            <mat-option>--</mat-option>
-            <mat-option *ngFor="let canal of canais" [value]="canal">
-              {{canal}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="title">
-        <h4 *ngIf="flow2">Resumo da fila</h4>
-        <p *ngIf="flow2">Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
-      </div>
-    </form>
-  </div>
-  <div class="inputs" [class.disabled]="cpfIsDisabled" #localizar>
-    <form class="example-form" [formGroup]="cpfForm">
-      <div class="title">
-        <h4>cpf ou cnpj</h4>
-        <mat-form-field class="example-full-width">
-          <input matInput formControlName="cpf" placeholder="Ex.: 123.123.123-10">
-        </mat-form-field>
-      </div>
-      <div class="localizar">
-        <button mat-raised-button color="primary" matTooltip="Localizar o usuário" class="btnLocalizar"
-          *ngIf="!localizando" [disabled]="!podeLocalizar" (click)="localizarUser()">
-          Localizar
-        </button>
-        <mat-spinner class="spinner" color="primary" *ngIf="localizando" diameter="30" strokeWidth="5"></mat-spinner>
-      </div>
-    </form>
-  </div>
-</div>
+</form>
 
 <div class="flows" [class.isresult]="isResult">
   <div class="flow" *ngIf="!isResult">
@@ -90,10 +79,60 @@
 
   <div class="result" *ngIf="isResult" [@resultAppeared]="resultState">
     <div class="result-title">
-      <h3>Resultado</h3>
+      <h3>Dados cadastrais</h3>
     </div>
     <div class="result-body">
-      <wff-grid-list [dados]='dadosPessoais' class="result-body-list"></wff-grid-list>
+        <div class="dados">
+          <ul class="tile">
+            <li class="grid">
+              <h4>Nome</h4>
+              <p>{{dadosPessoais.nome}}</p>
+            </li>
+            <li class="grid">
+              <h4>Segmento</h4>
+              <p>{{dadosPessoais.segmento}}</p>
+            </li>
+            <li class="grid">
+              <h4>Telefones</h4>
+              <p *ngFor="let t of dadosPessoais.telefones">{{t}}</p>
+            </li>
+            <li class="grid">
+              <h4>E-mails</h4>
+              <p *ngFor="let e of dadosPessoais.emails">{{e}}</p>
+            </li>
+            <li class="grid">
+              <h4 *ngIf="dadosPessoais.cpf">Cpf</h4>
+              <h4 *ngIf="dadosPessoais.cnpj">Cnpj</h4>
+              <p *ngIf="dadosPessoais.cpf">{{dadosPessoais.cpf}}</p>
+              <p *ngIf="dadosPessoais.cnpj">{{dadosPessoais.cnpj}}</p>
+            </li>
+            <li class="grid">
+              <h4>Pernunper</h4>
+              <p>{{dadosPessoais?.pernumper}}</p>
+            </li>
+            <li class="grid">
+              <h4>Cartão</h4>
+              <p *ngFor="let c of dadosPessoais.cartao">{{c}}</p>
+            </li>
+          </ul>
+        </div>
+        <div class="cartoes">
+          <h4>Contas e agências vinculadas</h4>
+          <div class="contas">
+            <ul class="contasUl">
+              <li class="contasLi" *ngFor="let c of dadosPessoais.cartoes">
+                <span>Agencia</span>
+                <span>Conta</span>
+              </li>
+            </ul>
+            <ul class="contasUl">
+              <li class="contasLi contasLists" *ngFor="let c of dadosPessoais.cartoes">
+                <mat-radio-button class="btnCheck" (change)="checarContas(c)"><span>{{ c.agencia }}</span></mat-radio-button>
+                <span>{{ c.conta }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
     </div>
     <div class="result-processar" [@btnAppeared]="btnState">
         <button mat-raised-button color="primary" matTooltip="Prosseguir"

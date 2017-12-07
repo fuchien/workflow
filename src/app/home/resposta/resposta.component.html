@@ -6,7 +6,8 @@
   </div>
 </div>
 <div class="accordions">
-  <div class="respostas">
+  <form [formGroup]="respForm">
+  <div class="respostas" formGroupName="parecerForm">
     <mat-expansion-panel class="panel" 
       [expanded]="step === 0" (opened)="setStep(0)">
       <mat-expansion-panel-header>
@@ -21,9 +22,9 @@
       <div class="accordion-body accordionParecer">
         <div class="forms-resp">
           <div class="form-left">
-            <form [formGroup]="respForm">
+            <div class="form">
               <div class="title">
-                <h4>Modalidade</h4>
+                <h4>Resposta</h4>
                 <mat-form-field class="example-full-width">
                   <mat-select placeholder="Selecione a modalidade" formControlName="resposta">
                     <mat-option>--</mat-option>
@@ -45,18 +46,18 @@
                   </mat-select>
                 </mat-form-field>
               </div>
-            </form>
+            </div>
           </div>
           <div class="form-right">
-            <form [formGroup]="respForm">
+            <div class="form">
               <div class="title">
                 <h4>Comentário do analista</h4>
                 <mat-form-field class="example-full-width">
                   <textarea matInput matTextareaAutosize matAutosizeMinRows="6"
-                      matAutosizeMaxRows="6" class="textarea"></textarea>
+                      matAutosizeMaxRows="6" class="textarea" formControlName="comentario"></textarea>
                 </mat-form-field>
               </div>
-            </form>
+            </div>
           </div>
         </div>
 
@@ -82,7 +83,7 @@
       
       <div class="accordion-body accordionTransacao">
         <div class="forms-resp">
-          <form [formGroup]="formTransacao" class="formTransacao">
+          <div class="formTransacao">
             <div class="title">
               <h4>Selecione as transações afetadas</h4>
               <h6>Selecionar todas transações</h6>
@@ -120,7 +121,7 @@
                 </mat-selection-list>
               </div>
             </div>
-          </form>
+          </div>
         </div>
 
         <div class="prosseguir">
@@ -244,4 +245,5 @@
       </div>
     </mat-expansion-panel>
   </div>
+  </form>
 </div>

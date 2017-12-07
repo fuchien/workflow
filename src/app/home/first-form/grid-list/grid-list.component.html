@@ -5,29 +5,35 @@
       <p>{{dados.nome}}</p>
     </li>
     <li class="grid" [@dadosAppeared]="dadosState">
-      <h4>Agência</h4>
-      <p>{{dados.agencia}}</p>
+      <h4>Segmento</h4>
+      <p *ngIf="!isEdit">{{dados.segmento}}</p>
+      <mat-form-field class="example-full-width" *ngIf="isEdit">
+        <input matInput [(ngModel)]="dados.segmento">
+      </mat-form-field>
     </li>
     <li class="grid" [@dadosAppeared]="dadosState">
-      <h4>Cpf</h4>
-      <p>{{dados.cpf}}</p>
-    </li>
-    <li class="grid" [@dadosAppeared]="dadosState">
-      <h4>Conta</h4>
-      <p>{{dados.conta}}</p>
+      <h4 *ngIf="dados.cpf">Cpf</h4>
+      <h4 *ngIf="dados.cnpj">Cnpj</h4>
+      <p *ngIf="dados.cpf && !isEdit">{{dados.cpf}}</p>
+      <p *ngIf="dados.cnpj && !isEdit">{{dados.cnpj}}</p>
+      <mat-form-field class="example-full-width" *ngIf="dados.cpf && isEdit">
+        <input matInput [(ngModel)]="dados.cpf">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" *ngIf="dados.cnpj && isEdit">
+        <input matInput [(ngModel)]="dados.cnpj">
+      </mat-form-field>
     </li>
     <li class="grid" [@dadosAppeared]="dadosState">
       <h4>Pernumper</h4>
-      <p>{{dados.pernumper}}</p>
-    </li>
-    <li class="grid" [@dadosAppeared]="dadosState">
-      <h4>Segmento</h4>
-      <p>{{dados.segmento}}</p>
+      <p *ngIf="!isEdit">{{dados.pernumper}}</p>
+      <mat-form-field class="example-full-width" *ngIf="isEdit">
+        <input matInput [(ngModel)]="dados.pernumper">
+      </mat-form-field>
     </li>
   </ul>
 </div>
 <div class="dado dados2">
-  <div class="dados-right">
+  <!-- <div class="dados-right"> -->
     <ul class="tile">
       <li class="grid" [@dadosAppeared]="dadosState">
         <h4>Telefones</h4>
@@ -37,22 +43,33 @@
         <h4>Emails</h4>
         <p *ngFor="let email of dados.emails">{{email}}</p>
       </li>
+      <li class="grid conta" [@dadosAppeared]="dadosState">
+        <h4>Conta e agência selecionada</h4>
+        <p *ngIf="!isEdit">{{ dados.cartaoSelecionada.agencia }} {{ dados.cartaoSelecionada.conta }}</p>
+        <table class="example-full-width" cellspacing="0" *ngIf="isEdit"><tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="dados.cartaoSelecionada.agencia">
+          </mat-form-field></td>
+          <td><mat-form-field class="example-full-width">
+            <input matInput [(ngModel)]="dados.cartaoSelecionada.conta">
+          </mat-form-field></td>
+        </tr></table>
+      </li>
+      <li class="grid conta" [@dadosAppeared]="dadosState">
+        <button mat-raised-button color="primary" matTooltip="Corrigir os Dados"
+          (click)="alterarDados()" *ngIf="!isEdit">
+          <mat-icon matSuffix class="icon">mode_edit</mat-icon>
+          Atualizar dados
+        </button>
+        <button mat-raised-button color="primary" matTooltip="Corrigir os Dados"
+          (click)="salvarDados()" *ngIf="isEdit">
+          <mat-icon matSuffix class="icon">mode_edit</mat-icon>
+          Salvar alterações
+        </button>
+      </li>
     </ul>
-  </div>
-  <div class="dados-right">
-    <form class="example-form" [formGroup]="contaForm" *ngIf="!buttonCorrigirDados">
-      <div class="title">
-        <h4>Canal</h4>
-        <mat-form-field class="example-full-width">
-          <mat-select placeholder="Selecione o canal" class="select" formControlName="conta">
-            <mat-option>--</mat-option>
-            <mat-option *ngFor="let canal of canais" [value]="canal">
-              {{canal}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-    </form>
+  <!-- </div> -->
+  <!-- <div class="dados-right">
     <ul class="tile" *ngIf="buttonCorrigirDados">
       <li class="grid corrigir" [@dadosAppeared]="dadosState">
         <h4>Conta selecionada</h4>
@@ -66,5 +83,5 @@
         </button>
       </li>
     </ul>
-  </div>
+  </div> -->
 </div>

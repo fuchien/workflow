@@ -1,8 +1,8 @@
 .dado {
     min-width: 50%;
     max-width: 50%;
-    max-height: 180px;
-    min-height: 180px;
+    max-height: 160px;
+    min-height: 160px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -15,14 +15,21 @@
         align-items: center;
         list-style: none;
         min-width: 90%;
+        min-height: 120px;
+        max-height: 120px;
+        margin: 0;
+        margin-top: 15px;
 
         .grid {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: flex-start;
-        width: 45%;
-        margin-top: 20px;
+            margin-top: 15px;
+            display: flex;
+            flex-flow: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            min-width: 45%;
+            max-width: 45%;
+            min-height: 60px;
+            max-height: 60px;
 
             h4 {
                 margin: 0;
@@ -42,6 +49,28 @@
                 line-height: 1.45;
                 color: #787878;
             }
+
+            .example-full-width {
+                padding: 0;
+                margin: 0;
+                max-height: 10px;
+                max-width: 50%;
+
+                td {
+                    padding: 0;
+                    margin: 0;
+                    max-height: 10px;
+                    max-width: 100px;
+
+                    .example-full-width {
+                        padding: 0;
+                        margin: 0;
+                        max-height: 10px;
+                        max-width: 100%;
+                        min-width: 100%;
+                    }
+                }
+            }
         }
     }
 }
@@ -49,24 +78,18 @@
 .dados2 {
     min-width: 50%;
     max-width: 50%;
-    /* max-height: 60%; */
-    max-height: 180px;
-    min-height: 180px;
     display: flex;
-    flex-flow: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
 
-    .dados-right {
-        min-width: 100%;
-        max-width: 100%;
-        display: flex;
-        align-items: flex-start;
+    .tile .conta {
 
-        .tile .corrigir {
-            margin-top: 5px;
+        h4 {
+            color: #33cccc;
+        }
 
         button {
-            width: 216px;
+            width: 228px;
             height: 32px;
             border-radius: 21px;
             background-color: #424455;
@@ -81,13 +104,12 @@
                 }
             }
         }
-        .example-form .title .example-full-width {
-            min-width: 90%;
-            padding: 0;
+    .example-form .title .example-full-width {
+        min-width: 90%;
+        padding: 0;
 
-            .select {
-                padding: 0;
-            }
+        .select {
+            padding: 0;
         }
     }
 }

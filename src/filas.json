@@ -1,0 +1,794 @@
+{
+    "filas": [
+        {
+            "ID": 1,
+            "name": "Cred_103-I",
+            "canal_id": "1"
+        },
+        {
+            "ID": 2,
+            "name": "Cred_103-I-NP",
+            "canal_id": "1"
+        },
+        {
+            "ID": 3,
+            "name": "Cred_103-I-NP-SP",
+            "canal_id": "1"
+        },
+        {
+            "ID": 4,
+            "name": "Cred_103-N",
+            "canal_id": "1"
+        },
+        {
+            "ID": 5,
+            "name": "Cred_103-N-NP",
+            "canal_id": "1"
+        },
+        {
+            "ID": 6,
+            "name": "Cred_103-N-NP-SP",
+            "canal_id": "1"
+        },
+        {
+            "ID": 7,
+            "name": "Cred_103-N-NP-VSP_Limite",
+            "canal_id": "1"
+        },
+        {
+            "ID": 8,
+            "name": "Adquirentes",
+            "canal_id": "1"
+        },
+        {
+            "ID": 9,
+            "name": "Cred_AR",
+            "canal_id": "1"
+        },
+        {
+            "ID": 10,
+            "name": "Cred_BTER",
+            "canal_id": "1"
+        },
+        {
+            "ID": 11,
+            "name": "Cartão_Emergencial",
+            "canal_id": "1"
+        },
+        {
+            "ID": 12,
+            "name": "Cred_ChipStder",
+            "canal_id": "1"
+        },
+        {
+            "ID": 13,
+            "name": "Cred_ChipStder_AR",
+            "canal_id": "1"
+        },
+        {
+            "ID": 14,
+            "name": "Filtro_PGT_CR",
+            "canal_id": "1"
+        },
+        {
+            "ID": 15,
+            "name": "GA",
+            "canal_id": "1"
+        },
+        {
+            "ID": 16,
+            "name": "Cred_HPUE_R",
+            "canal_id": "1"
+        },
+        {
+            "ID": 17,
+            "name": "Invasao_Conta",
+            "canal_id": "1"
+        },
+        {
+            "ID": 18,
+            "name": "Cred_ListaNegra-CSP",
+            "canal_id": "1"
+        },
+        {
+            "ID": 19,
+            "name": "Cred_MobileBanking",
+            "canal_id": "1"
+        },
+        {
+            "ID": 20,
+            "name": "Cred_MRAI",
+            "canal_id": "1"
+        },
+        {
+            "ID": 21,
+            "name": "Cred_MRI",
+            "canal_id": "1"
+        },
+        {
+            "ID": 22,
+            "name": "Cred_MRN",
+            "canal_id": "1"
+        },
+        {
+            "ID": 23,
+            "name": "Cred_MRR",
+            "canal_id": "1"
+        },
+        {
+            "ID": 24,
+            "name": "Cred_MRR_I",
+            "canal_id": "1"
+        },
+        {
+            "ID": 25,
+            "name": "Cred_MRR_II",
+            "canal_id": "1"
+        },
+        {
+            "ID": 26,
+            "name": "Cred_PA4",
+            "canal_id": "1"
+        }, {
+            "ID": 27,
+            "name": "Cred_PGT",
+            "canal_id": "1"
+        },
+        {
+            "ID": 28,
+            "name": "Cred_PGT-Canais",
+            "canal_id": "1"
+        },
+        {
+            "ID": 29,
+            "name": "Cred_PGT-IB",
+            "canal_id": "1"
+        },
+        {
+            "ID": 30,
+            "name": "Poc_Crédito",
+            "canal_id": "1"
+        },
+        {
+            "ID": 31,
+            "name": "Cred_PUC_Crédito",
+            "canal_id": "1"
+        }, {
+            "ID": 32,
+            "name": "Saque_Emergencial",
+            "canal_id": "1"
+        },
+        {
+            "ID": 33,
+            "name": "Cred_SCDOC_Online",
+            "canal_id": "1"
+        },
+        {
+            "ID": 34,
+            "name": "Cred_SCTrans_Online",
+            "canal_id": "1"
+        },
+        
+        {
+            "ID": 35,
+            "name": "Cred_TAM",
+            "canal_id": "1"
+        },
+        {
+            "ID": 36,
+            "name": "Cred_Trans.NaoFinanceiras",
+            "canal_id": "1"
+        },
+        {
+            "ID": 37,
+            "name": "UTL_Externo_CR",
+            "canal_id": "1"
+        },
+        {
+            "ID": 38,
+            "name": "Cred_PABIOMETRIA",
+            "canal_id": "1"
+        },
+        {
+            "ID": 39,
+            "name": "Cred_ScoreBandeiras",
+            "canal_id": "1"
+        },
+        {
+            "ID": 40,
+            "name": "VCAS",
+            "canal_id": "1"
+        },
+        {
+            "ID": 41,
+            "name": "103_CAS_AR",
+            "canal_id": "1"
+        },
+        {
+            "ID": 42,
+            "name": "103-CAS",
+            "canal_id": "1"
+        },
+        {
+            "ID": 43,
+            "name": "Cred_103-AR",
+            "canal_id": "1"
+        },
+        {
+            "ID": 44,
+            "name": "Cred_103-N-NP_II",
+            "canal_id": "1"
+        },
+        {
+            "ID": 45,
+            "name": "Cred_GA_AR",
+            "canal_id": "1"
+        },
+        {
+            "ID": 46,
+            "name": "Cred_SPay_103",
+            "canal_id": "1"
+        },
+        {
+            "ID": 47,
+            "name": "Cred_SPay_MST",
+            "canal_id": "1"
+        },
+        {
+            "ID": 48,
+            "name": "Cred_SPay_NFC",
+            "canal_id": "1"
+        },
+        {
+            "ID": 49,
+            "name": "Cred_Travel",
+            "canal_id": "1"
+        },
+        {
+            "ID": 50,
+            "name": "IBPF_DEB_TED",
+            "canal_id": "1"
+        },
+        {
+            "ID": 51,
+            "name": "PGT",
+            "canal_id": "1"
+        },
+        {
+            "ID": 52,
+            "name": "PGT-Canais",
+            "canal_id": "1"
+        },
+        {
+            "ID": 53,
+            "name": "PGT-IB",
+            "canal_id": "1"
+        },
+        {
+            "ID": 54,
+            "name": "SPay-MST",
+            "canal_id": "1"
+        },
+        {
+            "ID": 55,
+            "name": "SPay-NFC",
+            "canal_id": "1"
+        },
+        {
+            "ID": 56,
+            "name": "Trans.NaoFinanceiras",
+            "canal_id": "1"
+        },
+        {
+            "ID": 57,
+            "name": "Cred_CartaoVirtual_BTE",
+            "canal_id": "1"
+        },
+        {
+            "ID": 58,
+            "name": "Cred_CartaoVirtual",
+            "canal_id": "1"
+        },
+        {
+            "ID": 59,
+            "name": "Cred_103-CartãoVirtual",
+            "canal_id": "1"
+        },
+        {
+            "ID": 60,
+            "name": "Cred_WayTrans.NaoFinanceiras",
+            "canal_id": "1"
+        },
+        {
+            "ID": 61,
+            "name": "Cred_SantanderWay",
+            "canal_id": "1"
+        },
+        {
+            "ID": 62,
+            "name": "Cred_SantanderWay_103",
+            "canal_id": "1"
+        },
+        {
+            "ID": 63,
+            "name": "Cred_103-WayTrans.NFinanceiras",
+            "canal_id": "1"
+        },
+        {
+            "ID": 64,
+            "name": "Cred_103-PGT-IB",
+            "canal_id": "1"
+        },
+        {
+            "ID": 65,
+            "name": "Cred_103-AR-Select&Private",
+            "canal_id": "1"
+        },
+        {
+            "ID": 66,
+            "name": "Cred_103-N-Select&Private",
+            "canal_id": "1"
+        },
+        {
+            "ID": 67,
+            "name": "SAS",
+            "canal_id": "1"
+        },
+        {
+            "ID": 68,
+            "name": "Cred_SantanderPass",
+            "canal_id": "1"
+        },
+        {
+            "ID": 69,
+            "name": "Deb_CHIP",
+            "canal_id": "2"
+        },
+        {
+            "ID": 70,
+            "name": "Deb_CHIP_AR",
+            "canal_id": "2"
+        },
+        {
+            "ID": 71,
+            "name": "Deb_DPUC",
+            "canal_id": "2"
+        },
+        {
+            "ID": 72,
+            "name": "Deb_DRC",
+            "canal_id": "2"
+        },
+        {
+            "ID": 73,
+            "name": "Deb_DTB_AR",
+            "canal_id": "2"
+        },
+        {
+            "ID": 74,
+            "name": "Deb_AR",
+            "canal_id": "2"
+        },
+        {
+            "ID": 75,
+            "name": "Deb_Golpe",
+            "canal_id": "2"
+        },
+        {
+            "ID": 76,
+            "name": "Deb_DCI",
+            "canal_id": "2"
+        },
+        {
+            "ID": 77,
+            "name": "Deb_DCNP",
+            "canal_id": "2"
+        },
+        {
+            "ID": 78,
+            "name": "Deb_PGT_N",
+            "canal_id": "2"
+        },
+        {
+            "ID": 79,
+            "name": "Deb_PGT_R",
+            "canal_id": "2"
+        },
+        {
+            "ID": 80,
+            "name": "Deb_DCN",
+            "canal_id": "2"
+        },
+        {
+            "ID": 81,
+            "name": "Deb_DMRR",
+            "canal_id": "2"
+        },
+        {
+            "ID": 82,
+            "name": "Deb_DSQ_103",
+            "canal_id": "2"
+        },
+        {
+            "ID": 83,
+            "name": "Deb_DSQI",
+            "canal_id": "2"
+        },
+        {
+            "ID": 84,
+            "name": "Lynx Cielo DB",
+            "canal_id": "2"
+        },{
+            "ID": 85,
+            "name": "UTL_Externo_DB",
+            "canal_id": "2"
+        },
+        {
+            "ID": 86,
+            "name": "Deb_BIOMETRIA",
+            "canal_id": "2"
+        },
+        {
+            "ID": 87,
+            "name": "Deb_103_SamsungPay",
+            "canal_id": "2"
+        },
+        {
+            "ID": 88,
+            "name": "Deb_SPay_103",
+            "canal_id": "2"
+        },
+        {
+            "ID": 89,
+            "name": "Deb_SPay_MST",
+            "canal_id": "2"
+        },
+        {
+            "ID": 90,
+            "name": "Deb_SPay_NFC",
+            "canal_id": "2"
+        },
+        {
+            "ID": 91,
+            "name": "Deb_DCNP_103",
+            "canal_id": "2"
+        },
+        {
+            "ID": 92,
+            "name": "Deb_SantanderWay",
+            "canal_id": "2"
+        },
+        {
+            "ID": 93,
+            "name": "Deb_SantanderPas",
+            "canal_id": "2"
+        },
+        {
+            "ID": 94,
+            "name": "DEB_ATM_103",
+            "canal_id": "2"
+        },
+        {
+            "ID": 95,
+            "name": "CAS_CanalCombinado",
+            "canal_id": "3"
+        },
+        {
+            "ID": 96,
+            "name": "Central_Atendimento_SL",
+            "canal_id": "3"
+        },
+        {
+            "ID": 97,
+            "name": "Filtro_Fraude_SL",
+            "canal_id": "3"
+        },
+        {
+            "ID": 99,
+            "name": "CAS_NaoFinanceiras",
+            "canal_id": "3"
+        },
+        {
+            "ID": 100,
+            "name": "CAS_TED",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 101,
+            "name": "CAS_AR",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 102,
+            "name": "CAS_MR",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 103,
+            "name": "CAS_PGT",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 104,
+            "name": "PJPK_SL",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 105,
+            "name": "CCscore99_103",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 106,
+            "name": "Cscore99",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 107,
+            "name": "IBPF_STR",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 108,
+            "name": "IBPF_Ataque_DifContas",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 109,
+            "name": "PJPK_PF",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 110,
+            "name": "Trebbia PF",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 111,
+            "name": "IBPF_NIPF_DEB_TED",
+            "canal_id": "3"
+        },
+        
+        {
+            "ID": 112,
+            "name": "IBPF_NEURAL",
+            "canal_id": "3"
+        },
+        {
+            "ID": 113,
+            "name": "IBPF_TIT_C",
+            "canal_id": "3"
+        },
+        {
+            "ID": 114,
+            "name": "IBPF_DEB_103",
+            "canal_id": "3"
+        },
+        {
+            "ID": 115,
+            "name": "IBPF_DEB_AR",
+            "canal_id": "3"
+        },
+        {
+            "ID": 116,
+            "name": "IBPF_DEB_BR",
+            "canal_id": "3"
+        },
+        {
+            "ID": 117,
+            "name": "IBPF_DEB_CSO",
+            "canal_id": "3"
+        },
+        {
+            "ID": 118,
+            "name": "IBPF_DEB_MR",
+            "canal_id": "3"
+        },
+        {
+            "ID": 119,
+            "name": "IBPF_NaoFinanceiras",
+            "canal_id": "3"
+        },
+        {
+            "ID": 120,
+            "name": "IBPF_DEB_ARREC",
+            "canal_id": "3"
+        },
+        {
+            "ID": 121,
+            "name": "IBPF_Automação",
+            "canal_id": "3"
+        },
+        {
+            "ID": 122,
+            "name": "Mobile_HASH",
+            "canal_id": "3"
+        },
+        {
+            "ID": 123,
+            "name": "IBPF_NaoFinanceiras",
+            "canal_id": "3"
+        },
+        {
+            "ID": 124,
+            "name": "MBBPF_103",
+            "canal_id": "3"
+        },
+        {
+            "ID": 125,
+            "name": "IBscore99_103",
+            "canal_id": "3"
+        },
+        {
+            "ID": 126,
+            "name": "IBscore99",
+            "canal_id": "3"
+        },
+        {
+            "ID": 127,
+            "name": "Central_Atendimento_IB",
+            "canal_id": "3"
+        },
+        {
+            "ID": 128,
+            "name": "Filtro_Fraude_IB",
+            "canal_id": "3"
+        },
+        {
+            "ID": 129,
+            "name": "MobileBanking_IBPF",
+            "canal_id": "3"
+        },
+        {
+            "ID": 130,
+            "name": "MobileBanking_IBPF_TED",
+            "canal_id": "3"
+        },
+        {
+            "ID": 131,
+            "name": "Mobile_Agendamento",
+            "canal_id": "3"
+        },
+        {
+            "ID": 132,
+            "name": "Abertura_ContaDigital",
+            "canal_id": "3"
+        },
+        {
+            "ID": 133,
+            "name": "IBPJ_AR",
+            "canal_id": "3"
+        },
+        {
+            "ID": 134,
+            "name": "IBPJ_CYB",
+            "canal_id": "3"
+        },
+        {
+            "ID": 135,
+            "name": "PJPK_PJ",
+            "canal_id": "3"
+        },
+        {
+            "ID": 136,
+            "name": "Trebbia PJ",
+            "canal_id": "3"
+        },
+        {
+            "ID": 137,
+            "name": "IBPJ_ARREC",
+            "canal_id": "3"
+        },
+        {
+            "ID": 138,
+            "name": "IBPJ_TRANSF",
+            "canal_id": "3"
+        },
+        {
+            "ID": 139,
+            "name": "REVIEW",
+            "canal_id": "3"
+        },
+        {
+            "ID": 140,
+            "name": "FILTRO IP",
+            "canal_id": "3"
+        },
+        {
+            "ID": 141,
+            "name": "DENY",
+            "canal_id": "3"
+        },
+        {
+            "ID": 142,
+            "name": "IBJ_AA",
+            "canal_id": "3"
+        }
+        
+    ],
+    "pessoas": [
+        {
+            "nome": "Kelvin",
+            "cpf": "12345678911",
+            "segmento": "Van Gogh",
+            "telefones": [
+                "11 1111-1111",
+                "22 2222-2222"
+            ],
+            "emails": [
+                "kelvin@rsi.com.br",
+                "kelvin@br.ibm.com"
+            ],
+            "pernumper": 21312312,
+            "cartao": [
+                "1234 1234 1234 1234",
+                "5678 5678 5678 5678"
+            ],
+            "cartoes": [
+                {
+                    "agencia": 4120,
+                    "conta": 312312
+                },
+                {
+                    "agencia": 820,
+                    "conta": 425312
+                }
+            ]
+        },
+        {
+            "nome": "Chien",
+            "cnpj": "5532123456789111",
+            "segmento": "Select",
+            "telefones": [
+                "33 3333-3333",
+                "22 2222-2222"
+            ],
+            "emails": [
+                "kelvin@rsi.com.br",
+                "kelvin@br.ibm.com"
+            ],
+            "cartao": [
+                "1234 1234 1234 1234",
+                "5678 5678 5678 5678"
+            ],
+            "cartoes": [
+                {
+                    "agencia": 4120,
+                    "conta": 312312
+                },
+                {
+                    "agencia": 820,
+                    "conta": 425312
+                }
+            ]
+        },
+        {
+            "nome": "Kelvin 2",
+            "cpf": "82345678911",
+            "segmento": "Select",
+            "telefones": [
+                "33 3333-3333",
+                "22 2222-2222"
+            ],
+            "emails": [
+                "kelvin@rsi.com.br",
+                "kelvin@br.ibm.com"
+            ],
+            "cartao": [
+                "1234 1234 1234 1234",
+                "5678 5678 5678 5678"
+            ]
+        }
+    ]
+}
