@@ -36,9 +36,9 @@
     <div class="inputs" [class.disabled]="cpfIsDisabled" #localizar>
       <div class="example-form" >
         <div class="title">
-          <h4>cpf ou cnpj</h4>
+          <h4>cpf/cnpj/pernumper</h4>
           <mat-form-field class="example-full-width">
-            <input matInput formControlName="cpf" placeholder="Ex.: 123.123.123-10">
+            <input matInput formControlName="cpf" placeholder="Ex.: 123.123.123-10" pattern="[0-9]+">
           </mat-form-field>
         </div>
         <div class="localizar">

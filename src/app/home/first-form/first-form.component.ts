@@ -164,7 +164,7 @@ export class FirstFormComponent implements OnInit {
 
     if (!dados) {
 
-      this.snackbarService.notify(`CPF/CNPJ inválida!`)
+      this.snackbarService.notify(`CPF/CNPJ/PERNUMPER inválido!`)
       return
     }
 
