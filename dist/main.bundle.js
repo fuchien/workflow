@@ -586,11 +586,11 @@ var FirstFormService = (function () {
             .map(function (res) { return res.json(); });
     };
     FirstFormService.prototype.pegarRespostas = function () {
-        return this.http.get("http://www.mocky.io/v2/5a295c7e2e0000012aa09beb")
+        return this.http.get("https://www.mocky.io/v2/5a295c7e2e0000012aa09beb")
             .map(function (res) { return res.json(); });
     };
     FirstFormService.prototype.pegarModalidades = function () {
-        return this.http.get("http://www.mocky.io/v2/5a29554f2e00009f25a09bb6")
+        return this.http.get("https://www.mocky.io/v2/5a29554f2e00009f25a09bb6")
             .map(function (res) { return res.json(); });
     };
     return FirstFormService;
