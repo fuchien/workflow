@@ -5,7 +5,7 @@
         <div class="title">
           <h4>Canal</h4>
           <mat-form-field class="example-full-width">
-            <mat-select formControlName="canal" placeholder="Selecione o canal" [(ngModel)]="canalSelected">
+            <mat-select formControlName="canal" placeholder="Selecione o canal">
               <mat-option *ngFor="let canal of canais | async" [value]="canal">
                 {{canal.name}}
               </mat-option>
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <div class="inputs fila" [class.disabled]="filaIsDisabled" formGroupName="filaForm">
+    <div class="inputs fila" [class.disabled]="filaIsDisabled">
       <div class="example-form">
         <div class="title">
           <h4>Fila</h4>
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-    <div class="inputs" [class.disabled]="cpfIsDisabled" #localizar formGroupName="cpfForm">
+    <div class="inputs" [class.disabled]="cpfIsDisabled" #localizar>
       <div class="example-form" >
         <div class="title">
           <h4>cpf ou cnpj</h4>

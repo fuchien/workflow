@@ -28,18 +28,19 @@ export class FirstFormService {
 
   pegarDados() {
 
-    // return this._http.get(`http://www.mocky.io/v2/5a2920912e0000021ca09a54`)
     return this.http.get(`https://www.mocky.io/v2/5a2920912e0000021ca09a54`)
-      .map(res => res.json())
-    // if (numero.length <= 8)
-    //   return this._http.get(`http://localhost:3000/pessoas/?pernumper=${numero}`)
-    
-    // if (numero.length == 11)
-    //   return this._http.get(`http://localhost:3000/pessoas/?cpf=${numero}`)
-
-    // if (numero.length == 16)
-    //   return this._http.get(`http://localhost:3000/pessoas/?cnpj=${numero}`)
-    
+      .map(res => res.json())    
   }
 
+  pegarRespostas() {
+    
+    return this.http.get(`http://www.mocky.io/v2/5a29554f2e00009f25a09bb6`)
+      .map(res => res.json())    
+  }
+
+  pegarModalidades() {
+    
+    return this.http.get(`https://www.mocky.io/v2/5a2920912e0000021ca09a54`)
+      .map(res => res.json())    
+  }
 }

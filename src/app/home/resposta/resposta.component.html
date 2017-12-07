@@ -132,7 +132,7 @@
       </div>
     </mat-expansion-panel>
   </div>
-  <div class="respostas">
+  <div class="respostas" formGroupName="contatoForm">
     <mat-expansion-panel class="panel" *ngIf="mostrarContatos"
     [expanded]="step === 2" (opened)="setStep(2)">
       <mat-expansion-panel-header>
@@ -151,7 +151,7 @@
         <div class="forms-resp">
           <div class="form-left">
             <div class="title">
-              <h4>Números no cadastro</h4>
+              <h5>Números no cadastro</h5>
               <ul class="listNumbers">
                 <li *ngFor="let n of numerosRegistrados">
                   <div class="divAddIcon">

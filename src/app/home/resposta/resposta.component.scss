@@ -341,6 +341,16 @@
           color: #444444;
           margin-bottom: 0;
         }
+
+        .title h5 {
+          font-family: OpenSans;
+          font-size: 16px;
+          font-weight: 300;
+          line-height: 1.5;
+          text-align: left;
+          color: #424455;
+          margin-bottom: 0;
+        }
   
         .forms-resp {
           margin-top: 32px;
@@ -364,10 +374,6 @@
               flex-flow: column;
               align-items: center;
               justify-content: center;
-      
-              h4 {
-                margin-top: 10px;
-              }
     
               .listNumbers {
                 padding: 0;
@@ -380,9 +386,9 @@
                   display: flex;
                   justify-content: space-around;
                   align-items: center;
-                  min-width: 95%;
+                  min-width: 176px;
+                  max-width: 176px;
                   margin-top: 12px;
-                  max-width: 95%;
                   height: 32px;
                   border-radius: 21px;
                   background-color: #ffffff;

@@ -48,8 +48,12 @@ export class FirstFormComponent implements OnInit {
   
   // canais = ['Dog', 'Cat', 'Cow', 'Fox']
   canais: Observable<any>
+
   filas: any
   pessoas: any
+  respostas: any
+  modalidades: any
+
   filasSelecionadas: any
   filaId: number
   // canalSelected = this.canais[0]
@@ -58,6 +62,7 @@ export class FirstFormComponent implements OnInit {
 
   private myForm: FormGroup
   private dadosCartoes = []
+  numberPattern = /^[0-9]*$/
 
   constructor(
     private fb: FormBuilder,
@@ -69,19 +74,15 @@ export class FirstFormComponent implements OnInit {
     // criar o FORMULARIO
     this.myForm = fb.group({
       'canal': [null, [Validators.required]],
-      'filaForm': fb.group({
-        'fila': [null, [Validators.required]]
-      }),
-      'cpfForm': fb.group({
-        'cpf': ['', [Validators.required]]
-      })
+      'fila': [null, [Validators.required]],
+      'cpf': ['', [Validators.required, Validators.pattern(this.numberPattern)]]
     })
   }
 
   ngOnInit() {
 
-    this.myForm.get('filaForm.fila').disable()
-    this.myForm.get('cpfForm.cpf').disable()
+    this.myForm.get('fila').disable()
+    this.myForm.get('cpf').disable()
 
     this.canais = this.firstFormService.pegarCanais()
     this.firstFormService.pegarFilas()
@@ -90,41 +91,47 @@ export class FirstFormComponent implements OnInit {
     this.firstFormService.pegarDados()
       .subscribe(dados => this.pessoas = dados)
 
+    this.firstFormService.pegarRespostas()
+      .subscribe(respostas => this.respostas = respostas)
+
+    this.firstFormService.pegarModalidades()
+      .subscribe(modalidades => this.modalidades = modalidades)
+
     this.myForm.get('canal').valueChanges.subscribe(form => {
       
       if (form != null) {
 
         this.filasSelecionadas = this.filas.filter(fila => fila.canal_id == form.ID)
         this.value += 50
-        this.myForm.get('filaForm.fila').enable()
+        this.myForm.get('fila').enable()
         this.filaIsDisabled = false
 
         return
       }
 
       this.value = 0
-      this.myForm.get('filaForm.fila').disable()
+      this.myForm.get('fila').disable()
       this.filaIsDisabled = true
     })
 
-    this.myForm.get('filaForm').valueChanges.subscribe(form => {
+    this.myForm.get('fila').valueChanges.subscribe(form => {
       
-      if (form.fila != null) {
+      if (form != null) {
 
-        this.filaId = form.fila.ID
+        this.filaId = form.ID
 
         this.value += 50
-        this.myForm.get('cpfForm.cpf').enable()
+        this.myForm.get('cpf').enable()
         this.cpfIsDisabled = false
         return
       }
 
       this.value = 50
-      this.myForm.get('cpfForm.cpf').disable()
+      this.myForm.get('cpf').disable()
       this.cpfIsDisabled = true
     })
 
-    this.myForm.get('cpfForm').valueChanges.subscribe(form => {
+    this.myForm.get('cpf').valueChanges.subscribe(form => {
 
       if (form.cpf != '') {
 
@@ -140,24 +147,29 @@ export class FirstFormComponent implements OnInit {
     if (!valid) return
 
     let dados
-    if (value.cpfForm.cpf.length <= 8) {
+    if (value.cpf.length <= 8) {
 
-      dados = this.pessoas.find(pessoa => pessoa.pernumper == value.cpfForm.cpf)
+      dados = this.pessoas.find(pessoa => pessoa.pernumper == value.cpf)
     }
 
-    if (value.cpfForm.cpf.length == 11) {
+    if (value.cpf.length == 11) {
       
-      dados = this.pessoas.find(pessoa => pessoa.cpf == value.cpfForm.cpf)
+      dados = this.pessoas.find(pessoa => pessoa.cpf == value.cpf)
     }
 
-    if (value.cpfForm.cpf.length == 16) {
+    if (value.cpf.length == 16) {
       
-      dados = this.pessoas.find(pessoa => pessoa.cnpj == value.cpfForm.cpf)
+      dados = this.pessoas.find(pessoa => pessoa.cnpj == value.cpf)
     }
+
+    this.myForm.get('fila').disable()
+    this.myForm.get('cpf').disable()
+    this.myForm.get('canal').disable()
 
     this.dadosPessoais = dados
     this.localizando = true
     this.isResult = true
+
     this.snackbarService.notify(`CPF/CNPJ inválida!`)
   }
 

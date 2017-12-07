@@ -101,6 +101,12 @@ export class RespostaComponent implements OnInit {
         'resposta': [null, [Validators.required]],
         'modalidade': [null, [Validators.required]],
         'comentario': [null, [Validators.required]]
+      }),
+      'contatoForm': fb.group({
+        'telefone': [null, [Validators.required]],
+        'tipoOcorrencia': [null, [Validators.required]],
+        'numero': [null, [Validators.required]],
+        'ocorrencia': [null, [Validators.required]]
       })
     })
   }
