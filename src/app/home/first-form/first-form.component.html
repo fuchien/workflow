@@ -106,9 +106,9 @@
               <p *ngIf="dadosPessoais.cpf">{{dadosPessoais.cpf}}</p>
               <p *ngIf="dadosPessoais.cnpj">{{dadosPessoais.cnpj}}</p>
             </li>
-            <li class="grid">
+            <li class="grid" *ngIf="dadosPessoais.pernumper">
               <h4>Pernunper</h4>
-              <p>{{dadosPessoais?.pernumper}}</p>
+              <p>{{dadosPessoais.pernumper}}</p>
             </li>
             <li class="grid">
               <h4>Cartão</h4>
@@ -117,7 +117,7 @@
           </ul>
         </div>
         <div class="cartoes">
-          <h4>Contas e agências vinculadas</h4>
+          <h4 *ngIf="dadosPessoais.cartoes">Contas e agências vinculadas</h4>
           <div class="contas">
             <ul class="contasUl">
               <li class="contasLi" *ngFor="let c of dadosPessoais.cartoes">

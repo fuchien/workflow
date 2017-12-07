@@ -354,9 +354,11 @@
   
         .forms-resp {
           margin-top: 32px;
-          min-width: 100%;
+          min-width: 90%;
           display: flex;
           justify-content: space-between;
+          padding-bottom: 28px;
+          border-bottom: 2px solid #d8d8d8;
   
           .form-left {
             min-width: 20%;
@@ -374,6 +376,10 @@
               flex-flow: column;
               align-items: center;
               justify-content: center;
+
+              h5 {
+                margin-top: 0;
+              }
     
               .listNumbers {
                 padding: 0;
@@ -407,7 +413,83 @@
           .form-right {
             min-width: 80%;
             max-width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .title {
+              min-width: 100%;
+              display: flex;
+              flex-flow: column;
+              justify-content: space-between;
+
+              ul {
+                padding: 0;
+                list-style: none;
+                min-width: 100%;
+                display: flex;
+                flex-flow: row wrap;
+
+                .title1 {
+                  width: 30%;
+                }
+
+                .title2 {
+                  width: 70%;
+                }
+
+                li {
+                  display: flex;
+                  flex-flow: column;
+
+                  h4 {
+                    margin-top: 0;
+                    font-family: OpenSans;
+                    font-weight: bold;
+                    color: #191919;
+                    text-transform: uppercase;
+                  }
+
+                  .example-full-width {
+                    min-width: 100%;
+                  }
+                }
+              }
+
+              .btnRegister {
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+
+                button {
+                  width: 216px;
+                  height: 32px;
+                  border-radius: 21px;
+                  background-color: #424455;
+                  line-height: 32px;
+                  text-align: center;
+                  text-transform: uppercase;
+                  font-family: OpenSans;
+                  display: flex;
+                  justify-content: space-around;
+                  align-items: center;
+                  color: #ffffff;
+                }
+              }
+            }
           }
+        }
+
+        .contato {
+          min-width: 100%;
+          margin: 0 auto;
+          min-height: 194px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 6px;
+          background-color: #f9f9f9;
         }
       }
     }

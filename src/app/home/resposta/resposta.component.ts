@@ -19,6 +19,8 @@ export class RespostaComponent implements OnInit {
   mostrarChecklists: boolean = false
   mostrarEmails: boolean = false
 
+  numberPattern = /^[0-9]*$/
+
   transacoes = [
     {
       data1: '01/04/2017',
@@ -87,7 +89,27 @@ export class RespostaComponent implements OnInit {
     }
   ]
 
-  numerosRegistrados = ['11 1111-1111', '22 2222-2222', '33 3333-3333']
+  tiposOcorrencia = [
+    'Alteração recente de telefone',
+    'Caixa-Postal',
+    'Chama e não atende',
+    'Com sucesso',
+    'Desconhecido no local',
+    'Enviar SMS',
+    'Fora de área',
+    'Inexistente',
+    'Não pôde atender',
+    'Ocupado',
+    'Recado',
+    'Sem tom de discagem',
+    'Telefone Fraudulento'
+  ]
+
+  tiposTelefone = [
+    'Fixo',
+    'Celular',
+    'Telefone Comercial'
+  ]
 
   step = 0;
 
@@ -107,7 +129,7 @@ export class RespostaComponent implements OnInit {
       'contatoForm': fb.group({
         'telefone': [null, [Validators.required]],
         'tipoOcorrencia': [null, [Validators.required]],
-        'numero': [null, [Validators.required]],
+        'numero': [null, [Validators.required, Validators.pattern(this.numberPattern)]],
         'ocorrencia': [null, [Validators.required]]
       })
     })

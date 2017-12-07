@@ -151,7 +151,7 @@
             <div class="title">
               <h5>Números no cadastro</h5>
               <ul class="listNumbers">
-                <li *ngFor="let n of numerosRegistrados">
+                <li *ngFor="let n of dadosPessoais.telefones">
                   <div class="divAddIcon">
                     <mat-icon matSuffix class="addIcon">add</mat-icon>
                   </div>
@@ -161,16 +161,53 @@
             </div>
           </div>
           <div class="form-right">
-            <form [formGroup]="respForm">
-              <div class="title">
-                <h4>Comentário do analista</h4>
-                <mat-form-field class="example-full-width">
-                  <textarea matInput matTextareaAutosize matAutosizeMinRows="6"
-                      matAutosizeMaxRows="6" class="textarea"></textarea>
-                </mat-form-field>
+            <div class="title">
+              <ul>
+                <li class="title1">
+                  <h4>Tipo de telefone</h4>
+                  <mat-form-field class="example-full-width">
+                    <mat-select placeholder="Selecione" formControlName="telefone">
+                      <mat-option *ngFor="let t of tiposTelefone" [value]="t">
+                        {{t}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </li>
+                <li class="title2">
+                  <h4>Tipo de ocorrência</h4>
+                  <mat-form-field class="example-full-width">
+                    <mat-select placeholder="Selecione" formControlName="tipoOcorrencia">
+                      <mat-option *ngFor="let o of tiposOcorrencia" [value]="o">
+                        {{o}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </li>
+                <li class="title1">
+                  <h4>Número</h4>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Digite o número" formControlName="numero">
+                  </mat-form-field>
+                </li>
+                <li class="title2">
+                  <h4>Ocorrência</h4>
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Descreva a ocorrência" formControlName="ocorrencia">
+                  </mat-form-field>
+                </li>
+              </ul>
+              <div class="btnRegister">
+                <button mat-raised-button matTooltip="Registrar novo usuário">
+                  <mat-icon matSuffix class="addIcon">add</mat-icon>
+                  <span>Registrar Contato</span>
+                </button>
               </div>
-            </form>
+            </div>
           </div>
+        </div>
+
+        <div class="contatos">
+          <p>Nenhum contato registrado</p>
         </div>
 
         <div class="prosseguir">
