@@ -411,14 +411,14 @@
             }
           }
           .form-right {
-            min-width: 80%;
-            max-width: 80%;
+            min-width: 76%;
+            max-width: 76%;
             display: flex;
             justify-content: center;
             align-items: center;
 
             .title {
-              min-width: 100%;
+              min-width: 90%;
               display: flex;
               flex-flow: column;
               justify-content: space-between;
@@ -426,16 +426,17 @@
               ul {
                 padding: 0;
                 list-style: none;
-                min-width: 100%;
+                min-width: 90%;
                 display: flex;
                 flex-flow: row wrap;
+                justify-content: space-between;
 
                 .title1 {
                   width: 30%;
                 }
 
                 .title2 {
-                  width: 70%;
+                  width: 65%;
                 }
 
                 li {
@@ -481,15 +482,54 @@
           }
         }
 
-        .contato {
+        .contatos {
           min-width: 100%;
-          margin: 0 auto;
+          margin: 22px auto;
+          margin-bottom: 35px;
           min-height: 194px;
           display: flex;
           justify-content: center;
           align-items: center;
           border-radius: 6px;
           background-color: #f9f9f9;
+
+          p {
+            font-family: OpenSans;
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 1.2;
+            color: #444444;
+          }
+
+          .registrados {
+            min-width: 100%;
+            display: flex;
+            flex-flow: column;
+
+            .listRegistrados {
+              min-width: 80%;
+              margin: 0 auto;
+              display: flex;
+              justify-content: center;
+              align-content: center;
+
+              table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+              }
+              
+              td, th {
+                  border: 1px solid #dddddd;
+                  text-align: left;
+                  padding: 8px;
+              }
+              
+              tr:nth-child(even) {
+                  background-color: #dddddd;
+              }
+            }
+          }
         }
       }
     }

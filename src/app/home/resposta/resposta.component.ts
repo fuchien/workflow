@@ -12,8 +12,12 @@ import { FirstFormDatasService } from './../first-form/first-form-datas.service'
 export class RespostaComponent implements OnInit {
 
   dadosPessoais
+  dadosRegistrados = false
+  usersCadastrados = []
+
   respostas
   modalidades
+
   mostrarTransacoes: boolean = false
   mostrarContatos: boolean = false
   mostrarChecklists: boolean = false
@@ -114,6 +118,7 @@ export class RespostaComponent implements OnInit {
   step = 0;
 
   private respForm: FormGroup
+  private userForm: FormGroup
 
   constructor(
     private fb: FormBuilder,
@@ -125,13 +130,14 @@ export class RespostaComponent implements OnInit {
         'resposta': [null, [Validators.required]],
         'modalidade': [null, [Validators.required]],
         'comentario': [null, [Validators.required]]
-      }),
-      'contatoForm': fb.group({
-        'telefone': [null, [Validators.required]],
-        'tipoOcorrencia': [null, [Validators.required]],
-        'numero': [null, [Validators.required, Validators.pattern(this.numberPattern)]],
-        'ocorrencia': [null, [Validators.required]]
       })
+    })
+
+    this.userForm = fb.group({
+      'telefone': [null, [Validators.required]],
+      'tipoOcorrencia': [null, [Validators.required]],
+      'numero': [null, [Validators.required, Validators.pattern(this.numberPattern)]],
+      'ocorrencia': [null, [Validators.required]]
     })
   }
 
@@ -154,6 +160,22 @@ export class RespostaComponent implements OnInit {
 
   setStep(index: number) {
     this.step = index;
+  }
+
+  addUser(form, valid) {
+
+    if (!valid) return
+
+    this.dadosRegistrados = true
+    this.dadosPessoais.telefones.push(form.numero)
+    this.usersCadastrados.push(form)
+    this.userForm.reset()
+  }
+
+  removeUser(user) {
+
+    this.usersCadastrados = this.usersCadastrados.filter(users => users != user)
+    this.dadosPessoais.telefones = this.dadosPessoais.telefones.filter(tel => tel != user.numero)
   }
 
   nextStep(accordion) {

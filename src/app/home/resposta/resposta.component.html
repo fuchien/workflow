@@ -130,7 +130,7 @@
       </div>
     </mat-expansion-panel>
   </div>
-  <div class="respostas" formGroupName="contatoForm">
+  <div class="respostas">
     <mat-expansion-panel class="panel" *ngIf="mostrarContatos"
     [expanded]="step === 2" (opened)="setStep(2)">
       <mat-expansion-panel-header>
@@ -162,6 +162,7 @@
           </div>
           <div class="form-right">
             <div class="title">
+              <form [formGroup]="userForm">
               <ul>
                 <li class="title1">
                   <h4>Tipo de telefone</h4>
@@ -197,17 +198,39 @@
                 </li>
               </ul>
               <div class="btnRegister">
-                <button mat-raised-button matTooltip="Registrar novo usuário">
+                <button mat-raised-button matTooltip="Registrar novo usuário" (click)="addUser(userForm.value, userForm.valid)">
                   <mat-icon matSuffix class="addIcon">add</mat-icon>
                   <span>Registrar Contato</span>
                 </button>
               </div>
+            </form>
             </div>
           </div>
         </div>
 
         <div class="contatos">
-          <p>Nenhum contato registrado</p>
+          <p *ngIf="!dadosRegistrados">Nenhum contato registrado</p>
+          <div class="registrados" *ngIf="dadosRegistrados">
+            <h4>Contatos registrados</h4>
+            <div class="listRegistrados">
+              <table>
+                  <tr>
+                    <th></th>
+                    <th>Tipo de telefone</th>
+                    <th>Número</th>
+                    <th>Tipo da ocorrência</th>
+                    <th>Ocorrência</th>
+                  </tr>
+                  <tr *ngFor="let d of usersCadastrados">
+                    <td (click)="removeUser(d)"><mat-icon matSuffix class="addIcon">clear</mat-icon> Remove</td>
+                    <td>{{ d.telefone }}</td>
+                    <td>{{ d.tipoOcorrencia }}</td>
+                    <td>{{ d.numero }}</td>
+                    <td>{{ d.ocorrencia }}</td>
+                  </tr>
+              </table>
+            </div>
+          </div>
         </div>
 
         <div class="prosseguir">
@@ -229,55 +252,6 @@
           </div>
         </mat-panel-title>
       </mat-expansion-panel-header>
-      
-      <div class="accordion-body accordionParecer">
-        <div class="forms-resp">
-          <div class="form-left">
-            <form [formGroup]="respForm">
-              <div class="title">
-                <h4>Modalidade</h4>
-                <mat-form-field class="example-full-width">
-                  <mat-select placeholder="Selecione a modalidade" formControlName="resposta">
-                    <mat-option>--</mat-option>
-                    <mat-option *ngFor="let canal of canais" [value]="canal">
-                      {{canal}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-              
-              <div class="title">
-                <h4>Modalidade</h4>
-                <mat-form-field class="example-full-width">
-                  <mat-select placeholder="Selecione a modalidade" formControlName="modalidade">
-                    <mat-option>--</mat-option>
-                    <mat-option *ngFor="let canal of canais" [value]="canal">
-                      {{canal}}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-            </form>
-          </div>
-          <div class="form-right">
-            <form [formGroup]="respForm">
-              <div class="title">
-                <h4>Comentário do analista</h4>
-                <mat-form-field class="example-full-width">
-                  <textarea matInput matTextareaAutosize matAutosizeMinRows="6"
-                      matAutosizeMaxRows="6" class="textarea"></textarea>
-                </mat-form-field>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <div class="prosseguir">
-          <button mat-raised-button matTooltip="Corrigir os Dados" (click)="nextStep('mostrarEmails')">
-            Prosseguir
-          </button>
-        </div>
-      </div>
     </mat-expansion-panel>
   </div>
   </form>
