@@ -183,7 +183,11 @@ export class FirstFormComponent implements OnInit {
 
   prosseguir() {
 
-    if (!this.dadosPessoais.cartaoSelecionada) return
+    if (!this.dadosPessoais.cartaoSelecionada) {
+
+      this.snackbarService.notify(`Selecione uma conta!`)
+      return
+    }
 
     this.dadosPessoais.modalidades = this.modalidades
 

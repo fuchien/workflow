@@ -502,8 +502,10 @@ var FirstFormComponent = (function () {
         this.isResult = true;
     };
     FirstFormComponent.prototype.prosseguir = function () {
-        if (!this.dadosPessoais.cartaoSelecionada)
+        if (!this.dadosPessoais.cartaoSelecionada) {
+            this.snackbarService.notify("Selecione uma conta!");
             return;
+        }
         this.dadosPessoais.modalidades = this.modalidades;
         __WEBPACK_IMPORTED_MODULE_4__first_form_datas_service__["a" /* FirstFormDatasService */].setDadosPessoais(this.dadosPessoais);
         this.router.navigate(['/home/response']);
