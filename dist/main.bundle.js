@@ -482,13 +482,16 @@ var FirstFormComponent = (function () {
         if (value.cpf.length == 16) {
             dados = this.pessoas.find(function (pessoa) { return pessoa.cnpj == value.cpf; });
         }
+        if (!dados) {
+            this.snackbarService.notify("CPF/CNPJ inv\u00E1lida!");
+            return;
+        }
         this.myForm.get('fila').disable();
         this.myForm.get('cpf').disable();
         this.myForm.get('canal').disable();
         this.dadosPessoais = dados;
         this.localizando = true;
         this.isResult = true;
-        this.snackbarService.notify("CPF/CNPJ inv\u00E1lida!");
     };
     FirstFormComponent.prototype.prosseguir = function () {
         if (!this.dadosPessoais.cartaoSelecionada)

@@ -105,7 +105,7 @@ export class FirstFormComponent implements OnInit {
         this.value += 50
         this.myForm.get('fila').enable()
         this.filaIsDisabled = false
-
+ 
         return
       }
 
@@ -162,6 +162,12 @@ export class FirstFormComponent implements OnInit {
       dados = this.pessoas.find(pessoa => pessoa.cnpj == value.cpf)
     }
 
+    if (!dados) {
+
+      this.snackbarService.notify(`CPF/CNPJ inválida!`)
+      return
+    }
+
     this.myForm.get('fila').disable()
     this.myForm.get('cpf').disable()
     this.myForm.get('canal').disable()
@@ -169,8 +175,6 @@ export class FirstFormComponent implements OnInit {
     this.dadosPessoais = dados
     this.localizando = true
     this.isResult = true
-
-    this.snackbarService.notify(`CPF/CNPJ inválida!`)
   }
 
   prosseguir() {
