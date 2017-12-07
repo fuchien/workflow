@@ -1033,7 +1033,7 @@ var _a;
 /***/ "../../../../../src/app/home/toolbar/toolbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar color=\"primary\" class=\"toolbar\">\n  <div class=\"header\">\n    <div class=\"workflow\">\n      <div class=\"image-logo\">\n        <img src=\"assets/img/banco-santander-logo.png\" alt=\"Banco Santander\">\n      </div>\n      <div class=\"line-2-copy\"></div>\n      <div class=\"name\">\n        <h1>Workflow de Fraude</h1>\n      </div>\n    </div>\n    <div class=\"user\">\n      <h2>Produtividade</h2>\n      <div class=\"line-2-copy\"></div>\n      <h2>Relatórios</h2>\n      <div class=\"line-2-copy\"></div>\n      <div class=\"image-user\">\n        <!-- <img src=\"assets/img/user-icon.png\" alt=\"Usuário\"> -->\n        <p>LK</p>\n      </div>\n    </div>\n  </div>\n</mat-toolbar>"
+module.exports = "<mat-toolbar color=\"primary\" class=\"toolbar\">\n  <div class=\"header\">\n    <div class=\"workflow\">\n      <div class=\"image-logo\">\n        <img src=\"assets/img/banco-santander-logo.png\" alt=\"Banco Santander\">\n      </div>\n      <div class=\"line-2-copy\"></div>\n      <div class=\"name\">\n        <h1>Central de Eventos de Fraudes</h1>\n      </div>\n    </div>\n    <div class=\"user\">\n      <h2>Produtividade</h2>\n      <div class=\"line-2-copy\"></div>\n      <h2>Relatórios</h2>\n      <div class=\"line-2-copy\"></div>\n      <div class=\"image-user\">\n        <!-- <img src=\"assets/img/user-icon.png\" alt=\"Usuário\"> -->\n        <p>LK</p>\n      </div>\n    </div>\n  </div>\n</mat-toolbar>"
 
 /***/ }),
 
