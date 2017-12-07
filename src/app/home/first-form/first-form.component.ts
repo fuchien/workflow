@@ -102,6 +102,10 @@ export class FirstFormComponent implements OnInit {
       if (form != null) {
 
         this.filasSelecionadas = this.filas.filter(fila => fila.canal_id == form.ID)
+
+        let respostas = this.respostas.filter(resposta => resposta.canal_id == form.ID)
+        FirstFormDatasService.setRespostas(respostas)
+
         this.value += 50
         this.myForm.get('fila').enable()
         this.filaIsDisabled = false
@@ -181,6 +185,8 @@ export class FirstFormComponent implements OnInit {
 
     if (!this.dadosPessoais.cartaoSelecionada) return
 
+    this.dadosPessoais.modalidades = this.modalidades
+
     FirstFormDatasService.setDadosPessoais(this.dadosPessoais)
     this.router.navigate(['/home/response'])
   }
@@ -203,9 +209,15 @@ export interface Dados {
   cartao: string
   cartoes: Cartoes[]
   cartaoSelecionada: Cartoes
+  modalidades: Modalidade[]
 }
 
 export interface Cartoes {
   agencia: string
   conta: string
+}
+
+export interface Modalidade {
+  ID: number
+  name: string
 }

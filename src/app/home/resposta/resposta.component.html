@@ -27,9 +27,8 @@
                 <h4>Resposta</h4>
                 <mat-form-field class="example-full-width">
                   <mat-select placeholder="Selecione a modalidade" formControlName="resposta">
-                    <mat-option>--</mat-option>
-                    <mat-option *ngFor="let canal of canais" [value]="canal">
-                      {{canal}}
+                    <mat-option *ngFor="let resp of respostas" [value]="resp">
+                      {{resp.name}}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
@@ -39,9 +38,8 @@
                 <h4>Modalidade</h4>
                 <mat-form-field class="example-full-width">
                   <mat-select placeholder="Selecione a modalidade" formControlName="modalidade">
-                    <mat-option>--</mat-option>
-                    <mat-option *ngFor="let canal of canais" [value]="canal">
-                      {{canal}}
+                    <mat-option *ngFor="let mod of modalidades" [value]="mod">
+                      {{mod.name}}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>

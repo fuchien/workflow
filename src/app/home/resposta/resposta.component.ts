@@ -12,6 +12,8 @@ import { FirstFormDatasService } from './../first-form/first-form-datas.service'
 export class RespostaComponent implements OnInit {
 
   dadosPessoais
+  respostas
+  modalidades
   mostrarTransacoes: boolean = false
   mostrarContatos: boolean = false
   mostrarChecklists: boolean = false
@@ -114,6 +116,18 @@ export class RespostaComponent implements OnInit {
   ngOnInit() {
 
     this.dadosPessoais = FirstFormDatasService.getDadosPessoais()
+    this.respostas = FirstFormDatasService.getRespostas()
+
+    this.respForm.get('parecerForm.resposta').valueChanges.subscribe(respostas => {
+
+      if (respostas.ID == 2 || respostas.ID == 8 || respostas.ID == 14) {
+
+        this.modalidades = []
+        return
+      }
+
+      this.modalidades = this.dadosPessoais.modalidades
+    })
   }
 
   setStep(index: number) {

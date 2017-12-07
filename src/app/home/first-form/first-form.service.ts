@@ -34,13 +34,13 @@ export class FirstFormService {
 
   pegarRespostas() {
     
-    return this.http.get(`http://www.mocky.io/v2/5a29554f2e00009f25a09bb6`)
+    return this.http.get(`http://www.mocky.io/v2/5a295c7e2e0000012aa09beb`)
       .map(res => res.json())    
   }
 
   pegarModalidades() {
     
-    return this.http.get(`https://www.mocky.io/v2/5a2920912e0000021ca09a54`)
+    return this.http.get(`http://www.mocky.io/v2/5a29554f2e00009f25a09bb6`)
       .map(res => res.json())    
   }
 }
