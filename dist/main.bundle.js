@@ -494,9 +494,9 @@ var FirstFormComponent = (function () {
             this.snackbarService.notify("CPF/CNPJ/PERNUMPER inv\u00E1lido!");
             return;
         }
+        this.myForm.get('canal').disable();
         this.myForm.get('fila').disable();
         this.myForm.get('cpf').disable();
-        this.myForm.get('canal').disable();
         this.dadosPessoais = dados;
         this.localizando = true;
         this.isResult = true;

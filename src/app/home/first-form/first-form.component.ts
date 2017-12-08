@@ -172,9 +172,9 @@ export class FirstFormComponent implements OnInit {
       return
     }
 
+    this.myForm.get('canal').disable()
     this.myForm.get('fila').disable()
     this.myForm.get('cpf').disable()
-    this.myForm.get('canal').disable()
 
     this.dadosPessoais = dados
     this.localizando = true
