@@ -45,8 +45,8 @@
       </li>
       <li class="grid conta" [@dadosAppeared]="dadosState">
         <h4>Conta e agência selecionada</h4>
-        <p *ngIf="!isEdit">{{ dados.cartaoSelecionada.agencia }} {{ dados.cartaoSelecionada.conta }}</p>
-        <table class="example-full-width" cellspacing="0" *ngIf="isEdit"><tr>
+        <p *ngIf="!isEdit && dados.cartaoSelecionada">{{ dados.cartaoSelecionada.agencia }} {{ dados.cartaoSelecionada.conta }}</p>
+        <table class="example-full-width" cellspacing="0" *ngIf="isEdit && dados.cartaoSelecionada"><tr>
           <td><mat-form-field class="example-full-width">
             <input matInput [(ngModel)]="dados.cartaoSelecionada.agencia">
           </mat-form-field></td>
