@@ -611,7 +611,7 @@ var _a, _b;
 /***/ "../../../../../src/app/home/first-form/grid-list/grid-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"dado dados1\">\n  <ul class=\"tile\">\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Nome</h4>\n      <p>{{dados.nome}}</p>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Segmento</h4>\n      <p *ngIf=\"!isEdit\">{{dados.segmento}}</p>\n      <mat-form-field class=\"example-full-width\" *ngIf=\"isEdit\">\n        <input matInput [(ngModel)]=\"dados.segmento\">\n      </mat-form-field>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4 *ngIf=\"dados.cpf\">Cpf</h4>\n      <h4 *ngIf=\"dados.cnpj\">Cnpj</h4>\n      <p *ngIf=\"dados.cpf && !isEdit\">{{dados.cpf}}</p>\n      <p *ngIf=\"dados.cnpj && !isEdit\">{{dados.cnpj}}</p>\n      <mat-form-field class=\"example-full-width\" *ngIf=\"dados.cpf && isEdit\">\n        <input matInput [(ngModel)]=\"dados.cpf\">\n      </mat-form-field>\n      <mat-form-field class=\"example-full-width\" *ngIf=\"dados.cnpj && isEdit\">\n        <input matInput [(ngModel)]=\"dados.cnpj\">\n      </mat-form-field>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Pernumper</h4>\n      <p *ngIf=\"!isEdit\">{{dados.pernumper}}</p>\n      <mat-form-field class=\"example-full-width\" *ngIf=\"isEdit\">\n        <input matInput [(ngModel)]=\"dados.pernumper\">\n      </mat-form-field>\n    </li>\n  </ul>\n</div>\n<div class=\"dado dados2\">\n  <!-- <div class=\"dados-right\"> -->\n    <ul class=\"tile\">\n      <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n        <h4>Telefones</h4>\n        <p *ngFor=\"let tel of dados.telefones\">{{tel}}</p>\n      </li>\n      <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n        <h4>Emails</h4>\n        <p *ngFor=\"let email of dados.emails\">{{email}}</p>\n      </li>\n      <li class=\"grid conta\" [@dadosAppeared]=\"dadosState\">\n        <h4>Conta e agência selecionada</h4>\n        <p *ngIf=\"!isEdit && dados.cartaoSelecionada\">{{ dados.cartaoSelecionada.agencia }} {{ dados.cartaoSelecionada.conta }}</p>\n        <table class=\"example-full-width\" cellspacing=\"0\" *ngIf=\"isEdit && dados.cartaoSelecionada\"><tr>\n          <td><mat-form-field class=\"example-full-width\">\n            <input matInput [(ngModel)]=\"dados.cartaoSelecionada.agencia\">\n          </mat-form-field></td>\n          <td><mat-form-field class=\"example-full-width\">\n            <input matInput [(ngModel)]=\"dados.cartaoSelecionada.conta\">\n          </mat-form-field></td>\n        </tr></table>\n      </li>\n      <li class=\"grid conta\" [@dadosAppeared]=\"dadosState\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Corrigir os Dados\"\n          (click)=\"alterarDados()\" *ngIf=\"!isEdit\">\n          <mat-icon matSuffix class=\"icon\">mode_edit</mat-icon>\n          Atualizar dados\n        </button>\n        <button mat-raised-button color=\"primary\" matTooltip=\"Corrigir os Dados\"\n          (click)=\"salvarDados()\" *ngIf=\"isEdit\">\n          <mat-icon matSuffix class=\"icon\">mode_edit</mat-icon>\n          Salvar alterações\n        </button>\n      </li>\n    </ul>\n  <!-- </div> -->\n  <!-- <div class=\"dados-right\">\n    <ul class=\"tile\" *ngIf=\"buttonCorrigirDados\">\n      <li class=\"grid corrigir\" [@dadosAppeared]=\"dadosState\">\n        <h4>Conta selecionada</h4>\n        <p>Corrente 1231</p>\n      </li>\n      <li class=\"grid corrigir\" [@dadosAppeared]=\"dadosState\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Corrigir os Dados\"\n          (click)=\"corrigirDados()\">\n          <mat-icon matSuffix class=\"icon\">mode_edit</mat-icon>\n          Atualizar dados\n        </button>\n      </li>\n    </ul>\n  </div> -->\n</div>"
+module.exports = "<div class=\"dado dados1\">\n  <ul class=\"tile\">\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Nome</h4>\n      <p>{{dados.nome}}</p>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Segmento</h4>\n      <p *ngIf=\"!isEdit\">{{dados.segmento}}</p>\n      <mat-form-field class=\"example-full-width\" *ngIf=\"isEdit\">\n        <input matInput [(ngModel)]=\"dados.segmento\">\n      </mat-form-field>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>{{ documento.nome }}</h4>\n      <p *ngIf=\"!isEdit\">{{documento.numero}}</p>\n      <mat-form-field class=\"example-full-width\" *ngIf=\"isEdit\">\n        <input matInput [(ngModel)]=\"documento.numero\">\n      </mat-form-field>\n    </li>\n    <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n      <h4>Pernumper</h4>\n      <p *ngIf=\"!isEdit\">{{dados.pernumper}}</p>\n      <mat-form-field class=\"example-full-width\" *ngIf=\"isEdit\">\n        <input matInput [(ngModel)]=\"dados.pernumper\">\n      </mat-form-field>\n    </li>\n  </ul>\n</div>\n<div class=\"dado dados2\">\n  <!-- <div class=\"dados-right\"> -->\n    <ul class=\"tile\">\n      <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n        <h4>Telefones</h4>\n        <p *ngFor=\"let tel of dados.telefones\">{{tel}}</p>\n      </li>\n      <li class=\"grid\" [@dadosAppeared]=\"dadosState\">\n        <h4>Emails</h4>\n        <p *ngFor=\"let email of dados.emails\">{{email}}</p>\n      </li>\n      <li class=\"grid conta\" [@dadosAppeared]=\"dadosState\">\n        <h4>Conta e agência selecionada</h4>\n        <p *ngIf=\"!isEdit && dados.cartaoSelecionada\">{{ dados.cartaoSelecionada.agencia }} {{ dados.cartaoSelecionada.conta }}</p>\n        <table class=\"example-full-width\" cellspacing=\"0\" *ngIf=\"isEdit && dados.cartaoSelecionada\"><tr>\n          <td><mat-form-field class=\"example-full-width\">\n            <input matInput [(ngModel)]=\"dados.cartaoSelecionada.agencia\">\n          </mat-form-field></td>\n          <td><mat-form-field class=\"example-full-width\">\n            <input matInput [(ngModel)]=\"dados.cartaoSelecionada.conta\">\n          </mat-form-field></td>\n        </tr></table>\n      </li>\n      <li class=\"grid conta\" [@dadosAppeared]=\"dadosState\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Corrigir os Dados\"\n          (click)=\"alterarDados()\" *ngIf=\"!isEdit\">\n          <mat-icon matSuffix class=\"icon\">mode_edit</mat-icon>\n          Atualizar dados\n        </button>\n        <button mat-raised-button color=\"primary\" matTooltip=\"Corrigir os Dados\"\n          (click)=\"salvarDados()\" *ngIf=\"isEdit\">\n          <mat-icon matSuffix class=\"icon\">mode_edit</mat-icon>\n          Salvar alterações\n        </button>\n      </li>\n    </ul>\n  <!-- </div> -->\n  <!-- <div class=\"dados-right\">\n    <ul class=\"tile\" *ngIf=\"buttonCorrigirDados\">\n      <li class=\"grid corrigir\" [@dadosAppeared]=\"dadosState\">\n        <h4>Conta selecionada</h4>\n        <p>Corrente 1231</p>\n      </li>\n      <li class=\"grid corrigir\" [@dadosAppeared]=\"dadosState\">\n        <button mat-raised-button color=\"primary\" matTooltip=\"Corrigir os Dados\"\n          (click)=\"corrigirDados()\">\n          <mat-icon matSuffix class=\"icon\">mode_edit</mat-icon>\n          Atualizar dados\n        </button>\n      </li>\n    </ul>\n  </div> -->\n</div>"
 
 /***/ }),
 
@@ -638,6 +638,7 @@ module.exports = module.exports.toString();
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GridListComponent; });
+/* unused harmony export Documento */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_animations__ = __webpack_require__("../../../animations/@angular/animations.es5.js");
@@ -658,13 +659,21 @@ var GridListComponent = (function () {
         this.fb = fb;
         this.dadosState = 'ready';
         this.isEdit = false;
-        this.canais = ['Dog', 'Cat', 'Cow', 'Fox'];
+        this.documento = new Documento();
         this.buttonCorrigirDados = false;
         this.contaForm = fb.group({
             'conta': [null, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["h" /* Validators */].required]]
         });
     }
     GridListComponent.prototype.ngOnInit = function () {
+        if (this.dados.cpf) {
+            this.documento.nome = 'CPF';
+            this.documento.numero = this.dados.cpf;
+        }
+        if (this.dados.cnpj) {
+            this.documento.nome = 'CNPJ';
+            this.documento.numero = this.dados.cnpj;
+        }
         if (this.dados.prosseguir) {
             this.buttonCorrigirDados = true;
             return;
@@ -699,6 +708,12 @@ GridListComponent = __decorate([
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object])
 ], GridListComponent);
+
+var Documento = (function () {
+    function Documento() {
+    }
+    return Documento;
+}());
 
 var _a;
 //# sourceMappingURL=grid-list.component.js.map

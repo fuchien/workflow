@@ -12,15 +12,10 @@
       </mat-form-field>
     </li>
     <li class="grid" [@dadosAppeared]="dadosState">
-      <h4 *ngIf="dados.cpf">Cpf</h4>
-      <h4 *ngIf="dados.cnpj">Cnpj</h4>
-      <p *ngIf="dados.cpf && !isEdit">{{dados.cpf}}</p>
-      <p *ngIf="dados.cnpj && !isEdit">{{dados.cnpj}}</p>
-      <mat-form-field class="example-full-width" *ngIf="dados.cpf && isEdit">
-        <input matInput [(ngModel)]="dados.cpf">
-      </mat-form-field>
-      <mat-form-field class="example-full-width" *ngIf="dados.cnpj && isEdit">
-        <input matInput [(ngModel)]="dados.cnpj">
+      <h4>{{ documento.nome }}</h4>
+      <p *ngIf="!isEdit">{{documento.numero}}</p>
+      <mat-form-field class="example-full-width" *ngIf="isEdit">
+        <input matInput [(ngModel)]="documento.numero">
       </mat-form-field>
     </li>
     <li class="grid" [@dadosAppeared]="dadosState">

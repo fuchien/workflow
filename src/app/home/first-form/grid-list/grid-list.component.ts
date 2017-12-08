@@ -22,7 +22,7 @@ export class GridListComponent implements OnInit {
   isEdit: boolean = false
 
   @Input('dados') dados
-  canais = ['Dog', 'Cat', 'Cow', 'Fox']
+  documento: Documento = new Documento()
 
   buttonCorrigirDados: boolean = false
 
@@ -38,6 +38,18 @@ export class GridListComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    if (this.dados.cpf) {
+
+      this.documento.nome = 'CPF'
+      this.documento.numero = this.dados.cpf
+    }
+
+    if (this.dados.cnpj) {
+      
+      this.documento.nome = 'CNPJ'
+      this.documento.numero = this.dados.cnpj
+    }
 
     if (this.dados.prosseguir) {
 
@@ -56,4 +68,9 @@ export class GridListComponent implements OnInit {
     this.isEdit = false
   }
 
+}
+
+export class Documento {
+  nome: string
+  numero: string
 }
