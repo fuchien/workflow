@@ -56,7 +56,7 @@ export class FirstFormComponent implements OnInit {
 
   filasSelecionadas: any
   filaId: number
-  // canalSelected = this.canais[0]
+  cartaoSelecionado: Cartoes
 
   dadosPessoais: Dados
 
@@ -197,6 +197,7 @@ export class FirstFormComponent implements OnInit {
 
   checarContas(contas) {
 
+    this.cartaoSelecionado = contas
     this.dadosPessoais.cartaoSelecionada = contas
   }
 
