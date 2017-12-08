@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 /* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
 
 html {
@@ -11,4 +12,5 @@ body {
     margin: 0 0 54px; /* altura do seu footer */
     background-color: #f9f9f9;
     overflow-y: scroll;
+    font-family: 'Open Sans';
 }
