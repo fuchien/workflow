@@ -22,7 +22,7 @@ export class FirstFormService {
   pegarFilas() {
 
     // return this._http.get(`http://www.mocky.io/v2/5a2917352e00002e17a09a18`)
-    return this.http.get(`http://www.mocky.io/v2/5a2a69872d0000561291b0d5`)
+    return this.http.get(`https://www.mocky.io/v2/5a2a69872d0000561291b0d5`)
       .map(res => res.json())
   }
 

@@ -183,7 +183,7 @@ export class FirstFormComponent implements OnInit {
 
   prosseguir() {
 
-    if (!this.dadosPessoais.cartaoSelecionada) {
+    if (!this.dadosPessoais.cartaoSelecionada && this.dadosPessoais.cartoes.length != 0) {
 
       this.snackbarService.notify(`Selecione uma conta!`)
       return
@@ -197,7 +197,7 @@ export class FirstFormComponent implements OnInit {
 
   checarContas(contas) {
 
-    this.cartaoSelecionado = contas
+    // this.cartaoSelecionado = contas
     this.dadosPessoais.cartaoSelecionada = contas
   }
 

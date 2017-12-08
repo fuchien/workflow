@@ -502,7 +502,7 @@ var FirstFormComponent = (function () {
         this.isResult = true;
     };
     FirstFormComponent.prototype.prosseguir = function () {
-        if (!this.dadosPessoais.cartaoSelecionada) {
+        if (!this.dadosPessoais.cartaoSelecionada && this.dadosPessoais.cartoes.length != 0) {
             this.snackbarService.notify("Selecione uma conta!");
             return;
         }
@@ -511,7 +511,7 @@ var FirstFormComponent = (function () {
         this.router.navigate(['/home/response']);
     };
     FirstFormComponent.prototype.checarContas = function (contas) {
-        this.cartaoSelecionado = contas;
+        // this.cartaoSelecionado = contas
         this.dadosPessoais.cartaoSelecionada = contas;
     };
     return FirstFormComponent;
@@ -581,7 +581,7 @@ var FirstFormService = (function () {
     };
     FirstFormService.prototype.pegarFilas = function () {
         // return this._http.get(`http://www.mocky.io/v2/5a2917352e00002e17a09a18`)
-        return this.http.get("http://www.mocky.io/v2/5a2a69872d0000561291b0d5")
+        return this.http.get("https://www.mocky.io/v2/5a2a69872d0000561291b0d5")
             .map(function (res) { return res.json(); });
     };
     FirstFormService.prototype.pegarDados = function () {
