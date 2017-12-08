@@ -1,4 +1,13 @@
 /* FORMS */
+::ng-deep .mat-form-field-placeholder {
+  display: none;
+}
+
+
+::ng-deep .mat-input-placeholder {
+  display: none !important;
+}
+
 
 .forms {
     margin: 0 auto;
@@ -365,3 +374,9 @@
         margin-top: -15px;
       }
     }
+
+
+
+// mat-input-placeholder mat-form-field-placeholder ng-tns-c7-3
+
+// mat-input-placeholder mat-form-field-placeholder ng-tns-c7-3
