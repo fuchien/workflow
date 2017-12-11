@@ -36,7 +36,7 @@ exports.i(__webpack_require__("../../../../css-loader/index.js?{\"sourceMap\":fa
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */\n\nhtml {\n    position: relative;\n    min-height: 100%;\n}\n\nbody {\n    margin: 0 0 54px; /* altura do seu footer */\n    background-color: #f9f9f9;\n    overflow-y: scroll;\n    font-family: 'Open Sans';\n}", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */\n\nhtml {\n    position: relative;\n    min-height: 100%;\n    font-family: 'Open Sans' !important;\n}\n\nbody {\n    margin: 0 0 54px; /* altura do seu footer */\n    background-color: #f9f9f9;\n    overflow-y: scroll;\n    font-family: 'Open Sans';\n}", ""]);
 
 // exports
 
